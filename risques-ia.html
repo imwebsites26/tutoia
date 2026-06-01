@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Les risques de l'IA — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+.back{font-family:var(--sans);font-size:13px;color:var(--accent);display:inline-block;margin-bottom:2rem}
+.back:hover{text-decoration:underline}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
+.post-meta{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:2rem}
+.post-intro{font-size:19px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;margin-bottom:2.5rem;font-style:italic}
+.post-body h2{font-size:24px;font-weight:700;margin:2.5rem 0 1rem;letter-spacing:-.3px}
+.post-body p{margin-bottom:1.25rem;color:var(--muted)}
+.post-body strong{font-weight:700;color:var(--text)}
+.post-body a{color:var(--accent)}
+.author-bar{margin:3rem 0 0;padding:1.25rem 1.5rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px;transition:background .3s}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);flex-shrink:0}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
+.author-bio{font-family:var(--sans);font-size:13px;color:var(--hint)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){h1{font-size:26px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html">Tutoriels</a>
+        <a href="index.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <a class="back" href="index.html">← Retour au blog</a>
+
+  <div class="post-tag">Réflexion</div>
+  <h1>Les risques de l'IA : ce qu'il faut vraiment savoir</h1>
+  <div class="post-meta">20 avril 2026 · 6 min de lecture · TutoIA</div>
+
+  <p class="post-intro">On entend tout et son contraire sur les dangers de l'IA. Entre les catastrophistes et les enthousiastes aveugles, voici un regard honnête sur les vrais risques du quotidien.</p>
+
+  <div class="post-body">
+
+    <p>Je suis quelqu'un qui utilise l'IA tous les jours et qui en parle positivement sur ce blog. Mais ça ne veut pas dire que tout est rose. Il y a des risques réels, concrets, qui méritent d'être compris. Pas pour avoir peur, mais pour utiliser ces outils de façon éclairée.</p>
+
+    <h2>Les hallucinations : quand l'IA invente</h2>
+
+    <p>C'est le risque le plus immédiat et le plus sous-estimé. Les IA comme ChatGPT peuvent inventer des faits, des dates, des citations, des sources — avec une confiance absolue dans leur ton. On appelle ça des hallucinations. Ce n'est pas un bug, c'est une caractéristique fondamentale de comment ces systèmes fonctionnent.</p>
+
+    <p>J'ai personnellement vu ChatGPT citer un article scientifique qui n'existait pas, avec un titre plausible, des auteurs plausibles, et un journal plausible. Si tu ne vérifies pas, tu peux diffuser une information fausse sans le savoir. La règle : ne jamais faire confiance à une information importante sans la vérifier dans une source primaire.</p>
+
+    <h2>La désinformation à grande échelle</h2>
+
+    <p>L'IA permet de créer des textes, des images, des vidéos et des voix fausses à une vitesse et un coût jamais vus. Les deepfakes vidéo sont de plus en plus difficiles à détecter. Les faux articles d'actualité peuvent être générés par milliers. Ce n'est pas une menace abstraite, c'est déjà une réalité lors des élections et des crises internationales.</p>
+
+    <p>La bonne pratique : développer son esprit critique, croiser les sources, et se méfier particulièrement des contenus qui provoquent une réaction émotionnelle forte.</p>
+
+    <h2>La vie privée et les données personnelles</h2>
+
+    <p>Quand tu utilises un outil IA gratuit, tes conversations peuvent servir à entraîner les modèles futurs. Les informations que tu partages — projets professionnels, informations personnelles, données clients — peuvent potentiellement être vues par des employés de l'entreprise ou utilisées d'une façon que tu n'as pas anticipée.</p>
+
+    <p>Règle simple : ne jamais partager avec une IA des informations confidentielles, des données clients, des mots de passe, ou tout ce que tu ne voudrais pas voir apparaître dans une fuite de données.</p>
+
+    <h2>L'impact sur l'emploi</h2>
+
+    <p>C'est le sujet qui inquiète le plus, et c'est légitime. Certains métiers vont être profondément transformés par l'IA dans les prochaines années. La traduction, la rédaction basique, le support client, certaines tâches comptables et juridiques répétitives — ces domaines sont déjà impactés.</p>
+
+    <p>La réponse n'est pas de nier cette réalité, mais de comprendre quelles compétences restent spécifiquement humaines : la créativité stratégique, la relation client, le jugement dans des situations complexes, l'empathie. Et d'apprendre à utiliser l'IA comme un outil plutôt que de la subir comme une menace.</p>
+
+    <h2>La dépendance et l'atrophie cognitive</h2>
+
+    <p>Un risque moins évident mais réel : si on délègue trop à l'IA, on risque de perdre des capacités. Écrire, synthétiser, argumenter — ce sont des muscles cognitifs. Si l'IA les remplace complètement, ils s'atrophient. J'essaie personnellement de garder des zones où je travaille sans assistance IA, juste pour maintenir ces capacités.</p>
+
+    <h2>Mon point de vue</h2>
+
+    <p>L'IA est un outil extraordinaire qui comporte des risques réels. La bonne posture n'est ni la peur aveugle ni l'enthousiasme naïf. C'est l'utilisation consciente, informée, et critique. Comprendre comment ça marche, connaître les limites, et garder son jugement actif — c'est tout ce qu'il faut pour en tirer le meilleur sans en subir le pire.</p>
+
+  </div>
+
+  <div style="border-top:1px solid var(--border);margin:3rem 0 2rem"></div>
+
+  <div class="author-bar">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="author-name">TutoIA</div>
+      <div class="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;
+  const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){
+  document.body.classList.add('dark');
+  document.querySelector('.theme-btn').textContent='Mode clair';
+}
+</script>
+
+</body>
+</html>
