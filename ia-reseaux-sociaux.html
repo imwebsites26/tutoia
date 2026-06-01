@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>L'IA pour les réseaux sociaux — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+.back{font-family:var(--sans);font-size:13px;color:var(--accent);display:inline-block;margin-bottom:2rem}
+.back:hover{text-decoration:underline}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
+.post-meta{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:2rem}
+.post-intro{font-size:19px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;margin-bottom:2.5rem;font-style:italic}
+.post-body h2{font-size:24px;font-weight:700;margin:2.5rem 0 1rem;letter-spacing:-.3px}
+.post-body p{margin-bottom:1.25rem;color:var(--muted)}
+.post-body strong{font-weight:700;color:var(--text)}
+.post-body a{color:var(--accent)}
+.prompt-box{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:var(--sans);font-size:15px;color:var(--text);font-style:italic}
+.author-bar{margin:3rem 0 0;padding:1.25rem 1.5rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px;transition:background .3s}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);flex-shrink:0}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
+.author-bio{font-family:var(--sans);font-size:13px;color:var(--hint)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){h1{font-size:26px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html">Tutoriels</a>
+        <a href="index.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <a class="back" href="index.html">← Retour au blog</a>
+
+  <div class="post-tag">Productivité</div>
+  <h1>Comment j'utilise l'IA pour gérer mes réseaux sociaux sans y passer ma vie</h1>
+  <div class="post-meta">25 avril 2026 · 6 min de lecture · TutoIA</div>
+
+  <p class="post-intro">Publier régulièrement sur les réseaux sociaux prend un temps fou. Voici comment j'ai réduit ce temps de moitié grâce à l'IA, sans que mes posts sonnent comme un robot.</p>
+
+  <div class="post-body">
+
+    <p>La constance est la clé des réseaux sociaux. Tout le monde le sait. Mais trouver des idées, écrire les posts, créer les visuels, planifier — c'est chronophage. Depuis que j'utilise l'IA dans mon process, je publie plus régulièrement et je passe deux fois moins de temps dessus.</p>
+
+    <h2>Trouver des idées de contenu</h2>
+
+    <p>La panne d'inspiration, c'est le premier ennemi de la régularité. J'ai créé un prompt que j'utilise chaque semaine pour générer mes idées :</p>
+
+    <div class="prompt-box">
+      "Je gère un compte [Instagram/LinkedIn/Twitter] sur le thème [ton thème]. Propose-moi 10 idées de posts pour cette semaine. Mix de contenu éducatif, personnel et engageant. Ton naturel, pas corporate."
+    </div>
+
+    <p>En deux minutes j'ai une liste d'idées sur laquelle je pioche. Je n'utilise pas tout, mais ça suffit à débloquer ma créativité et à planifier la semaine.</p>
+
+    <h2>Rédiger les captions</h2>
+
+    <p>Une fois l'idée choisie, je demande à ChatGPT de rédiger une première version :</p>
+
+    <div class="prompt-box">
+      "Écris une caption Instagram pour un post sur [sujet]. Ton conversationnel, première personne, maximum 150 mots. Termine par une question pour engager la communauté. Pas de hashtags pour l'instant."
+    </div>
+
+    <p>Je retouche toujours le résultat pour que ça sonne vraiment comme moi. L'IA donne un excellent point de départ, mais la touche personnelle reste indispensable pour que ce soit authentique.</p>
+
+    <h2>Créer les visuels avec Canva IA</h2>
+
+    <p>Canva a intégré des fonctionnalités IA qui permettent de générer des visuels directement dans l'outil. Je décris ce que je veux, il génère plusieurs options, je choisis et j'adapte. Pour des stories, des carrousels ou des posts simples, c'est largement suffisant et beaucoup plus rapide que de tout faire à la main.</p>
+
+    <h2>Planifier avec un calendrier éditorial IA</h2>
+
+    <p>Je demande à ChatGPT de m'aider à construire mon calendrier éditorial mensuel :</p>
+
+    <div class="prompt-box">
+      "Crée un calendrier éditorial pour le mois de juin pour un compte [thème]. 3 posts par semaine. Mix de formats : texte, carrousel, question. Varie les sujets pour ne pas être répétitif."
+    </div>
+
+    <p>J'obtiens un plan structuré que je charge ensuite dans Buffer ou Later pour programmer les publications à l'avance.</p>
+
+    <h2>Ce que l'IA ne peut pas faire à ta place</h2>
+
+    <p>L'authenticité, ça ne se délègue pas. Les posts qui performent le mieux sont toujours ceux qui partagent une vraie expérience, une vraie opinion, un vrai moment. L'IA peut t'aider à les formuler, mais l'histoire de fond doit venir de toi. C'est ce qui crée la connexion avec ton audience, et aucun outil ne peut l'inventer.</p>
+
+  </div>
+
+  <div style="border-top:1px solid var(--border);margin:3rem 0 2rem"></div>
+
+  <div class="author-bar">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="author-name">TutoIA</div>
+      <div class="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;
+  const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){
+  document.body.classList.add('dark');
+  document.querySelector('.theme-btn').textContent='Mode clair';
+}
+</script>
+
+</body>
+</html>
