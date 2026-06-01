@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tutoriels IA — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--accent)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.page-hero{max-width:780px;margin:0 auto;padding:4rem 2rem 2rem}
+.page-hero h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
+.page-hero p{font-size:17px;color:var(--muted);line-height:1.75}
+.main{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+.section-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2rem}
+.post-item{padding:2rem 0;border-bottom:1px solid var(--border)}
+.post-item:last-child{border-bottom:none}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.post-title{font-size:22px;font-weight:700;line-height:1.3;margin-bottom:8px;color:var(--text)}
+.post-item a:hover .post-title{color:var(--accent)}
+.post-excerpt{font-family:var(--sans);font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:12px}
+.post-date{font-family:var(--sans);font-size:13px;color:var(--hint)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){.page-hero h1{font-size:28px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="tutoriels.html" class="active">Tutoriels</a>
+        <a href="comparatifs.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+<div class="page-hero">
+  <h1>Tutoriels</h1>
+  <p>Des guides pratiques pour utiliser les outils IA au quotidien, étape par étape.</p>
+</div>
+<div class="main">
+  <div class="section-label">Tous les tutoriels</div>
+  <div class="post-item">
+    <div class="post-tag">Guide débutant</div>
+    <a href="chatgpt-guide-debutant.html"><div class="post-title">C'est quoi ChatGPT ? Tout comprendre en 5 minutes</div></a>
+    <div class="post-excerpt">J'ai passé des semaines à tester ChatGPT avant d'écrire cet article. Voici ce que j'aurais aimé savoir dès le début.</div>
+    <div class="post-date">1 juin 2026</div>
+  </div>
+  <div class="post-item">
+    <div class="post-tag">Tutoriel</div>
+    <a href="outils-ia-gratuits.html"><div class="post-title">5 outils IA gratuits qui m'ont sauvé du temps cette semaine</div></a>
+    <div class="post-excerpt">Des outils que j'utilise vraiment, pas une liste copiée-collée d'un article américain.</div>
+    <div class="post-date">25 mai 2026</div>
+  </div>
+  <div class="post-item">
+    <div class="post-tag">Productivité</div>
+    <a href="cv-avec-chatgpt.html"><div class="post-title">Comment j'ai écrit mon CV en 12 minutes avec ChatGPT</div></a>
+    <div class="post-excerpt">Le process exact, les prompts que j'ai utilisés, et ce que j'ai dû corriger à la main.</div>
+    <div class="post-date">20 mai 2026</div>
+  </div>
+  <div class="post-item">
+    <div class="post-tag">Image IA</div>
+    <a href="midjourney-debutant.html"><div class="post-title">Midjourney pour les nuls : mes premières images, mes premières erreurs</div></a>
+    <div class="post-excerpt">Un vrai retour de débutant, avec les prompts qui marchent et ceux qui donnent des résultats étranges.</div>
+    <div class="post-date">15 mai 2026</div>
+  </div>
+  <div class="post-item">
+    <div class="post-tag">Tutoriel</div>
+    <a href="apprendre-langue-ia.html"><div class="post-title">Comment apprendre une langue avec l'IA en 2026</div></a>
+    <div class="post-excerpt">J'ai testé ChatGPT comme professeur d'anglais pendant un mois. Voici ce qui m'a vraiment aidé.</div>
+    <div class="post-date">10 mai 2026</div>
+  </div>
+  <div class="post-item">
+    <div class="post-tag">Productivité</div>
+    <a href="resumer-pdf-ia.html"><div class="post-title">Comment résumer un PDF avec l'IA en 2 minutes</div></a>
+    <div class="post-excerpt">Rapport de 80 pages, contrat interminable — l'IA peut tout digérer à ta place.</div>
+    <div class="post-date">30 avril 2026</div>
+  </div>
+  <div class="post-item">
+    <div class="post-tag">Productivité</div>
+    <a href="ia-reseaux-sociaux.html"><div class="post-title">Comment j'utilise l'IA pour gérer mes réseaux sociaux sans y passer ma vie</div></a>
+    <div class="post-excerpt">Publier régulièrement prend un temps fou. Voici comment j'ai réduit ce temps de moitié.</div>
+    <div class="post-date">25 avril 2026</div>
+  </div>
+  <div class="post-item">
+    <div class="post-tag">Productivité</div>
+    <a href="automatiser-taches-ia.html"><div class="post-title">Comment automatiser ses tâches répétitives avec l'IA</div></a>
+    <div class="post-excerpt">J'ai récupéré environ 5 heures par semaine en automatisant des tâches que je faisais manuellement.</div>
+    <div class="post-date">5 avril 2026</div>
+  </div>
+  <div class="post-item">
+    <div class="post-tag">Tutoriel</div>
+    <a href="ia-traduction.html"><div class="post-title">IA et traduction : les meilleurs outils pour ne plus jamais être bloqué par la langue</div></a>
+    <div class="post-excerpt">Google Traduction c'est bien. Mais l'IA fait tellement mieux avec du contexte et de la nuance.</div>
+    <div class="post-date">1 avril 2026</div>
+  </div>
+  <div class="post-item">
+    <div class="post-tag">Tutoriel</div>
+    <a href="ia-etudiant.html"><div class="post-title">Les meilleurs outils IA pour les étudiants en 2026</div></a>
+    <div class="post-excerpt">Comprendre un cours difficile, préparer un exposé — l'IA peut t'aider sur tout ça.</div>
+    <div class="post-date">28 mars 2026</div>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+<script>
+function toggleTheme(){const body=document.body;const btn=document.querySelector('.theme-btn');body.classList.toggle('dark');btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light')}
+const saved=localStorage.getItem('theme');if(saved==='dark'){document.body.classList.add('dark');document.querySelector('.theme-btn').textContent='Mode clair'}
+</script>
+</body>
+</html>
