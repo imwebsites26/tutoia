@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>L'IA pour les étudiants — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+.back{font-family:var(--sans);font-size:13px;color:var(--accent);display:inline-block;margin-bottom:2rem}
+.back:hover{text-decoration:underline}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
+.post-meta{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:2rem}
+.post-intro{font-size:19px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;margin-bottom:2.5rem;font-style:italic}
+.post-body h2{font-size:24px;font-weight:700;margin:2.5rem 0 1rem;letter-spacing:-.3px}
+.post-body p{margin-bottom:1.25rem;color:var(--muted)}
+.post-body strong{font-weight:700;color:var(--text)}
+.post-body a{color:var(--accent)}
+.prompt-box{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:var(--sans);font-size:15px;color:var(--text);font-style:italic}
+.author-bar{margin:3rem 0 0;padding:1.25rem 1.5rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px;transition:background .3s}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);flex-shrink:0}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
+.author-bio{font-family:var(--sans);font-size:13px;color:var(--hint)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){h1{font-size:26px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html">Tutoriels</a>
+        <a href="index.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <a class="back" href="index.html">← Retour au blog</a>
+
+  <div class="post-tag">Tutoriel</div>
+  <h1>Les meilleurs outils IA pour les étudiants en 2026</h1>
+  <div class="post-meta">28 mars 2026 · 6 min de lecture · TutoIA</div>
+
+  <p class="post-intro">Comprendre un cours difficile, rédiger un plan de dissertation, préparer un exposé — l'IA peut t'aider sur tout ça. Sans tricher, mais en travaillant beaucoup plus intelligemment.</p>
+
+  <div class="post-body">
+
+    <p>Je vais être direct sur un point avant de commencer : utiliser l'IA pour faire rédiger ses devoirs à sa place, c'est de la triche et ça se détecte de mieux en mieux. Ce n'est pas ce dont je vais parler ici. Je vais parler d'utiliser l'IA comme un outil d'apprentissage, ce qui est non seulement autorisé mais franchement utile pour progresser.</p>
+
+    <h2>Comprendre un cours difficile</h2>
+
+    <p>C'est l'usage qui m'a le plus bluffé. Quand un concept de maths, de physique, d'économie ou de droit reste flou après le cours, ChatGPT peut te l'expliquer d'une dizaine de façons différentes jusqu'à ce que ça clique.</p>
+
+    <div class="prompt-box">
+      "Explique-moi [concept] comme si j'avais 15 ans, avec un exemple concret de la vie quotidienne. Puis explique-le de façon plus technique."
+    </div>
+
+    <p>La capacité de l'IA à adapter son niveau d'explication est remarquable. Tu peux demander des analogies, des exemples, des schémas textuels, jusqu'à ce que le concept devienne vraiment clair.</p>
+
+    <h2>Préparer un plan de dissertation</h2>
+
+    <p>Attention, je parle bien du plan, pas de la rédaction. L'IA peut t'aider à structurer ta pensée, à identifier les axes principaux, à ne pas oublier d'arguments importants. Mais c'est toi qui rédiges ensuite.</p>
+
+    <div class="prompt-box">
+      "Je dois écrire une dissertation sur [sujet]. Propose-moi trois plans possibles avec leurs avantages et inconvénients. Je suis en [niveau]. La problématique est : [ta problématique]."
+    </div>
+
+    <h2>Créer ses fiches de révision</h2>
+
+    <p>Colle le contenu de ton cours dans ChatGPT et demande-lui de générer des fiches de révision synthétiques. Ou encore mieux, demande-lui de créer des questions-réponses pour te tester :</p>
+
+    <div class="prompt-box">
+      "À partir de ce cours, crée 15 questions de révision avec les réponses. Mix de questions factuelles et de questions de compréhension. Voici le cours : [colle le cours]"
+    </div>
+
+    <p>Tu obtiens un outil de révision personnalisé en deux minutes.</p>
+
+    <h2>Améliorer son anglais académique</h2>
+
+    <p>Pour les étudiants qui doivent rédiger en anglais, l'IA est un correcteur bien plus puissant que Grammarly. Tu écris ton texte, tu le colles dans ChatGPT et tu demandes :</p>
+
+    <div class="prompt-box">
+      "Corrige ce texte académique en anglais. Explique chaque correction et pourquoi tu l'as faite. Je veux apprendre de mes erreurs."
+    </div>
+
+    <h2>NotebookLM pour les longues bibliographies</h2>
+
+    <p>Si tu dois lire beaucoup d'articles académiques pour un mémoire ou une thèse, NotebookLM de Google est ton meilleur ami. Tu importes tous tes documents, et tu peux ensuite poser des questions qui synthétisent l'information de plusieurs sources à la fois. Un gain de temps considérable pour la recherche documentaire.</p>
+
+    <h2>La règle d'or</h2>
+
+    <p>Utilise l'IA pour mieux comprendre et mieux apprendre, pas pour éviter de réfléchir. Les compétences que tu développes maintenant — analyser, synthétiser, argumenter — sont celles qui feront ta valeur sur le marché du travail. L'IA est un outil pour les renforcer, pas pour les court-circuiter.</p>
+
+  </div>
+
+  <div style="border-top:1px solid var(--border);margin:3rem 0 2rem"></div>
+
+  <div class="author-bar">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="author-name">TutoIA</div>
+      <div class="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;
+  const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){
+  document.body.classList.add('dark');
+  document.querySelector('.theme-btn').textContent='Mode clair';
+}
+</script>
+
+</body>
+</html>
