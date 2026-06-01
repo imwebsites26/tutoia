@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tutoriels IA — TutoIA</title>
+<title>Articles — TutoIA</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -25,10 +25,13 @@ nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;t
 .page-hero{max-width:780px;margin:0 auto;padding:4rem 2rem 2rem}
 .page-hero h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
 .page-hero p{font-size:17px;color:var(--muted);line-height:1.75}
-.main{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
-.section-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2rem}
+.filters{max-width:780px;margin:0 auto;padding:0 2rem 2rem;display:flex;gap:10px;flex-wrap:wrap}
+.filter-btn{font-family:var(--sans);font-size:13px;padding:6px 16px;border-radius:20px;border:1px solid var(--border);background:none;color:var(--muted);cursor:pointer;transition:all .2s}
+.filter-btn:hover,.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.main{max-width:780px;margin:0 auto;padding:1rem 2rem 5rem}
 .post-item{padding:2rem 0;border-bottom:1px solid var(--border)}
 .post-item:last-child{border-bottom:none}
+.post-item.hidden{display:none}
 .post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
 .post-title{font-size:22px;font-weight:700;line-height:1.3;margin-bottom:8px;color:var(--text)}
 .post-item a:hover .post-title{color:var(--accent)}
@@ -50,7 +53,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
     <div class="nav-right">
       <div class="nav-links">
         <a href="index.html">Accueil</a>
-        <a href="tutoriels.html" class="active">Tutoriels</a>
+        <a href="articles.html" class="active">Articles</a>
         <a href="comparatifs.html">Comparatifs</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -58,73 +61,114 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
     </div>
   </div>
 </nav>
+
 <div class="page-hero">
-  <h1>Tutoriels</h1>
-  <p>Des guides pratiques pour utiliser les outils IA au quotidien, étape par étape.</p>
+  <h1>Tous les articles</h1>
+  <p>Guides pratiques, comparatifs honnêtes et réflexions sur l'intelligence artificielle.</p>
 </div>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="filter('tous')">Tous</button>
+  <button class="filter-btn" onclick="filter('tutoriel')">Tutoriels</button>
+  <button class="filter-btn" onclick="filter('comparatif')">Comparatifs</button>
+  <button class="filter-btn" onclick="filter('productivite')">Productivité</button>
+  <button class="filter-btn" onclick="filter('reflexion')">Réflexions</button>
+  <button class="filter-btn" onclick="filter('business')">Business</button>
+</div>
+
 <div class="main">
-  <div class="section-label">Tous les tutoriels</div>
-  <div class="post-item">
+  <div class="post-item" data-cat="tutoriel">
     <div class="post-tag">Guide débutant</div>
     <a href="chatgpt-guide-debutant.html"><div class="post-title">C'est quoi ChatGPT ? Tout comprendre en 5 minutes</div></a>
     <div class="post-excerpt">J'ai passé des semaines à tester ChatGPT avant d'écrire cet article. Voici ce que j'aurais aimé savoir dès le début.</div>
     <div class="post-date">1 juin 2026</div>
   </div>
-  <div class="post-item">
+  <div class="post-item" data-cat="comparatif">
+    <div class="post-tag">Comparatif</div>
+    <a href="chatgpt-vs-gemini.html"><div class="post-title">ChatGPT vs Gemini : mon avis après 3 mois d'utilisation</div></a>
+    <div class="post-excerpt">Pas de tableau de fonctionnalités ennuyeux. Juste mon retour honnête après avoir utilisé les deux au quotidien.</div>
+    <div class="post-date">28 mai 2026</div>
+  </div>
+  <div class="post-item" data-cat="tutoriel">
     <div class="post-tag">Tutoriel</div>
     <a href="outils-ia-gratuits.html"><div class="post-title">5 outils IA gratuits qui m'ont sauvé du temps cette semaine</div></a>
     <div class="post-excerpt">Des outils que j'utilise vraiment, pas une liste copiée-collée d'un article américain.</div>
     <div class="post-date">25 mai 2026</div>
   </div>
-  <div class="post-item">
+  <div class="post-item" data-cat="productivite">
     <div class="post-tag">Productivité</div>
     <a href="cv-avec-chatgpt.html"><div class="post-title">Comment j'ai écrit mon CV en 12 minutes avec ChatGPT</div></a>
     <div class="post-excerpt">Le process exact, les prompts que j'ai utilisés, et ce que j'ai dû corriger à la main.</div>
     <div class="post-date">20 mai 2026</div>
   </div>
-  <div class="post-item">
+  <div class="post-item" data-cat="tutoriel">
     <div class="post-tag">Image IA</div>
     <a href="midjourney-debutant.html"><div class="post-title">Midjourney pour les nuls : mes premières images, mes premières erreurs</div></a>
     <div class="post-excerpt">Un vrai retour de débutant, avec les prompts qui marchent et ceux qui donnent des résultats étranges.</div>
     <div class="post-date">15 mai 2026</div>
   </div>
-  <div class="post-item">
+  <div class="post-item" data-cat="tutoriel">
     <div class="post-tag">Tutoriel</div>
     <a href="apprendre-langue-ia.html"><div class="post-title">Comment apprendre une langue avec l'IA en 2026</div></a>
     <div class="post-excerpt">J'ai testé ChatGPT comme professeur d'anglais pendant un mois. Voici ce qui m'a vraiment aidé.</div>
     <div class="post-date">10 mai 2026</div>
   </div>
-  <div class="post-item">
+  <div class="post-item" data-cat="reflexion">
+    <div class="post-tag">Réflexion</div>
+    <a href="ia-remplacer-graphiste.html"><div class="post-title">L'IA peut-elle vraiment remplacer un graphiste ?</div></a>
+    <div class="post-excerpt">J'ai testé les principaux outils de création visuelle par IA pendant deux semaines.</div>
+    <div class="post-date">5 mai 2026</div>
+  </div>
+  <div class="post-item" data-cat="productivite">
     <div class="post-tag">Productivité</div>
     <a href="resumer-pdf-ia.html"><div class="post-title">Comment résumer un PDF avec l'IA en 2 minutes</div></a>
     <div class="post-excerpt">Rapport de 80 pages, contrat interminable — l'IA peut tout digérer à ta place.</div>
     <div class="post-date">30 avril 2026</div>
   </div>
-  <div class="post-item">
+  <div class="post-item" data-cat="productivite">
     <div class="post-tag">Productivité</div>
     <a href="ia-reseaux-sociaux.html"><div class="post-title">Comment j'utilise l'IA pour gérer mes réseaux sociaux sans y passer ma vie</div></a>
-    <div class="post-excerpt">Publier régulièrement prend un temps fou. Voici comment j'ai réduit ce temps de moitié.</div>
+    <div class="post-excerpt">Publier régulièrement sur les réseaux sociaux prend un temps fou. Voici comment j'ai réduit ce temps de moitié.</div>
     <div class="post-date">25 avril 2026</div>
   </div>
-  <div class="post-item">
+  <div class="post-item" data-cat="reflexion">
+    <div class="post-tag">Réflexion</div>
+    <a href="risques-ia.html"><div class="post-title">Les risques de l'IA : ce qu'il faut vraiment savoir</div></a>
+    <div class="post-excerpt">Entre les catastrophistes et les enthousiastes aveugles, voici un regard honnête sur les vrais risques.</div>
+    <div class="post-date">20 avril 2026</div>
+  </div>
+  <div class="post-item" data-cat="business">
+    <div class="post-tag">Business</div>
+    <a href="ia-petites-entreprises.html"><div class="post-title">Comment les petites entreprises peuvent utiliser l'IA sans se ruiner</div></a>
+    <div class="post-excerpt">L'IA n'est pas réservée aux grandes entreprises. Voici comment en tirer un avantage concret.</div>
+    <div class="post-date">15 avril 2026</div>
+  </div>
+  <div class="post-item" data-cat="comparatif">
+    <div class="post-tag">Guide</div>
+    <a href="claude-ai-guide.html"><div class="post-title">Claude AI : pourquoi j'ai commencé à l'utiliser en plus de ChatGPT</div></a>
+    <div class="post-excerpt">Pendant longtemps j'étais un utilisateur exclusif de ChatGPT. Puis j'ai testé Claude sérieusement.</div>
+    <div class="post-date">10 avril 2026</div>
+  </div>
+  <div class="post-item" data-cat="productivite">
     <div class="post-tag">Productivité</div>
     <a href="automatiser-taches-ia.html"><div class="post-title">Comment automatiser ses tâches répétitives avec l'IA</div></a>
     <div class="post-excerpt">J'ai récupéré environ 5 heures par semaine en automatisant des tâches que je faisais manuellement.</div>
     <div class="post-date">5 avril 2026</div>
   </div>
-  <div class="post-item">
+  <div class="post-item" data-cat="tutoriel">
     <div class="post-tag">Tutoriel</div>
     <a href="ia-traduction.html"><div class="post-title">IA et traduction : les meilleurs outils pour ne plus jamais être bloqué par la langue</div></a>
     <div class="post-excerpt">Google Traduction c'est bien. Mais l'IA fait tellement mieux avec du contexte et de la nuance.</div>
     <div class="post-date">1 avril 2026</div>
   </div>
-  <div class="post-item">
+  <div class="post-item" data-cat="tutoriel">
     <div class="post-tag">Tutoriel</div>
     <a href="ia-etudiant.html"><div class="post-title">Les meilleurs outils IA pour les étudiants en 2026</div></a>
     <div class="post-excerpt">Comprendre un cours difficile, préparer un exposé — l'IA peut t'aider sur tout ça.</div>
     <div class="post-date">28 mars 2026</div>
   </div>
 </div>
+
 <footer>
   <div class="footer-logo">Tuto<span>IA</span></div>
   <div class="footer-links">
@@ -134,9 +178,25 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
   </div>
   <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
 </footer>
+
 <script>
-function toggleTheme(){const body=document.body;const btn=document.querySelector('.theme-btn');body.classList.toggle('dark');btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light')}
-const saved=localStorage.getItem('theme');if(saved==='dark'){document.body.classList.add('dark');document.querySelector('.theme-btn').textContent='Mode clair'}
+function toggleTheme(){
+  const body=document.body;const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){document.body.classList.add('dark');document.querySelector('.theme-btn').textContent='Mode clair'}
+
+function filter(cat){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.post-item').forEach(item=>{
+    if(cat==='tous'||item.dataset.cat===cat){item.classList.remove('hidden')}
+    else{item.classList.add('hidden')}
+  });
+}
 </script>
 </body>
 </html>
