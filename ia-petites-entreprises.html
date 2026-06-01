@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>L'IA pour les petites entreprises — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+.back{font-family:var(--sans);font-size:13px;color:var(--accent);display:inline-block;margin-bottom:2rem}
+.back:hover{text-decoration:underline}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
+.post-meta{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:2rem}
+.post-intro{font-size:19px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;margin-bottom:2.5rem;font-style:italic}
+.post-body h2{font-size:24px;font-weight:700;margin:2.5rem 0 1rem;letter-spacing:-.3px}
+.post-body p{margin-bottom:1.25rem;color:var(--muted)}
+.post-body strong{font-weight:700;color:var(--text)}
+.post-body a{color:var(--accent)}
+.prompt-box{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:var(--sans);font-size:15px;color:var(--text);font-style:italic}
+.author-bar{margin:3rem 0 0;padding:1.25rem 1.5rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px;transition:background .3s}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);flex-shrink:0}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
+.author-bio{font-family:var(--sans);font-size:13px;color:var(--hint)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){h1{font-size:26px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html">Tutoriels</a>
+        <a href="index.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <a class="back" href="index.html">← Retour au blog</a>
+
+  <div class="post-tag">Business</div>
+  <h1>Comment les petites entreprises peuvent utiliser l'IA sans se ruiner</h1>
+  <div class="post-meta">15 avril 2026 · 7 min de lecture · TutoIA</div>
+
+  <p class="post-intro">L'IA n'est pas réservée aux grandes entreprises avec des budgets colossaux. Voici comment une petite structure peut en tirer un avantage concret, souvent gratuitement.</p>
+
+  <div class="post-body">
+
+    <p>Quand on parle d'IA en entreprise, on imagine souvent des investissements massifs et des équipes de data scientists. La réalité en 2026, c'est que les meilleurs outils IA sont accessibles pour quelques dizaines d'euros par mois, voire gratuitement. Et pour une petite structure, le gain de productivité peut être transformateur.</p>
+
+    <h2>Le service client automatisé</h2>
+
+    <p>Répondre aux mêmes questions encore et encore est une perte de temps énorme pour les petites équipes. Un chatbot IA peut gérer les questions fréquentes 24h/24, libérant du temps pour les demandes qui nécessitent vraiment une intervention humaine.</p>
+
+    <p>Des outils comme Tidio ou Intercom intègrent maintenant l'IA de façon accessible. Tu configures les réponses aux questions courantes, et l'IA gère le reste. Pour une boutique en ligne ou un restaurant, c'est une économie de plusieurs heures par semaine.</p>
+
+    <h2>La création de contenu marketing</h2>
+
+    <p>Une petite entreprise a souvent du mal à produire du contenu régulier — posts réseaux sociaux, newsletters, descriptions produits, articles de blog. L'IA change complètement cette équation.</p>
+
+    <div class="prompt-box">
+      "Tu es un expert en marketing pour [type de business]. Crée 5 posts Instagram pour cette semaine qui mettent en valeur [produit/service]. Ton chaleureux et authentique, pas publicitaire."
+    </div>
+
+    <p>En 10 minutes, tu as une semaine de contenu à retoucher et publier. Ce qui prenait une demi-journée en prend maintenant une heure.</p>
+
+    <h2>La gestion administrative</h2>
+
+    <p>Rédiger des emails professionnels, des devis, des conditions générales de vente, des réponses aux avis clients — tout ça prend du temps et de l'énergie mentale. ChatGPT peut générer des premiers jets solides pour tous ces documents.</p>
+
+    <p>Attention cependant pour les documents juridiques importants : l'IA peut donner une bonne base, mais une relecture par un professionnel reste nécessaire avant toute utilisation officielle.</p>
+
+    <h2>L'analyse des retours clients</h2>
+
+    <p>Si tu reçois des avis, des emails ou des commentaires de clients, l'IA peut t'aider à en extraire des tendances. Colle une vingtaine d'avis dans ChatGPT et demande :</p>
+
+    <div class="prompt-box">
+      "Analyse ces avis clients. Quels sont les points positifs récurrents ? Les points négatifs ? Que devrais-je améliorer en priorité ?"
+    </div>
+
+    <p>Tu obtiens une synthèse en secondes au lieu de passer une heure à tout lire et analyser manuellement.</p>
+
+    <h2>Par où commencer</h2>
+
+    <p>Mon conseil : commence par un seul cas d'usage, celui qui te coûte le plus de temps en ce moment. Maîtrise-le vraiment avant d'en ajouter d'autres. L'erreur classique c'est de vouloir tout automatiser d'un coup et de se retrouver avec des outils mal configurés qui créent plus de problèmes qu'ils n'en résolvent.</p>
+
+    <p>Pour une petite entreprise qui débute avec l'IA, ChatGPT en version gratuite ou à 20€/mois couvre déjà 80% des besoins. C'est l'investissement le plus rentable que tu puisses faire en ce moment.</p>
+
+  </div>
+
+  <div style="border-top:1px solid var(--border);margin:3rem 0 2rem"></div>
+
+  <div class="author-bar">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="author-name">TutoIA</div>
+      <div class="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;
+  const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){
+  document.body.classList.add('dark');
+  document.querySelector('.theme-btn').textContent='Mode clair';
+}
+</script>
+
+</body>
+</html>
