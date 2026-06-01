@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ChatGPT vs Gemini — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+.back{font-family:var(--sans);font-size:13px;color:var(--accent);display:inline-block;margin-bottom:2rem}
+.back:hover{text-decoration:underline}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
+.post-meta{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:2rem}
+.post-intro{font-size:19px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;margin-bottom:2.5rem;font-style:italic}
+.post-body h2{font-size:24px;font-weight:700;margin:2.5rem 0 1rem;letter-spacing:-.3px}
+.post-body p{margin-bottom:1.25rem;color:var(--muted)}
+.post-body strong{font-weight:700;color:var(--text)}
+.post-body a{color:var(--accent)}
+.author-bar{margin:3rem 0 0;padding:1.25rem 1.5rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px;transition:background .3s}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);flex-shrink:0}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
+.author-bio{font-family:var(--sans);font-size:13px;color:var(--hint)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){h1{font-size:26px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html">Tutoriels</a>
+        <a href="index.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <a class="back" href="index.html">← Retour au blog</a>
+
+  <div class="post-tag">Comparatif</div>
+  <h1>ChatGPT vs Gemini : mon avis après 3 mois d'utilisation</h1>
+  <div class="post-meta">28 mai 2026 · 5 min de lecture · TutoIA</div>
+
+  <p class="post-intro">Pas de tableau de fonctionnalités ennuyeux. Juste mon retour honnête après avoir utilisé les deux au quotidien pendant trois mois.</p>
+
+  <div class="post-body">
+
+    <p>Quand Gemini est sorti, j'ai voulu tester si ça valait vraiment le coup de changer mes habitudes. J'utilisais ChatGPT depuis des mois, j'en étais assez content. Mais la curiosité l'a emporté. Voilà ce que j'ai découvert.</p>
+
+    <h2>C'est quoi Gemini ?</h2>
+
+    <p>Gemini est l'assistant IA de Google, anciennement connu sous le nom Bard. Google l'a rebaptisé et amélioré en 2024. L'avantage évident sur le papier : il est directement connecté à internet et aux services Google comme Gmail, Docs ou Drive. ChatGPT, lui, a longtemps fonctionné avec des données figées dans le temps, même si ça a beaucoup évolué depuis.</p>
+
+    <h2>Ce que ChatGPT fait mieux</h2>
+
+    <p>Pour écrire, ChatGPT reste mon choix numéro un. Les textes sont plus naturels, plus fluides. Quand je lui demande de rédiger un email délicat ou de reformuler un paragraphe maladroit, le résultat est quasi toujours utilisable directement. Gemini a tendance à produire des textes un peu plus rigides, plus "scolaires".</p>
+
+    <p>ChatGPT est aussi plus fiable pour le code. Si tu demandes à résoudre un bug ou à écrire une fonction, les réponses sont généralement plus précises et mieux expliquées. C'est un détail si tu ne codes pas, mais ça compte.</p>
+
+    <h2>Ce que Gemini fait mieux</h2>
+
+    <p>La connexion à internet en temps réel est un vrai avantage. Quand je veux savoir ce qui s'est passé cette semaine, ou vérifier une info récente, Gemini répond avec des sources fraîches. ChatGPT dans sa version gratuite a une date limite de connaissance, ce qui peut poser problème sur des sujets d'actualité.</p>
+
+    <p>L'intégration avec Google est aussi très pratique si tu vis dans l'écosystème Google. Gemini peut lire tes emails, résumer tes documents Drive, créer des événements dans ton agenda. ChatGPT ne fait pas ça nativement.</p>
+
+    <h2>Lequel choisir au final ?</h2>
+
+    <p>Si tu veux un assistant pour écrire, réfléchir, apprendre et créer du contenu, prends ChatGPT. C'est celui que j'utilise tous les jours et qui m'a le plus bluffé sur la durée.</p>
+
+    <p>Si tu es très ancré dans l'univers Google et que tu veux un assistant qui interagit avec tes outils existants, Gemini a du sens. La recherche en temps réel est aussi un vrai plus si tu as besoin d'infos récentes régulièrement.</p>
+
+    <p>La bonne nouvelle : les deux sont gratuits. Rien ne t'empêche de tester les deux pendant une semaine et de décider toi-même. C'est d'ailleurs ce que je recommande à tout le monde.</p>
+
+    <h2>Mon verdict</h2>
+
+    <p>Après trois mois, je n'ai pas lâché ChatGPT. Gemini est sur mon téléphone pour les recherches rapides liées à l'actualité, mais pour le vrai travail, ChatGPT reste mon outil principal. Aucun des deux n'est parfait, mais ensemble ils couvrent à peu près tous mes besoins.</p>
+
+  </div>
+
+  <div style="border-top:1px solid var(--border);margin:3rem 0 2rem"></div>
+
+  <div class="author-bar">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="author-name">TutoIA</div>
+      <div class="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;
+  const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){
+  document.body.classList.add('dark');
+  document.querySelector('.theme-btn').textContent='Mode clair';
+}
+</script>
+
+</body>
+</html>
