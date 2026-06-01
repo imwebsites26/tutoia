@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Automatiser ses tâches avec l'IA — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+.back{font-family:var(--sans);font-size:13px;color:var(--accent);display:inline-block;margin-bottom:2rem}
+.back:hover{text-decoration:underline}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
+.post-meta{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:2rem}
+.post-intro{font-size:19px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;margin-bottom:2.5rem;font-style:italic}
+.post-body h2{font-size:24px;font-weight:700;margin:2.5rem 0 1rem;letter-spacing:-.3px}
+.post-body p{margin-bottom:1.25rem;color:var(--muted)}
+.post-body strong{font-weight:700;color:var(--text)}
+.post-body a{color:var(--accent)}
+.prompt-box{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:var(--sans);font-size:15px;color:var(--text);font-style:italic}
+.author-bar{margin:3rem 0 0;padding:1.25rem 1.5rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px;transition:background .3s}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);flex-shrink:0}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
+.author-bio{font-family:var(--sans);font-size:13px;color:var(--hint)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){h1{font-size:26px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html">Tutoriels</a>
+        <a href="index.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <a class="back" href="index.html">← Retour au blog</a>
+
+  <div class="post-tag">Productivité</div>
+  <h1>Comment automatiser ses tâches répétitives avec l'IA</h1>
+  <div class="post-meta">5 avril 2026 · 7 min de lecture · TutoIA</div>
+
+  <p class="post-intro">J'ai récupéré environ 5 heures par semaine en automatisant des tâches que je faisais manuellement depuis des années. Voici exactement comment j'ai fait.</p>
+
+  <div class="post-body">
+
+    <p>On a tous ces tâches qu'on fait en pilote automatique, qui prennent du temps, et qui sont franchement ennuyeuses. Trier des emails, reformuler des messages, créer des rapports hebdomadaires, répondre aux mêmes questions. L'IA peut prendre en charge une bonne partie de tout ça.</p>
+
+    <h2>Identifier ce qui mérite d'être automatisé</h2>
+
+    <p>Avant de se lancer, il faut choisir les bonnes batailles. Une bonne tâche à automatiser est répétitive, suit toujours le même schéma, et ne nécessite pas de jugement humain complexe. Les emails de confirmation, les résumés de réunion, les descriptions de produits, les réponses types aux questions fréquentes — tout ça est parfait.</p>
+
+    <h2>Make et Zapier : l'automatisation sans coder</h2>
+
+    <p>Ces deux outils permettent de connecter des applications entre elles et d'y intégrer l'IA. Par exemple, tu peux créer un workflow qui, à chaque nouvel email reçu dans une catégorie, demande automatiquement à ChatGPT de le résumer et te l'envoie par notification. Ou qui génère un brouillon de réponse que tu n'as plus qu'à valider.</p>
+
+    <p>Make propose un plan gratuit suffisant pour commencer. La prise en main prend une après-midi, mais une fois les premiers workflows créés, c'est du temps récupéré chaque semaine indéfiniment.</p>
+
+    <h2>Les prompts templates : l'automatisation simple</h2>
+
+    <p>Pas besoin d'outils complexes pour commencer. La méthode la plus simple : créer des prompts templates que tu réutilises. J'ai un document avec mes 10 prompts les plus utilisés, que je copie-colle selon le besoin.</p>
+
+    <div class="prompt-box">
+      "Tu es mon assistant. Voici les notes de ma réunion de ce matin : [colle les notes]. Génère un compte-rendu structuré avec : décisions prises, actions à mener, responsables, délais."
+    </div>
+
+    <p>Ce prompt, je l'utilise après chaque réunion. En deux minutes j'ai un compte-rendu propre que j'envoie directement à l'équipe.</p>
+
+    <h2>Automatiser sa veille</h2>
+
+    <p>Rester informé sur son secteur prend du temps. J'utilise une combinaison de newsletters et de Perplexity pour automatiser ma veille. Chaque matin je pose la même question à Perplexity :</p>
+
+    <div class="prompt-box">
+      "Quelles sont les trois actualités les plus importantes sur l'intelligence artificielle des dernières 24 heures ? Résume chacune en deux phrases."
+    </div>
+
+    <p>En 30 secondes j'ai ma veille quotidienne, sans avoir à parcourir des dizaines de sites.</p>
+
+    <h2>Automatiser la création de rapports</h2>
+
+    <p>Si tu dois produire des rapports réguliers — hebdomadaires, mensuels — l'IA peut générer la structure et le texte à partir de tes données brutes. Tu fournis les chiffres, elle rédige l'analyse et les commentaires. Tu vérifies et tu envoies.</p>
+
+    <h2>Les limites de l'automatisation</h2>
+
+    <p>Tout ne peut pas et ne doit pas être automatisé. Les conversations importantes, les décisions stratégiques, les relations clients sensibles — ça demande une présence humaine réelle. L'automatisation est au service de ta productivité, pas un remplacement de ton jugement. Garde toujours un œil sur ce que l'IA produit en ton nom.</p>
+
+  </div>
+
+  <div style="border-top:1px solid var(--border);margin:3rem 0 2rem"></div>
+
+  <div class="author-bar">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="author-name">TutoIA</div>
+      <div class="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;
+  const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){
+  document.body.classList.add('dark');
+  document.querySelector('.theme-btn').textContent='Mode clair';
+}
+</script>
+
+</body>
+</html>
