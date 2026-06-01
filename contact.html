@@ -26,34 +26,57 @@ nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;t
 .page-hero h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
 .page-hero p{font-size:17px;color:var(--muted);line-height:1.75}
 .main{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
-.contact-card{background:var(--surface);border-radius:12px;padding:2.5rem;margin-bottom:2rem}
-.contact-card h2{font-size:22px;font-weight:700;margin-bottom:1rem}
-.contact-card p{font-family:var(--sans);font-size:15px;color:var(--muted);margin-bottom:1.5rem}
-.contact-email{display:inline-block;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);border:1px solid var(--accent);padding:10px 24px;border-radius:6px}
-.contact-email:hover{background:var(--accent);color:#fff}
-.faq{margin-top:3rem}
+
+.faq{margin-bottom:3rem}
 .faq h2{font-size:24px;font-weight:700;margin-bottom:2rem}
 .faq-item{padding:1.5rem 0;border-bottom:1px solid var(--border)}
 .faq-item:last-child{border-bottom:none}
 .faq-q{font-family:var(--sans);font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px}
 .faq-a{font-family:var(--sans);font-size:15px;color:var(--muted);line-height:1.65}
+
+.comments-section h2{font-size:24px;font-weight:700;margin-bottom:.5rem}
+.comments-section .subtitle{font-family:var(--sans);font-size:15px;color:var(--muted);margin-bottom:2rem}
+
+.comment-form{background:var(--surface);border-radius:12px;padding:2rem;margin-bottom:2.5rem;transition:background .3s}
+.comment-form h3{font-family:var(--sans);font-size:16px;font-weight:600;margin-bottom:1.25rem;color:var(--text)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-field{display:flex;flex-direction:column;gap:6px}
+.form-field label{font-family:var(--sans);font-size:13px;color:var(--muted);font-weight:500}
+.form-field input,.form-field textarea{background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:var(--sans);font-size:14px;padding:10px 14px;border-radius:8px;outline:none;transition:border-color .2s}
+.form-field input:focus,.form-field textarea:focus{border-color:var(--accent)}
+.form-field textarea{resize:vertical;min-height:120px;margin-bottom:1rem}
+.submit-btn{background:var(--accent);border:none;color:#fff;font-family:var(--sans);font-size:14px;font-weight:600;padding:12px 28px;border-radius:8px;cursor:pointer;transition:opacity .2s}
+.submit-btn:hover{opacity:.85}
+
+.comments-list{display:flex;flex-direction:column;gap:1.5rem}
+.comment{background:var(--surface);border-radius:12px;padding:1.5rem;transition:background .3s}
+.comment-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.comment-avatar{width:38px;height:38px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--accent);flex-shrink:0}
+.comment-author{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
+.comment-date{font-family:var(--sans);font-size:12px;color:var(--hint)}
+.comment-text{font-family:var(--sans);font-size:15px;color:var(--muted);line-height:1.65}
+.like-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:12px;padding:4px 12px;border-radius:20px;cursor:pointer;margin-top:10px;transition:all .2s}
+.like-btn:hover,.like-btn.liked{border-color:var(--accent);color:var(--accent)}
+.no-comments{font-family:var(--sans);font-size:15px;color:var(--hint);text-align:center;padding:2rem;background:var(--surface);border-radius:12px}
+
 footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
 .footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
 .footer-logo span{color:var(--accent)}
 .footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
 .footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
 .footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
-@media(max-width:600px){.page-hero h1{font-size:28px}.nav-links{display:none}}
+@media(max-width:600px){.page-hero h1{font-size:28px}.nav-links{display:none}.form-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
     <div class="nav-right">
       <div class="nav-links">
         <a href="index.html">Accueil</a>
-        <a href="tutoriels.html">Tutoriels</a>
+        <a href="articles.html">Articles</a>
         <a href="comparatifs.html">Comparatifs</a>
         <a href="contact.html" class="active">Contact</a>
       </div>
@@ -61,16 +84,13 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
     </div>
   </div>
 </nav>
+
 <div class="page-hero">
-  <h1>Contact</h1>
-  <p>Une question, une suggestion, un partenariat ? Je lis tous les messages.</p>
+  <h1>Contact & Communauté</h1>
+  <p>Une question, une réaction, une suggestion ? Laisse un commentaire — je lis tout.</p>
 </div>
+
 <div class="main">
-  <div class="contact-card">
-    <h2>Me contacter directement</h2>
-    <p>Tu peux m'écrire pour toute question sur un article, une suggestion de sujet, ou simplement pour partager ton expérience avec l'IA. Je réponds à tous les messages, généralement sous 48h.</p>
-    <a class="contact-email" href="mailto:contact@tutoia.fr">contact@tutoia.fr</a>
-  </div>
 
   <div class="faq">
     <h2>Questions fréquentes</h2>
@@ -79,19 +99,49 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
       <div class="faq-a">Les articles sont rédigés avec l'aide de l'IA, mais relus, corrigés et enrichis par un humain. Chaque retour d'expérience est authentique.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Vous faites de la publicité ou des partenariats rémunérés ?</div>
-      <div class="faq-a">Le site est monétisé via Google AdSense uniquement. Aucun article n'est sponsorisé. Les recommandations sont basées sur l'expérience réelle, pas sur des partenariats commerciaux.</div>
+      <div class="faq-q">Le site contient-il de la publicité ?</div>
+      <div class="faq-a">Le site est monétisé via Google AdSense uniquement. Aucun article n'est sponsorisé. Les recommandations sont basées sur l'expérience réelle.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Puis-je suggérer un sujet d'article ?</div>
-      <div class="faq-a">Absolument. Les meilleures idées d'articles viennent souvent des lecteurs. Envoie-moi un email avec ta suggestion et je l'ajouterai à ma liste.</div>
+      <div class="faq-a">Absolument. Laisse un commentaire ci-dessous avec ta suggestion et je l'ajouterai à ma liste.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">À quelle fréquence publiez-vous ?</div>
-      <div class="faq-a">L'objectif est un article par semaine, alternant tutoriels pratiques et réflexions sur l'IA. Abonne-toi à la newsletter pour ne rien rater.</div>
+      <div class="faq-a">L'objectif est un article par semaine. Abonne-toi à la newsletter sur la page d'accueil pour ne rien rater.</div>
     </div>
   </div>
+
+  <div class="comments-section">
+    <h2>Commentaires</h2>
+    <p class="subtitle">Réagis, pose une question, suggère un sujet — la communauté te répondra.</p>
+
+    <div class="comment-form">
+      <h3>Laisser un commentaire</h3>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Prénom *</label>
+          <input type="text" id="comment-name" placeholder="Ton prénom"/>
+        </div>
+        <div class="form-field">
+          <label>Ville (optionnel)</label>
+          <input type="text" id="comment-city" placeholder="Paris, Dakar..."/>
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Ton message *</label>
+        <textarea id="comment-text" placeholder="Écris ton commentaire ici..."></textarea>
+      </div>
+      <button class="submit-btn" onclick="submitComment()">Publier le commentaire</button>
+    </div>
+
+    <div class="comments-list" id="comments-list">
+      <div class="no-comments" id="no-comments">Sois le premier à laisser un commentaire !</div>
+    </div>
+  </div>
+
 </div>
+
 <footer>
   <div class="footer-logo">Tuto<span>IA</span></div>
   <div class="footer-links">
@@ -101,9 +151,70 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
   </div>
   <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
 </footer>
+
 <script>
-function toggleTheme(){const body=document.body;const btn=document.querySelector('.theme-btn');body.classList.toggle('dark');btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light')}
-const saved=localStorage.getItem('theme');if(saved==='dark'){document.body.classList.add('dark');document.querySelector('.theme-btn').textContent='Mode clair'}
+function toggleTheme(){
+  const body=document.body;const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){document.body.classList.add('dark');document.querySelector('.theme-btn').textContent='Mode clair'}
+
+let comments=JSON.parse(localStorage.getItem('tutoia-comments')||'[]');
+
+function renderComments(){
+  const list=document.getElementById('comments-list');
+  const noComments=document.getElementById('no-comments');
+  const existing=list.querySelectorAll('.comment');
+  existing.forEach(c=>c.remove());
+  if(comments.length===0){noComments.style.display='block';return;}
+  noComments.style.display='none';
+  comments.slice().reverse().forEach((c,i)=>{
+    const div=document.createElement('div');
+    div.className='comment';
+    const initials=c.name.charAt(0).toUpperCase();
+    const location=c.city?` · ${c.city}`:'';
+    div.innerHTML=`
+      <div class="comment-header">
+        <div class="comment-avatar">${initials}</div>
+        <div>
+          <div class="comment-author">${c.name}${location}</div>
+          <div class="comment-date">${c.date}</div>
+        </div>
+      </div>
+      <div class="comment-text">${c.text}</div>
+      <button class="like-btn ${c.liked?'liked':''}" onclick="toggleLike(${comments.length-1-i})">
+        ♥ ${c.likes} j'aime
+      </button>`;
+    list.appendChild(div);
+  });
+}
+
+function submitComment(){
+  const name=document.getElementById('comment-name').value.trim();
+  const city=document.getElementById('comment-city').value.trim();
+  const text=document.getElementById('comment-text').value.trim();
+  if(!name||!text){alert('Merci de remplir ton prénom et ton message.');return;}
+  const now=new Date();
+  const date=now.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
+  comments.push({name,city,text,date,likes:0,liked:false});
+  localStorage.setItem('tutoia-comments',JSON.stringify(comments));
+  document.getElementById('comment-name').value='';
+  document.getElementById('comment-city').value='';
+  document.getElementById('comment-text').value='';
+  renderComments();
+}
+
+function toggleLike(i){
+  if(comments[i].liked){comments[i].likes--;comments[i].liked=false;}
+  else{comments[i].likes++;comments[i].liked=true;}
+  localStorage.setItem('tutoia-comments',JSON.stringify(comments));
+  renderComments();
+}
+
+renderComments();
 </script>
 </body>
 </html>
