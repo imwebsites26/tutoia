@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Écrire son CV avec ChatGPT — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+.back{font-family:var(--sans);font-size:13px;color:var(--accent);display:inline-block;margin-bottom:2rem}
+.back:hover{text-decoration:underline}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
+.post-meta{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:2rem}
+.post-intro{font-size:19px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;margin-bottom:2.5rem;font-style:italic}
+.post-body h2{font-size:24px;font-weight:700;margin:2.5rem 0 1rem;letter-spacing:-.3px}
+.post-body p{margin-bottom:1.25rem;color:var(--muted)}
+.post-body strong{font-weight:700;color:var(--text)}
+.post-body a{color:var(--accent)}
+.prompt-box{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:var(--sans);font-size:15px;color:var(--text);font-style:italic}
+.author-bar{margin:3rem 0 0;padding:1.25rem 1.5rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px;transition:background .3s}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);flex-shrink:0}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
+.author-bio{font-family:var(--sans);font-size:13px;color:var(--hint)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){h1{font-size:26px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html">Tutoriels</a>
+        <a href="index.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <a class="back" href="index.html">← Retour au blog</a>
+
+  <div class="post-tag">Productivité</div>
+  <h1>Comment j'ai écrit mon CV en 12 minutes avec ChatGPT</h1>
+  <div class="post-meta">20 mai 2026 · 4 min de lecture · TutoIA</div>
+
+  <p class="post-intro">Le process exact, les prompts que j'ai utilisés, et ce que j'ai dû corriger à la main. Spoiler : c'est plus utile qu'on ne le pense, mais pas magique non plus.</p>
+
+  <div class="post-body">
+
+    <p>Je devais mettre à jour mon CV pour une opportunité qui s'est présentée assez vite. Pas le temps de passer des heures dessus. J'ai décidé de tester ChatGPT pour aller vite. Voilà exactement ce que j'ai fait.</p>
+
+    <h2>Étape 1 — Lui donner le contexte</h2>
+
+    <p>La première erreur que font la plupart des gens : demander à ChatGPT de "faire un CV" sans lui donner d'informations. Il va inventer des expériences génériques qui ne ressemblent à personne. Il faut lui donner de la matière.</p>
+
+    <p>J'ai commencé par lui envoyer ce message :</p>
+
+    <div class="prompt-box">
+      "Je cherche un poste de [ton poste] dans [ton secteur]. Voici mes expériences : [liste brute de tes jobs, dates, missions]. Voici mes compétences : [liste]. Aide-moi à rédiger un CV percutant, avec des formulations orientées résultats."
+    </div>
+
+    <p>La clé c'est "orientées résultats". ChatGPT va transformer "j'ai géré les réseaux sociaux" en "développé la présence digitale de la marque, augmentation de l'engagement de 40%". Évidemment, il faut vérifier que les chiffres sont réels — c'est toi qui les ajustes.</p>
+
+    <h2>Étape 2 — Adapter à l'offre d'emploi</h2>
+
+    <p>Une fois le CV de base généré, j'ai collé l'annonce du poste qui m'intéressait et j'ai demandé :</p>
+
+    <div class="prompt-box">
+      "Voici l'offre d'emploi : [colle l'annonce]. Adapte mon CV pour qu'il corresponde mieux à ce poste. Mets en avant les compétences et expériences les plus pertinentes."
+    </div>
+
+    <p>Le résultat était vraiment bon. ChatGPT a réorganisé les priorités, mis en avant ce qui comptait pour ce recruteur spécifique, et ajusté le vocabulaire pour coller aux mots-clés de l'annonce.</p>
+
+    <h2>Étape 3 — La lettre de motivation en 3 minutes</h2>
+
+    <p>Avec le CV adapté et l'annonce sous la main, j'ai enchaîné :</p>
+
+    <div class="prompt-box">
+      "Rédige une lettre de motivation courte (3 paragraphes maximum) pour ce poste. Ton naturel, pas trop formel. Commence par ce qui m'attire dans cette entreprise, puis ce que j'apporte, puis une conclusion engageante."
+    </div>
+
+    <p>Premier jet très correct. J'ai retouché deux phrases pour que ça sonne vraiment comme moi, pas comme un robot.</p>
+
+    <h2>Ce que j'ai dû corriger à la main</h2>
+
+    <p>ChatGPT a une fâcheuse tendance à sur-vendre. Il a mis des formulations un peu trop pompeuses que j'ai allégées. Il a aussi inventé un chiffre que je n'avais pas donné — je l'ai supprimé. Et le format visuel, évidemment, c'est moi qui l'ai fait sur Canva ensuite.</p>
+
+    <p>Au total : 12 minutes pour le contenu avec ChatGPT, 20 minutes pour le design sur Canva. Bien mieux qu'une après-midi à fixer une page blanche.</p>
+
+  </div>
+
+  <div style="border-top:1px solid var(--border);margin:3rem 0 2rem"></div>
+
+  <div class="author-bar">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="author-name">TutoIA</div>
+      <div class="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;
+  const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){
+  document.body.classList.add('dark');
+  document.querySelector('.theme-btn').textContent='Mode clair';
+}
+</script>
+
+</body>
+</html>
