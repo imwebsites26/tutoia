@@ -32,6 +32,7 @@ nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;t
 .main{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
 .section-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2rem}
 .post-item{padding:2rem 0;border-bottom:1px solid var(--border)}
+.post-item:last-child{border-bottom:none}
 .post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
 .post-title{font-size:22px;font-weight:700;line-height:1.3;margin-bottom:8px;color:var(--text)}
 .post-item a:hover .post-title{color:var(--accent)}
@@ -60,8 +61,8 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
     <div class="nav-right">
       <div class="nav-links">
         <a href="index.html">Accueil</a>
-        <a href="index.html">Tutoriels</a>
-        <a href="index.html">Comparatifs</a>
+        <a href="tutoriels.html">Tutoriels</a>
+        <a href="comparatifs.html">Comparatifs</a>
         <a href="contact.html">Contact</a>
       </div>
       <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
@@ -88,11 +89,107 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
 
   <div class="post-item">
     <div class="post-tag">Guide débutant</div>
-    <a href="chatgpt-guide-debutant.html">
-      <div class="post-title">C'est quoi ChatGPT ? Tout comprendre en 5 minutes</div>
-    </a>
+    <a href="chatgpt-guide-debutant.html"><div class="post-title">C'est quoi ChatGPT ? Tout comprendre en 5 minutes</div></a>
     <div class="post-excerpt">J'ai passé des semaines à tester ChatGPT avant d'écrire cet article. Voici ce que j'aurais aimé savoir dès le début, sans les termes techniques inutiles.</div>
     <div class="post-date">1 juin 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Comparatif</div>
+    <a href="chatgpt-vs-gemini.html"><div class="post-title">ChatGPT vs Gemini : mon avis après 3 mois d'utilisation</div></a>
+    <div class="post-excerpt">Pas de tableau de fonctionnalités ennuyeux. Juste mon retour honnête après avoir utilisé les deux au quotidien pendant trois mois.</div>
+    <div class="post-date">28 mai 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Tutoriel</div>
+    <a href="outils-ia-gratuits.html"><div class="post-title">5 outils IA gratuits qui m'ont sauvé du temps cette semaine</div></a>
+    <div class="post-excerpt">Des outils que j'utilise vraiment, pas une liste copiée-collée d'un article américain.</div>
+    <div class="post-date">25 mai 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Productivité</div>
+    <a href="cv-avec-chatgpt.html"><div class="post-title">Comment j'ai écrit mon CV en 12 minutes avec ChatGPT</div></a>
+    <div class="post-excerpt">Le process exact, les prompts que j'ai utilisés, et ce que j'ai dû corriger à la main.</div>
+    <div class="post-date">20 mai 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Image IA</div>
+    <a href="midjourney-debutant.html"><div class="post-title">Midjourney pour les nuls : mes premières images, mes premières erreurs</div></a>
+    <div class="post-excerpt">Un vrai retour de débutant, avec les prompts qui marchent et ceux qui donnent des résultats étranges.</div>
+    <div class="post-date">15 mai 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Tutoriel</div>
+    <a href="apprendre-langue-ia.html"><div class="post-title">Comment apprendre une langue avec l'IA en 2026</div></a>
+    <div class="post-excerpt">J'ai testé ChatGPT comme professeur d'anglais pendant un mois. Voici ce qui m'a vraiment aidé à progresser.</div>
+    <div class="post-date">10 mai 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Réflexion</div>
+    <a href="ia-remplacer-graphiste.html"><div class="post-title">L'IA peut-elle vraiment remplacer un graphiste ?</div></a>
+    <div class="post-excerpt">J'ai testé les principaux outils de création visuelle par IA pendant deux semaines. La réponse est plus nuancée qu'on ne le pense.</div>
+    <div class="post-date">5 mai 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Productivité</div>
+    <a href="resumer-pdf-ia.html"><div class="post-title">Comment résumer un PDF avec l'IA en 2 minutes</div></a>
+    <div class="post-excerpt">Rapport de 80 pages, contrat interminable — l'IA peut tout digérer à ta place.</div>
+    <div class="post-date">30 avril 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Productivité</div>
+    <a href="ia-reseaux-sociaux.html"><div class="post-title">Comment j'utilise l'IA pour gérer mes réseaux sociaux sans y passer ma vie</div></a>
+    <div class="post-excerpt">Publier régulièrement sur les réseaux sociaux prend un temps fou. Voici comment j'ai réduit ce temps de moitié.</div>
+    <div class="post-date">25 avril 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Réflexion</div>
+    <a href="risques-ia.html"><div class="post-title">Les risques de l'IA : ce qu'il faut vraiment savoir</div></a>
+    <div class="post-excerpt">Entre les catastrophistes et les enthousiastes aveugles, voici un regard honnête sur les vrais risques du quotidien.</div>
+    <div class="post-date">20 avril 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Business</div>
+    <a href="ia-petites-entreprises.html"><div class="post-title">Comment les petites entreprises peuvent utiliser l'IA sans se ruiner</div></a>
+    <div class="post-excerpt">L'IA n'est pas réservée aux grandes entreprises. Voici comment une petite structure peut en tirer un avantage concret.</div>
+    <div class="post-date">15 avril 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Guide</div>
+    <a href="claude-ai-guide.html"><div class="post-title">Claude AI : pourquoi j'ai commencé à l'utiliser en plus de ChatGPT</div></a>
+    <div class="post-excerpt">Pendant longtemps j'étais un utilisateur exclusif de ChatGPT. Puis j'ai testé Claude sérieusement.</div>
+    <div class="post-date">10 avril 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Productivité</div>
+    <a href="automatiser-taches-ia.html"><div class="post-title">Comment automatiser ses tâches répétitives avec l'IA</div></a>
+    <div class="post-excerpt">J'ai récupéré environ 5 heures par semaine en automatisant des tâches que je faisais manuellement depuis des années.</div>
+    <div class="post-date">5 avril 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Tutoriel</div>
+    <a href="ia-traduction.html"><div class="post-title">IA et traduction : les meilleurs outils pour ne plus jamais être bloqué par la langue</div></a>
+    <div class="post-excerpt">Google Traduction c'est bien. Mais l'IA fait tellement mieux avec du contexte et de la nuance.</div>
+    <div class="post-date">1 avril 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Tutoriel</div>
+    <a href="ia-etudiant.html"><div class="post-title">Les meilleurs outils IA pour les étudiants en 2026</div></a>
+    <div class="post-excerpt">Comprendre un cours difficile, préparer un exposé — l'IA peut t'aider sur tout ça, sans tricher.</div>
+    <div class="post-date">28 mars 2026</div>
   </div>
 
   <div class="newsletter">
