@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Politique de confidentialité — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article{max-width:780px;margin:0 auto;padding:4rem 2rem 5rem}
+.article h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:.5rem}
+.article .date{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:2.5rem}
+.article h2{font-size:20px;font-weight:700;margin:2.5rem 0 1rem;color:var(--text)}
+.article p{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:1.25rem}
+.article strong{font-weight:700;color:var(--text)}
+.article a{color:var(--accent)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){.article h1{font-size:26px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="articles.html">Articles</a>
+        <a href="comparatifs.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <h1>Politique de confidentialité</h1>
+  <div class="date">Dernière mise à jour : 1 juin 2026</div>
+
+  <p>Cette politique de confidentialité décrit comment TutoIA collecte, utilise et protège les informations des visiteurs du site <strong>imwebsites26.github.io/tutoia</strong>.</p>
+
+  <h2>1. Responsable du traitement</h2>
+  <p>Le site TutoIA est un blog personnel géré à titre individuel. Pour toute question relative à vos données personnelles, vous pouvez nous contacter via la <a href="contact.html">page contact</a>.</p>
+
+  <h2>2. Données collectées</h2>
+  <p>TutoIA ne collecte aucune donnée personnelle directement. Les seules données susceptibles d'être traitées sont celles collectées automatiquement par les services tiers utilisés sur ce site.</p>
+
+  <h2>3. Google AdSense</h2>
+  <p>Ce site utilise Google AdSense pour afficher des publicités. Google AdSense peut utiliser des cookies pour personnaliser les annonces affichées en fonction de vos visites précédentes sur ce site ou d'autres sites. Vous pouvez désactiver la personnalisation des annonces en vous rendant sur les <a href="https://www.google.com/settings/ads" target="_blank">paramètres des annonces Google</a>.</p>
+  <p>Google, en tant que fournisseur tiers, utilise des cookies pour diffuser des annonces. Pour en savoir plus sur la façon dont Google utilise les données, consultez la <a href="https://policies.google.com/privacy" target="_blank">politique de confidentialité de Google</a>.</p>
+
+  <h2>4. Cookies</h2>
+  <p>Ce site utilise des cookies à des fins suivantes :</p>
+  <p><strong>Cookies fonctionnels :</strong> mémorisation de vos préférences d'affichage (mode sombre/clair) via localStorage. Ces données restent sur votre appareil et ne sont pas transmises à des tiers.</p>
+  <p><strong>Cookies publicitaires :</strong> utilisés par Google AdSense pour afficher des publicités pertinentes. Ces cookies sont gérés par Google conformément à sa propre politique de confidentialité.</p>
+
+  <h2>5. Commentaires</h2>
+  <p>Les commentaires laissés sur la page contact sont stockés localement dans votre navigateur via localStorage. Ils ne sont pas transmis à un serveur externe et restent sur votre appareil.</p>
+
+  <h2>6. Vos droits</h2>
+  <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants : droit d'accès, de rectification, d'effacement, de limitation du traitement et d'opposition. Pour exercer ces droits, contactez-nous via la <a href="contact.html">page contact</a>.</p>
+
+  <h2>7. Hébergement</h2>
+  <p>Ce site est hébergé par GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). GitHub peut collecter des données techniques lors de votre visite conformément à sa propre <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank">politique de confidentialité</a>.</p>
+
+  <h2>8. Modifications</h2>
+  <p>Cette politique de confidentialité peut être mise à jour à tout moment. La date de dernière mise à jour est indiquée en haut de cette page. Nous vous encourageons à la consulter régulièrement.</p>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){document.body.classList.add('dark');document.querySelector('.theme-btn').textContent='Mode clair'}
+</script>
+</body>
+</html>
