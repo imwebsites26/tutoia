@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>C'est quoi ChatGPT ? — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+.back{font-family:var(--sans);font-size:13px;color:var(--accent);display:inline-block;margin-bottom:2rem}
+.back:hover{text-decoration:underline}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
+.post-meta{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:2rem}
+.post-intro{font-size:19px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;margin-bottom:2.5rem;font-style:italic}
+.post-body h2{font-size:24px;font-weight:700;margin:2.5rem 0 1rem;letter-spacing:-.3px}
+.post-body p{margin-bottom:1.25rem;color:var(--muted)}
+.post-body strong{font-weight:700;color:var(--text)}
+.post-body a{color:var(--accent)}
+.author-bar{margin:3rem 0 0;padding:1.25rem 1.5rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px;transition:background .3s}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);flex-shrink:0}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
+.author-bio{font-family:var(--sans);font-size:13px;color:var(--hint)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){h1{font-size:26px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html">Tutoriels</a>
+        <a href="index.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <a class="back" href="index.html">← Retour au blog</a>
+
+  <div class="post-tag">Guide débutant</div>
+  <h1>C'est quoi ChatGPT ? Tout comprendre en 5 minutes</h1>
+  <div class="post-meta">1 juin 2026 · 6 min de lecture · TutoIA</div>
+
+  <p class="post-intro">J'ai passé des semaines à tester ChatGPT avant d'écrire cet article. Voici ce que j'aurais aimé savoir dès le début, sans les termes techniques inutiles.</p>
+
+  <div class="post-body">
+
+    <p>Depuis fin 2022, il est impossible de passer une journée sur internet sans entendre parler de ChatGPT. Certains disent que ça va révolutionner le travail, d'autres que c'est dangereux, d'autres encore que c'est juste un gadget. Alors, c'est quoi exactement ?</p>
+
+    <p>Je vais t'expliquer ça simplement, sans jargon, comme je l'aurais expliqué à un ami autour d'un café.</p>
+
+    <h2>C'est quoi ChatGPT concrètement ?</h2>
+
+    <p>ChatGPT est un programme informatique avec lequel tu peux avoir une conversation écrite. Tu poses une question, il te répond. Tu lui demandes d'écrire quelque chose, il le fait. Tu lui soumets un problème, il essaie de le résoudre. Ce qui le rend différent des vieux chatbots frustrants qu'on connaissait avant, c'est qu'il comprend vraiment ce que tu lui dis. Tu peux lui écrire comme tu écrirais à un ami, pas besoin de formules spéciales.</p>
+
+    <h2>Qui l'a créé, et pourquoi ?</h2>
+
+    <p>ChatGPT a été créé par une entreprise américaine appelée OpenAI, fondée en 2015. À la base, leur objectif était de développer une intelligence artificielle bénéfique pour l'humanité. ChatGPT est sorti officiellement en novembre 2022 et a atteint 100 millions d'utilisateurs en seulement deux mois, un record absolu dans l'histoire d'internet.</p>
+
+    <h2>Comment ça marche (sans se prendre la tête) ?</h2>
+
+    <p>ChatGPT a été nourri avec une quantité astronomique de textes : des livres, des articles, des sites web, des forums… Il a appris à reconnaître des patterns dans le langage, à comprendre le contexte, et à produire des réponses cohérentes. Ce n'est pas une base de données qu'on interroge. C'est plus proche d'un cerveau qui a beaucoup lu et qui essaie de te répondre de façon pertinente. Parfois il se trompe, et c'est important de le savoir.</p>
+
+    <h2>À quoi ça sert vraiment au quotidien ?</h2>
+
+    <p>Personnellement, je l'utilise pour écrire des emails quand je ne sais pas trop comment tourner les choses. Je lui décris la situation et il me rédige un brouillon que je retouche ensuite. Je l'utilise aussi pour résumer des documents longs, pour comprendre des sujets complexes qu'il explique avec des mots simples, ou encore pour trouver des idées quand je sèche. Et oui, il corrige aussi mon français mieux que la plupart des correcteurs automatiques.</p>
+
+    <h2>C'est gratuit ?</h2>
+
+    <p>Oui, en grande partie. Tu peux créer un compte sur <a href="https://chat.openai.com" target="_blank">chat.openai.com</a> et utiliser ChatGPT gratuitement. La version gratuite est déjà très puissante pour la majorité des usages du quotidien. Il existe une version payante à environ 20 €/mois qui donne accès aux modèles les plus récents, mais pour commencer, tu n'en as vraiment pas besoin.</p>
+
+    <h2>Les limites à connaître</h2>
+
+    <p>Ce serait malhonnête de ne pas en parler. ChatGPT peut se tromper, et parfois avec beaucoup d'assurance. Il peut inventer des faits, des sources, des citations qui n'existent pas. On appelle ça des hallucinations. La règle d'or : ne jamais lui faire confiance aveuglément sur des sujets importants comme la santé, le droit ou les finances. Vérifie toujours ailleurs ce qui compte vraiment.</p>
+
+    <h2>En résumé</h2>
+
+    <p>ChatGPT est un assistant intelligent accessible à tous, gratuit, et capable de t'aider dans une quantité de tâches du quotidien. Ce n'est pas magique, ce n'est pas infaillible, mais utilisé avec un peu de recul, c'est un outil qui fait vraiment gagner du temps. La meilleure façon de comprendre ce que c'est ? Le tester toi-même, dès maintenant.</p>
+
+  </div>
+
+  <div style="border-top:1px solid var(--border);margin:3rem 0 2rem"></div>
+
+  <div class="author-bar">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="author-name">TutoIA</div>
+      <div class="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;
+  const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){
+  document.body.classList.add('dark');
+  document.querySelector('.theme-btn').textContent='Mode clair';
+}
+</script>
+
+</body>
+</html>
