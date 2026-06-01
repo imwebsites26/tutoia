@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Résumer un PDF avec l'IA — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+.back{font-family:var(--sans);font-size:13px;color:var(--accent);display:inline-block;margin-bottom:2rem}
+.back:hover{text-decoration:underline}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
+.post-meta{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:2rem}
+.post-intro{font-size:19px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;margin-bottom:2.5rem;font-style:italic}
+.post-body h2{font-size:24px;font-weight:700;margin:2.5rem 0 1rem;letter-spacing:-.3px}
+.post-body p{margin-bottom:1.25rem;color:var(--muted)}
+.post-body strong{font-weight:700;color:var(--text)}
+.post-body a{color:var(--accent)}
+.prompt-box{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:var(--sans);font-size:15px;color:var(--text);font-style:italic}
+.author-bar{margin:3rem 0 0;padding:1.25rem 1.5rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px;transition:background .3s}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);flex-shrink:0}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
+.author-bio{font-family:var(--sans);font-size:13px;color:var(--hint)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){h1{font-size:26px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html">Tutoriels</a>
+        <a href="index.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <a class="back" href="index.html">← Retour au blog</a>
+
+  <div class="post-tag">Productivité</div>
+  <h1>Comment résumer un PDF avec l'IA en 2 minutes</h1>
+  <div class="post-meta">30 avril 2026 · 5 min de lecture · TutoIA</div>
+
+  <p class="post-intro">Rapport de 80 pages, contrat interminable, article académique en anglais — l'IA peut tout digérer à ta place. Voici les meilleurs outils et la bonne méthode.</p>
+
+  <div class="post-body">
+
+    <p>On reçoit tous des documents trop longs qu'on n'a jamais le temps de lire entièrement. Contrats, rapports annuels, études de marché, articles scientifiques. Depuis que j'utilise l'IA pour les résumer, je passe dix fois moins de temps sur cette tâche et je rate beaucoup moins d'informations importantes.</p>
+
+    <h2>La méthode la plus simple : ChatGPT</h2>
+
+    <p>Si ton PDF fait moins de quelques dizaines de pages, tu peux directement le glisser dans ChatGPT (version gratuite ou payante). L'interface accepte les fichiers PDF depuis 2024. Tu l'uploades et tu poses ta question directement :</p>
+
+    <div class="prompt-box">
+      "Résume ce document en 5 points clés. Dis-moi ce qui est important et ce que je dois retenir absolument."
+    </div>
+
+    <p>Pour aller plus loin, tu peux poser des questions spécifiques sur le document comme si tu interrogeais quelqu'un qui l'a lu :</p>
+
+    <div class="prompt-box">
+      "Quelles sont les obligations qui me concernent dans ce contrat ? Y a-t-il des clauses inhabituelles dont je devrais me méfier ?"
+    </div>
+
+    <h2>Pour les très longs documents : NotebookLM</h2>
+
+    <p>NotebookLM est un outil gratuit de Google qui est fait exactement pour ça. Tu importes un ou plusieurs documents, et tu peux ensuite les interroger librement. Il génère même automatiquement un résumé et des questions fréquentes sur le contenu. Pour des rapports de 100 pages ou des thèses, c'est l'outil le plus adapté.</p>
+
+    <h2>Pour les PDFs en anglais</h2>
+
+    <p>C'est là que l'IA est particulièrement utile. Tu uploades un document en anglais et tu demandes :</p>
+
+    <div class="prompt-box">
+      "Résume ce document en français, en langage simple, comme si tu l'expliquais à quelqu'un qui n'est pas expert dans ce domaine."
+    </div>
+
+    <p>Tu obtiens une synthèse claire dans ta langue, sans avoir à traduire ou à déchiffrer un jargon technique. C'est un gain de temps énorme pour les professionnels qui travaillent avec des documents internationaux.</p>
+
+    <h2>Les limites à connaître</h2>
+
+    <p>Pour des documents juridiques ou financiers importants, le résumé IA ne remplace pas une lecture attentive ou l'avis d'un professionnel. L'IA peut rater des nuances ou simplifier des clauses complexes de façon trompeuse. Utilise-la pour gagner du temps sur la compréhension générale, pas pour prendre des décisions critiques à l'aveugle.</p>
+
+    <p>Les PDFs scannés (photos de documents) posent aussi problème — l'IA a besoin de texte sélectionnable pour fonctionner correctement. Si ton PDF est une image, il faut d'abord passer par un outil OCR comme Adobe Acrobat ou Google Drive pour le convertir.</p>
+
+    <h2>Mon usage au quotidien</h2>
+
+    <p>Je l'utilise chaque semaine pour digérer des articles de recherche sur l'IA, pour comprendre rapidement des CGU avant de m'inscrire à un service, et pour préparer des réunions où j'aurais dû lire un rapport que je n'ai pas eu le temps de parcourir. C'est devenu un réflexe indispensable.</p>
+
+  </div>
+
+  <div style="border-top:1px solid var(--border);margin:3rem 0 2rem"></div>
+
+  <div class="author-bar">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="author-name">TutoIA</div>
+      <div class="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;
+  const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){
+  document.body.classList.add('dark');
+  document.querySelector('.theme-btn').textContent='Mode clair';
+}
+</script>
+
+</body>
+</html>
