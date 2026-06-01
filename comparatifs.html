@@ -22,35 +22,58 @@ nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;t
 .nav-links a.active{color:var(--accent)}
 .theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
 .theme-btn:hover{border-color:var(--accent);color:var(--accent)}
-.page-hero{max-width:780px;margin:0 auto;padding:4rem 2rem 2rem}
+
+.page-hero{max-width:780px;margin:0 auto;padding:4rem 2rem 3rem}
 .page-hero h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
-.page-hero p{font-size:17px;color:var(--muted);line-height:1.75}
-.main{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
-.section-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2rem}
+.page-hero p{font-size:17px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;font-style:italic}
+
+.main{max-width:780px;margin:0 auto;padding:2rem 2rem 5rem}
+.section-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1.5rem}
+
+.featured{background:var(--surface);border-radius:14px;padding:2.5rem;margin-bottom:3rem;transition:background .3s}
+.featured-badge{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+.featured-title{font-size:26px;font-weight:700;line-height:1.25;margin-bottom:1rem;color:var(--text)}
+.featured-title:hover{color:var(--accent)}
+.featured-excerpt{font-family:var(--sans);font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+.featured-meta{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.read-btn{display:inline-block;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--accent);border:1px solid var(--accent);padding:8px 20px;border-radius:6px;margin-top:1rem;transition:all .2s}
+.read-btn:hover{background:var(--accent);color:#fff}
+
+.verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem}
+.verdict-card{border:1px solid var(--border);border-radius:12px;padding:1.75rem;transition:border-color .2s}
+.verdict-card:hover{border-color:var(--accent)}
+.verdict-tool{font-family:var(--sans);font-size:12px;font-weight:600;color:#fff;background:var(--accent);display:inline-block;padding:3px 12px;border-radius:20px;margin-bottom:10px}
+.verdict-title{font-size:17px;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:8px}
+.verdict-card a:hover .verdict-title{color:var(--accent)}
+.verdict-desc{font-family:var(--sans);font-size:14px;color:var(--muted);line-height:1.55;margin-bottom:12px}
+.verdict-result{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--accent)}
+
 .post-item{padding:2rem 0;border-bottom:1px solid var(--border)}
 .post-item:last-child{border-bottom:none}
 .post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-.post-title{font-size:22px;font-weight:700;line-height:1.3;margin-bottom:8px;color:var(--text)}
+.post-title{font-size:20px;font-weight:700;line-height:1.3;margin-bottom:8px;color:var(--text)}
 .post-item a:hover .post-title{color:var(--accent)}
-.post-excerpt{font-family:var(--sans);font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:12px}
+.post-excerpt{font-family:var(--sans);font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:10px}
 .post-date{font-family:var(--sans);font-size:13px;color:var(--hint)}
+
 footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
 .footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
 .footer-logo span{color:var(--accent)}
 .footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
 .footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
 .footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
-@media(max-width:600px){.page-hero h1{font-size:28px}.nav-links{display:none}}
+@media(max-width:600px){.page-hero h1{font-size:28px}.nav-links{display:none}.verdict-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
     <div class="nav-right">
       <div class="nav-links">
         <a href="index.html">Accueil</a>
-        <a href="tutoriels.html">Tutoriels</a>
+        <a href="articles.html">Articles</a>
         <a href="comparatifs.html" class="active">Comparatifs</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -58,37 +81,78 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
     </div>
   </div>
 </nav>
+
 <div class="page-hero">
   <h1>Comparatifs</h1>
-  <p>Des comparaisons honnêtes entre les meilleurs outils IA, basées sur une utilisation réelle.</p>
+  <p>Des face-à-face honnêtes entre les meilleurs outils IA. Pas de fiches techniques ennuyeuses — juste mon verdict après utilisation réelle.</p>
 </div>
+
 <div class="main">
-  <div class="section-label">Tous les comparatifs</div>
-  <div class="post-item">
-    <div class="post-tag">Comparatif</div>
-    <a href="chatgpt-vs-gemini.html"><div class="post-title">ChatGPT vs Gemini : mon avis après 3 mois d'utilisation</div></a>
-    <div class="post-excerpt">Pas de tableau de fonctionnalités ennuyeux. Juste mon retour honnête après avoir utilisé les deux au quotidien.</div>
-    <div class="post-date">28 mai 2026</div>
+
+  <div class="section-label">Le comparatif du moment</div>
+  <div class="featured">
+    <div class="featured-badge">Comparatif phare</div>
+    <a href="chatgpt-vs-gemini.html">
+      <div class="featured-title">ChatGPT vs Gemini : mon avis après 3 mois d'utilisation quotidienne</div>
+    </a>
+    <div class="featured-excerpt">J'ai utilisé les deux chaque jour pendant trois mois pour des tâches réelles. Rédaction, recherche, code, créativité — voici lequel gagne sur chaque terrain et lequel j'ai finalement gardé comme outil principal.</div>
+    <div class="featured-meta">28 mai 2026 · 5 min de lecture</div>
+    <a class="read-btn" href="chatgpt-vs-gemini.html">Lire le comparatif</a>
   </div>
+
+  <div class="section-label">Verdicts rapides</div>
+  <div class="verdict-grid">
+    <div class="verdict-card">
+      <div class="verdict-tool">Rédaction</div>
+      <a href="chatgpt-vs-gemini.html"><div class="verdict-title">ChatGPT vs Gemini</div></a>
+      <div class="verdict-desc">Lequel produit les meilleurs textes au quotidien ? Après 3 mois d'utilisation alternée, le verdict est clair.</div>
+      <div class="verdict-result">Gagnant : ChatGPT</div>
+    </div>
+    <div class="verdict-card">
+      <div class="verdict-tool">Polyvalence</div>
+      <a href="claude-ai-guide.html"><div class="verdict-title">ChatGPT vs Claude</div></a>
+      <div class="verdict-desc">Deux IA complémentaires plutôt que concurrentes. Chacune excelle dans des domaines différents.</div>
+      <div class="verdict-result">Gagnant : les deux</div>
+    </div>
+    <div class="verdict-card">
+      <div class="verdict-tool">Création visuelle</div>
+      <a href="ia-remplacer-graphiste.html"><div class="verdict-title">IA vs Graphiste humain</div></a>
+      <div class="verdict-desc">L'IA peut-elle vraiment remplacer un professionnel du design ? La réponse est plus nuancée qu'on ne le croit.</div>
+      <div class="verdict-result">Gagnant : ça dépend</div>
+    </div>
+    <div class="verdict-card">
+      <div class="verdict-tool">Traduction</div>
+      <a href="ia-traduction.html"><div class="verdict-title">DeepL vs ChatGPT</div></a>
+      <div class="verdict-desc">Deux approches différentes de la traduction. L'une est plus précise, l'autre plus contextuelle.</div>
+      <div class="verdict-result">Gagnant : les deux</div>
+    </div>
+  </div>
+
+  <div class="section-label">Toutes les réflexions</div>
+
+  <div class="post-item">
+    <div class="post-tag">Réflexion</div>
+    <a href="risques-ia.html"><div class="post-title">Les risques de l'IA : ce qu'il faut vraiment savoir</div></a>
+    <div class="post-excerpt">Entre les catastrophistes et les enthousiastes aveugles, voici un regard honnête sur les vrais risques du quotidien.</div>
+    <div class="post-date">20 avril 2026</div>
+  </div>
+
+  <div class="post-item">
+    <div class="post-tag">Réflexion</div>
+    <a href="ia-remplacer-graphiste.html"><div class="post-title">L'IA peut-elle vraiment remplacer un graphiste ?</div></a>
+    <div class="post-excerpt">J'ai testé les principaux outils de création visuelle par IA pendant deux semaines. La réponse est plus nuancée qu'on ne le pense.</div>
+    <div class="post-date">5 mai 2026</div>
+  </div>
+
   <div class="post-item">
     <div class="post-tag">Comparatif</div>
     <a href="claude-ai-guide.html"><div class="post-title">Claude AI : pourquoi j'ai commencé à l'utiliser en plus de ChatGPT</div></a>
     <div class="post-excerpt">Pendant longtemps j'étais un utilisateur exclusif de ChatGPT. Puis j'ai testé Claude sérieusement.</div>
     <div class="post-date">10 avril 2026</div>
   </div>
-  <div class="post-item">
-    <div class="post-tag">Réflexion</div>
-    <a href="ia-remplacer-graphiste.html"><div class="post-title">L'IA peut-elle vraiment remplacer un graphiste ?</div></a>
-    <div class="post-excerpt">J'ai testé les principaux outils de création visuelle par IA pendant deux semaines. La réponse est nuancée.</div>
-    <div class="post-date">5 mai 2026</div>
-  </div>
-  <div class="post-item">
-    <div class="post-tag">Réflexion</div>
-    <a href="risques-ia.html"><div class="post-title">Les risques de l'IA : ce qu'il faut vraiment savoir</div></a>
-    <div class="post-excerpt">Entre les catastrophistes et les enthousiastes aveugles, voici un regard honnête sur les vrais risques.</div>
-    <div class="post-date">20 avril 2026</div>
-  </div>
+
 </div>
+
 <footer>
   <div class="footer-logo">Tuto<span>IA</span></div>
   <div class="footer-links">
@@ -98,9 +162,16 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
   </div>
   <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
 </footer>
+
 <script>
-function toggleTheme(){const body=document.body;const btn=document.querySelector('.theme-btn');body.classList.toggle('dark');btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light')}
-const saved=localStorage.getItem('theme');if(saved==='dark'){document.body.classList.add('dark');document.querySelector('.theme-btn').textContent='Mode clair'}
+function toggleTheme(){
+  const body=document.body;const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){document.body.classList.add('dark');document.querySelector('.theme-btn').textContent='Mode clair'}
 </script>
 </body>
 </html>
