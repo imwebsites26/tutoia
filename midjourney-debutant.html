@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Midjourney pour les nuls — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+.back{font-family:var(--sans);font-size:13px;color:var(--accent);display:inline-block;margin-bottom:2rem}
+.back:hover{text-decoration:underline}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
+.post-meta{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:2rem}
+.post-intro{font-size:19px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;margin-bottom:2.5rem;font-style:italic}
+.post-body h2{font-size:24px;font-weight:700;margin:2.5rem 0 1rem;letter-spacing:-.3px}
+.post-body p{margin-bottom:1.25rem;color:var(--muted)}
+.post-body strong{font-weight:700;color:var(--text)}
+.post-body a{color:var(--accent)}
+.prompt-box{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:var(--sans);font-size:15px;color:var(--text);font-style:italic}
+.author-bar{margin:3rem 0 0;padding:1.25rem 1.5rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px;transition:background .3s}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);flex-shrink:0}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
+.author-bio{font-family:var(--sans);font-size:13px;color:var(--hint)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){h1{font-size:26px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html">Tutoriels</a>
+        <a href="index.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <a class="back" href="index.html">← Retour au blog</a>
+
+  <div class="post-tag">Image IA</div>
+  <h1>Midjourney pour les nuls : mes premières images, mes premières erreurs</h1>
+  <div class="post-meta">15 mai 2026 · 6 min de lecture · TutoIA</div>
+
+  <p class="post-intro">Un vrai retour de débutant, avec les prompts qui marchent et ceux qui donnent des résultats étranges. Personne ne t'explique ça dans les tutoriels classiques.</p>
+
+  <div class="post-body">
+
+    <p>La première fois que j'ai ouvert Midjourney, j'étais convaincu que ça allait être simple. Tu décris une image, il la génère. En théorie oui. En pratique, mes cinq premières tentatives ressemblaient à des cauchemars numériques. Voilà ce que j'ai appris depuis.</p>
+
+    <h2>C'est quoi Midjourney exactement ?</h2>
+
+    <p>Midjourney est un outil qui génère des images à partir de descriptions textuelles qu'on appelle des "prompts". Tu écris ce que tu veux voir, l'IA l'interprète et crée une image. Le résultat peut être époustouflant ou complètement raté selon la façon dont tu formules ta demande. C'est là que tout se joue.</p>
+
+    <p>Contrairement à d'autres outils comme DALL-E ou Adobe Firefly, Midjourney fonctionne via Discord, ce qui déroute beaucoup de débutants. Il n'y a pas de site web avec une interface classique. Tu rejoins un serveur Discord, tu tapes une commande, et l'image apparaît.</p>
+
+    <h2>Mes premières erreurs</h2>
+
+    <p>Erreur numéro un : des prompts trop vagues. J'ai tapé "un paysage beau" et j'ai obtenu quelque chose de générique et sans intérêt. Midjourney a besoin de détails. Plus tu es précis sur le style, l'ambiance, la lumière, la composition, meilleur sera le résultat.</p>
+
+    <p>Erreur numéro deux : ignorer les paramètres de style. Midjourney a des options comme le ratio d'aspect, le niveau de stylisation, ou la version du modèle utilisé. Au début je ne touchais à rien et les résultats étaient aléatoires.</p>
+
+    <h2>Les prompts qui marchent vraiment</h2>
+
+    <p>Voilà la structure que j'utilise maintenant et qui donne de bons résultats à chaque fois :</p>
+
+    <div class="prompt-box">
+      [Sujet principal] + [Style artistique] + [Ambiance/Lumière] + [Détails techniques]
+    </div>
+
+    <p>Par exemple, au lieu de "un café parisien", j'écris :</p>
+
+    <div class="prompt-box">
+      "A cozy Parisian café at golden hour, warm light through large windows, people reading, watercolor illustration style, soft colors, detailed, --ar 16:9"
+    </div>
+
+    <p>La différence de qualité est immense. Le fait d'écrire en anglais aide aussi beaucoup — Midjourney fonctionne mieux avec des prompts en anglais même si tu es francophone.</p>
+
+    <h2>Ce que ça coûte</h2>
+
+    <p>Midjourney n'est plus gratuit depuis 2023. L'abonnement de base commence à environ 10 dollars par mois pour 200 images. C'est raisonnable si tu l'utilises régulièrement pour des projets créatifs, moins justifié si c'est juste pour tester. Dans ce cas, Adobe Firefly ou Bing Image Creator sont des alternatives gratuites correctes pour commencer.</p>
+
+    <h2>Mon verdict après quelques semaines</h2>
+
+    <p>Midjourney produit les images les plus belles que j'ai vues sortir d'une IA. La courbe d'apprentissage est réelle mais courte — une semaine de pratique suffit pour obtenir des résultats dont tu peux être fier. Si la création visuelle fait partie de tes projets, ça vaut clairement le détour.</p>
+
+  </div>
+
+  <div style="border-top:1px solid var(--border);margin:3rem 0 2rem"></div>
+
+  <div class="author-bar">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="author-name">TutoIA</div>
+      <div class="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;
+  const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){
+  document.body.classList.add('dark');
+  document.querySelector('.theme-btn').textContent='Mode clair';
+}
+</script>
+
+</body>
+</html>
