@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>À propos — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article{max-width:780px;margin:0 auto;padding:4rem 2rem 5rem}
+.article h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:2rem}
+.article h2{font-size:22px;font-weight:700;margin:2.5rem 0 1rem}
+.article p{font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:1.25rem}
+.article strong{font-weight:700;color:var(--text)}
+.author-card{background:var(--surface);border-radius:12px;padding:2rem;display:flex;align-items:center;gap:1.5rem;margin:2rem 0;transition:background .3s}
+.author-avatar{width:64px;height:64px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:24px;font-weight:700;color:var(--accent);flex-shrink:0}
+.author-info-name{font-family:var(--sans);font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px}
+.author-info-bio{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
+.value-card{background:var(--surface);border-radius:10px;padding:1.25rem;transition:background .3s}
+.value-title{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px}
+.value-desc{font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.5}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){.article h1{font-size:28px}.nav-links{display:none}.values{grid-template-columns:1fr}.author-card{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="articles.html">Articles</a>
+        <a href="comparatifs.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="article">
+  <h1>À propos de TutoIA</h1>
+
+  <div class="author-card">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="author-info-name">TutoIA</div>
+      <div class="author-info-bio">Curieux de l'IA depuis 2023 · Un article par semaine · Basé en France</div>
+    </div>
+  </div>
+
+  <p>TutoIA est né d'une frustration simple : en 2023, quand j'ai commencé à m'intéresser sérieusement à l'intelligence artificielle, la plupart des contenus disponibles en français étaient soit trop techniques, soit trop superficiels. Les vrais guides pratiques, ceux qui expliquent comment utiliser ces outils au quotidien sans jargon inutile, étaient rares.</p>
+
+  <p>Alors j'ai décidé d'en créer un moi-même. Pas un media, pas une entreprise — juste un blog personnel où je partage ce que j'apprends, ce que je teste, ce qui marche et ce qui déçoit.</p>
+
+  <h2>Ce que tu trouveras ici</h2>
+
+  <p>Des guides honnêtes sur les outils IA — ChatGPT, Gemini, Claude, Midjourney et bien d'autres. Des tutoriels pratiques pour les utiliser dans ta vie professionnelle et personnelle. Des comparatifs basés sur une vraie utilisation, pas sur des fiches techniques. Et parfois des réflexions sur ce que tout ça change vraiment dans notre façon de travailler.</p>
+
+  <div class="values">
+    <div class="value-card">
+      <div class="value-title">Honnêteté</div>
+      <div class="value-desc">Je dis ce qui marche et ce qui ne marche pas. Pas de promotion déguisée.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-title">Simplicité</div>
+      <div class="value-desc">Pas de jargon inutile. Si c'est complexe, je l'explique simplement.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-title">Pratique</div>
+      <div class="value-desc">Chaque article doit t'apporter quelque chose d'utilisable immédiatement.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-title">Régularité</div>
+      <div class="value-desc">Un article par semaine, sans exception. La constance avant tout.</div>
+    </div>
+  </div>
+
+  <h2>Comment ce blog est financé</h2>
+
+  <p>TutoIA est financé uniquement par la publicité display via Google AdSense. Aucun article n'est sponsorisé, aucun lien n'est affilié sauf mention explicite. Les recommandations sont basées sur mon expérience personnelle, point.</p>
+
+  <h2>Contacte-moi</h2>
+
+  <p>Tu as une question, une suggestion d'article, ou tu veux simplement réagir à quelque chose que tu as lu ici ? Rends-toi sur la <a href="contact.html" style="color:var(--accent)">page contact</a> et laisse un commentaire. Je lis tout.</p>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){document.body.classList.add('dark');document.querySelector('.theme-btn').textContent='Mode clair'}
+</script>
+</body>
+</html>
