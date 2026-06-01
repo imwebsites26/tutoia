@@ -8,20 +8,24 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
-body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8}
+body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
 a{cursor:pointer;text-decoration:none}
-nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
 .nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
 .nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
 .nav-links{display:flex;gap:2rem}
 .nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
 .nav-links a:hover{color:var(--text)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
 .hero{max-width:780px;margin:0 auto;padding:4rem 2rem 2rem}
 .hero-label{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:1rem}
 .hero h1{font-size:38px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1.25rem}
 .hero p{font-size:18px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;font-style:italic}
-.author-bar{max-width:780px;margin:2rem auto 0;padding:1.25rem 2rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px}
+.author-bar{max-width:780px;margin:2rem auto 0;padding:1.25rem 2rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px;transition:background .3s}
 .author-avatar{width:44px;height:44px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);flex-shrink:0}
 .author-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
 .author-bio{font-family:var(--sans);font-size:13px;color:var(--hint)}
@@ -33,7 +37,7 @@ nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;t
 .post-item a:hover .post-title{color:var(--accent)}
 .post-excerpt{font-family:var(--sans);font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:12px}
 .post-date{font-family:var(--sans);font-size:13px;color:var(--hint)}
-.newsletter{background:var(--text);color:var(--bg);border-radius:12px;padding:2.5rem;margin:3rem 0;text-align:center}
+.newsletter{background:var(--text);color:var(--bg);border-radius:12px;padding:2.5rem;margin:3rem 0;text-align:center;transition:background .3s}
 .newsletter h3{font-size:22px;font-weight:700;margin-bottom:8px}
 .newsletter p{font-family:var(--sans);font-size:15px;color:#aaa;margin-bottom:1.5rem}
 .nl-form{display:flex;gap:8px;max-width:380px;margin:0 auto}
@@ -53,11 +57,14 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
-    <div class="nav-links">
-      <a href="index.html">Accueil</a>
-      <a href="index.html">Tutoriels</a>
-      <a href="index.html">Comparatifs</a>
-      <a href="contact.html">Contact</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="index.html">Tutoriels</a>
+        <a href="index.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
     </div>
   </div>
 </nav>
@@ -107,6 +114,21 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
   </div>
   <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
 </footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body;
+  const btn=document.querySelector('.theme-btn');
+  body.classList.toggle('dark');
+  btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){
+  document.body.classList.add('dark');
+  document.querySelector('.theme-btn').textContent='Mode clair';
+}
+</script>
 
 </body>
 </html>
