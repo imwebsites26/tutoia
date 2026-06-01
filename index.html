@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TutoIA — L'IA expliquée simplement</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8}
+a{cursor:pointer;text-decoration:none}
+nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.hero{max-width:780px;margin:0 auto;padding:4rem 2rem 2rem}
+.hero-label{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:1rem}
+.hero h1{font-size:38px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1.25rem}
+.hero p{font-size:18px;color:var(--muted);line-height:1.75;border-left:3px solid var(--accent);padding-left:1.25rem;font-style:italic}
+.author-bar{max-width:780px;margin:2rem auto 0;padding:1.25rem 2rem;background:var(--surface);border-radius:10px;display:flex;align-items:center;gap:14px}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:#c0392b22;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--accent);flex-shrink:0}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--text)}
+.author-bio{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.main{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+.section-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2rem}
+.post-item{padding:2rem 0;border-bottom:1px solid var(--border)}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.post-title{font-size:22px;font-weight:700;line-height:1.3;margin-bottom:8px;color:var(--text)}
+.post-item a:hover .post-title{color:var(--accent)}
+.post-excerpt{font-family:var(--sans);font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:12px}
+.post-date{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.newsletter{background:var(--text);color:var(--bg);border-radius:12px;padding:2.5rem;margin:3rem 0;text-align:center}
+.newsletter h3{font-size:22px;font-weight:700;margin-bottom:8px}
+.newsletter p{font-family:var(--sans);font-size:15px;color:#aaa;margin-bottom:1.5rem}
+.nl-form{display:flex;gap:8px;max-width:380px;margin:0 auto}
+.nl-form input{flex:1;background:#2a2a2a;border:1px solid #333;color:#faf9f7;font-size:14px;padding:10px 14px;border-radius:6px;outline:none;font-family:var(--sans)}
+.nl-form button{background:var(--accent);border:none;color:#fff;font-size:14px;font-weight:600;padding:10px 18px;border-radius:6px;cursor:pointer;font-family:var(--sans)}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
+@media(max-width:600px){.hero h1{font-size:28px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="index.html">Tutoriels</a>
+      <a href="index.html">Comparatifs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Un blog sur l'intelligence artificielle</div>
+  <h1>L'IA expliquée simplement, par quelqu'un qui l'apprend avec toi.</h1>
+  <p>Pas de jargon, pas de blabla. Juste des guides honnêtes sur les outils qui changent vraiment notre façon de travailler.</p>
+</div>
+
+<div class="author-bar">
+  <div class="author-avatar">T</div>
+  <div>
+    <div class="author-name">TutoIA</div>
+    <div class="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine · Toujours en train de tester un nouvel outil</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="section-label">Derniers articles</div>
+
+  <div class="post-item">
+    <div class="post-tag">Guide débutant</div>
+    <a href="chatgpt-guide-debutant.html">
+      <div class="post-title">C'est quoi ChatGPT ? Tout comprendre en 5 minutes</div>
+    </a>
+    <div class="post-excerpt">J'ai passé des semaines à tester ChatGPT avant d'écrire cet article. Voici ce que j'aurais aimé savoir dès le début, sans les termes techniques inutiles.</div>
+    <div class="post-date">1 juin 2026</div>
+  </div>
+
+  <div class="newsletter">
+    <h3>Un article par semaine, dans ta boîte mail.</h3>
+    <p>Pas de spam. Juste les meilleurs guides IA, directement chez toi.</p>
+    <div class="nl-form">
+      <input type="email" placeholder="ton@email.com"/>
+      <button>Je m'abonne</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Tuto<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutoIA — Fait avec curiosité</div>
+</footer>
+
+</body>
+</html>
