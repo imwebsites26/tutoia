@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title id="page-title">C'est quoi ChatGPT ? Tout comprendre en 5 minutes — TutoIA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3118115945698615" crossorigin="anonymous"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4YL93JT3K0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-4YL93JT3K0');
 </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3118115945698615"
-     crossorigin="anonymous"></script>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>C'est quoi ChatGPT ? — TutoIA</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
@@ -23,15 +21,22 @@ body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted
 body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
 a{cursor:pointer;text-decoration:none}
 nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
-.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+.nav-inner{max-width:780px;margin:0 auto;padding:0 1.5rem;height:58px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
 .nav-logo span{color:var(--accent)}
-.nav-right{display:flex;align-items:center;gap:2rem}
-.nav-links{display:flex;gap:2rem}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-links{display:flex;gap:1.5rem}
 .nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
 .nav-links a:hover{color:var(--text)}
 .theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
 .theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* LANGUAGE SELECTOR */
+.lang-selector{display:flex;gap:4px;align-items:center}
+.lang-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:12px;font-weight:600;padding:4px 8px;border-radius:6px;cursor:pointer;transition:all .2s}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+.lang-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
 .article{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
 .back{font-family:var(--sans);font-size:13px;color:var(--accent);display:inline-block;margin-bottom:2rem}
 .back:hover{text-decoration:underline}
@@ -50,10 +55,12 @@ h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bo
 footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
 .footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
 .footer-logo span{color:var(--accent)}
-.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem;flex-wrap:wrap}
 .footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint)}
 .footer-copy{font-family:var(--sans);font-size:12px;color:#ccc}
-@media(max-width:600px){h1{font-size:26px}.nav-links{display:none}}
+.lang-content{display:none}
+.lang-content.active{display:block}
+@media(max-width:600px){h1{font-size:26px}.nav-links{display:none}.lang-btn{font-size:11px;padding:3px 6px}}
 </style>
 </head>
 <body>
@@ -62,11 +69,12 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">Tuto<span>IA</span></a>
     <div class="nav-right">
-      <div class="nav-links">
-        <a href="index.html">Accueil</a>
-        <a href="index.html">Tutoriels</a>
-        <a href="index.html">Comparatifs</a>
-        <a href="contact.html">Contact</a>
+      <div class="lang-selector">
+        <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('de')">DE</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" onclick="setLang('nl')">NL</button>
       </div>
       <button class="theme-btn" onclick="toggleTheme()">Mode sombre</button>
     </div>
@@ -74,57 +82,148 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
 </nav>
 
 <div class="article">
-  <a class="back" href="index.html">← Retour au blog</a>
 
-  <div class="post-tag">Guide débutant</div>
-  <h1>C'est quoi ChatGPT ? Tout comprendre en 5 minutes</h1>
-  <div class="post-meta">1 juin 2026 · 6 min de lecture · TutoIA</div>
+  <!-- FRANÇAIS -->
+  <div class="lang-content active" id="lang-fr">
+    <a class="back" href="index.html">← Retour au blog</a>
+    <div class="post-tag">Guide débutant</div>
+    <h1>C'est quoi ChatGPT ? Tout comprendre en 5 minutes</h1>
+    <div class="post-meta">1 juin 2026 · 6 min de lecture · TutoIA</div>
+    <p class="post-intro">J'ai passé des semaines à tester ChatGPT avant d'écrire cet article. Voici ce que j'aurais aimé savoir dès le début, sans les termes techniques inutiles.</p>
+    <div class="post-body">
+      <p>Depuis fin 2022, il est impossible de passer une journée sur internet sans entendre parler de ChatGPT. Certains disent que ça va révolutionner le travail, d'autres que c'est dangereux, d'autres encore que c'est juste un gadget. Alors, c'est quoi exactement ?</p>
+      <p>Je vais t'expliquer ça simplement, sans jargon, comme je l'aurais expliqué à un ami autour d'un café.</p>
+      <h2>C'est quoi ChatGPT concrètement ?</h2>
+      <p>ChatGPT est un programme informatique avec lequel tu peux avoir une conversation écrite. Tu poses une question, il te répond. Tu lui demandes d'écrire quelque chose, il le fait. Ce qui le rend différent des vieux chatbots frustrants qu'on connaissait avant, c'est qu'il comprend vraiment ce que tu lui dis. Tu peux lui écrire comme tu écrirais à un ami, pas besoin de formules spéciales.</p>
+      <h2>Qui l'a créé, et pourquoi ?</h2>
+      <p>ChatGPT a été créé par une entreprise américaine appelée OpenAI, fondée en 2015. ChatGPT est sorti officiellement en novembre 2022 et a atteint 100 millions d'utilisateurs en seulement deux mois, un record absolu dans l'histoire d'internet.</p>
+      <h2>Comment ça marche ?</h2>
+      <p>ChatGPT a été nourri avec une quantité astronomique de textes : des livres, des articles, des sites web, des forums. Il a appris à reconnaître des patterns dans le langage, à comprendre le contexte, et à produire des réponses cohérentes. Ce n'est pas une base de données qu'on interroge. C'est plus proche d'un cerveau qui a beaucoup lu.</p>
+      <h2>À quoi ça sert au quotidien ?</h2>
+      <p>Personnellement, je l'utilise pour écrire des emails quand je ne sais pas trop comment tourner les choses, pour résumer des documents longs, pour comprendre des sujets complexes, ou encore pour trouver des idées quand je sèche. Il corrige aussi mon français mieux que la plupart des correcteurs automatiques.</p>
+      <h2>C'est gratuit ?</h2>
+      <p>Oui, en grande partie. Tu peux créer un compte sur <a href="https://chat.openai.com" target="_blank">chat.openai.com</a> et utiliser ChatGPT gratuitement. Il existe une version payante à environ 20 €/mois qui donne accès aux modèles les plus récents, mais pour commencer, tu n'en as vraiment pas besoin.</p>
+      <h2>Les limites à connaître</h2>
+      <p>ChatGPT peut se tromper, et parfois avec beaucoup d'assurance. Il peut inventer des faits, des sources, des citations qui n'existent pas. On appelle ça des hallucinations. La règle d'or : ne jamais lui faire confiance aveuglément sur des sujets importants comme la santé, le droit ou les finances.</p>
+      <h2>En résumé</h2>
+      <p>ChatGPT est un assistant intelligent accessible à tous, gratuit, et capable de t'aider dans une quantité de tâches du quotidien. Ce n'est pas magique, ce n'est pas infaillible, mais utilisé avec un peu de recul, c'est un outil qui fait vraiment gagner du temps.</p>
+    </div>
+  </div>
 
-  <p class="post-intro">J'ai passé des semaines à tester ChatGPT avant d'écrire cet article. Voici ce que j'aurais aimé savoir dès le début, sans les termes techniques inutiles.</p>
+  <!-- ENGLISH -->
+  <div class="lang-content" id="lang-en">
+    <a class="back" href="index.html">← Back to blog</a>
+    <div class="post-tag">Beginner's guide</div>
+    <h1>What is ChatGPT? Everything you need to know in 5 minutes</h1>
+    <div class="post-meta">June 1, 2026 · 6 min read · TutoIA</div>
+    <p class="post-intro">I spent weeks testing ChatGPT before writing this article. Here's what I wish I had known from the start, without the unnecessary technical jargon.</p>
+    <div class="post-body">
+      <p>Since late 2022, it's been impossible to spend a day on the internet without hearing about ChatGPT. Some say it will revolutionize work, others that it's dangerous, and others that it's just a gadget. So what exactly is it?</p>
+      <p>I'll explain it simply, without jargon, the way I'd explain it to a friend over coffee.</p>
+      <h2>What exactly is ChatGPT?</h2>
+      <p>ChatGPT is a computer program with which you can have a written conversation. You ask a question, it answers. You ask it to write something, it does. What makes it different from the old frustrating chatbots we knew before is that it truly understands what you're saying. You can write to it like you'd write to a friend — no special commands needed.</p>
+      <h2>Who created it, and why?</h2>
+      <p>ChatGPT was created by an American company called OpenAI, founded in 2015. ChatGPT officially launched in November 2022 and reached 100 million users in just two months — an absolute record in the history of the internet.</p>
+      <h2>How does it work?</h2>
+      <p>ChatGPT was trained on an astronomical amount of text: books, articles, websites, forums. It learned to recognize patterns in language, understand context, and produce coherent responses. It's not a database you query. It's more like a brain that has read a lot.</p>
+      <h2>What is it useful for day-to-day?</h2>
+      <p>Personally, I use it to write emails when I'm not sure how to phrase things, to summarize long documents, to understand complex topics, or to find ideas when I'm stuck. It also corrects my writing better than most automatic spell checkers.</p>
+      <h2>Is it free?</h2>
+      <p>Yes, largely. You can create an account at <a href="https://chat.openai.com" target="_blank">chat.openai.com</a> and use ChatGPT for free. There's a paid version at around $20/month that gives access to the most recent models, but to get started, you really don't need it.</p>
+      <h2>Limitations to know</h2>
+      <p>ChatGPT can be wrong — sometimes very confidently. It can invent facts, sources, citations that don't exist. This is called "hallucination." The golden rule: never blindly trust it on important subjects like health, law, or finance.</p>
+      <h2>In summary</h2>
+      <p>ChatGPT is an intelligent assistant accessible to everyone, free, and capable of helping with a huge range of daily tasks. It's not magic, it's not infallible, but used with a bit of perspective, it's a tool that genuinely saves time.</p>
+    </div>
+  </div>
 
-  <div class="post-body">
+  <!-- DEUTSCH -->
+  <div class="lang-content" id="lang-de">
+    <a class="back" href="index.html">← Zurück zum Blog</a>
+    <div class="post-tag">Einsteiger-Guide</div>
+    <h1>Was ist ChatGPT? Alles verstehen in 5 Minuten</h1>
+    <div class="post-meta">1. Juni 2026 · 6 Min. Lesezeit · TutoIA</div>
+    <p class="post-intro">Ich habe wochenlang ChatGPT getestet, bevor ich diesen Artikel geschrieben habe. Hier ist, was ich von Anfang an gewusst haben wollte — ohne unnötigen Fachjargon.</p>
+    <div class="post-body">
+      <p>Seit Ende 2022 ist es unmöglich, einen Tag im Internet zu verbringen, ohne von ChatGPT zu hören. Manche sagen, es werde die Arbeit revolutionieren, andere halten es für gefährlich, wieder andere für einen reinen Hype. Was also steckt dahinter?</p>
+      <p>Ich erkläre es einfach, ohne Fachjargon — so wie ich es einem Freund beim Kaffee erklären würde.</p>
+      <h2>Was genau ist ChatGPT?</h2>
+      <p>ChatGPT ist ein Computerprogramm, mit dem man schriftlich kommunizieren kann. Du stellst eine Frage, es antwortet. Du bittest es, etwas zu schreiben, es tut es. Was es von alten, frustrierenden Chatbots unterscheidet: Es versteht wirklich, was du sagst. Du kannst es anschreiben wie einen Freund — keine besonderen Befehle nötig.</p>
+      <h2>Wer hat es entwickelt und warum?</h2>
+      <p>ChatGPT wurde von einem amerikanischen Unternehmen namens OpenAI entwickelt, das 2015 gegründet wurde. ChatGPT wurde offiziell im November 2022 veröffentlicht und erreichte in nur zwei Monaten 100 Millionen Nutzer — ein absoluter Rekord in der Geschichte des Internets.</p>
+      <h2>Wie funktioniert es?</h2>
+      <p>ChatGPT wurde mit einer astronomischen Menge an Texten trainiert: Bücher, Artikel, Webseiten, Foren. Es hat gelernt, Muster in der Sprache zu erkennen, den Kontext zu verstehen und kohärente Antworten zu geben. Es ist keine Datenbank, die man abfragt — eher wie ein Gehirn, das sehr viel gelesen hat.</p>
+      <h2>Wofür ist es im Alltag nützlich?</h2>
+      <p>Ich nutze es persönlich zum Verfassen von E-Mails, zum Zusammenfassen langer Dokumente, zum Verstehen komplexer Themen und zum Finden von Ideen. Es korrigiert meine Texte außerdem besser als die meisten automatischen Rechtschreibkorrektoren.</p>
+      <h2>Ist es kostenlos?</h2>
+      <p>Ja, größtenteils. Du kannst ein Konto auf <a href="https://chat.openai.com" target="_blank">chat.openai.com</a> erstellen und ChatGPT kostenlos nutzen. Es gibt eine kostenpflichtige Version für ca. 20 €/Monat, aber zum Einstieg brauchst du sie wirklich nicht.</p>
+      <h2>Bekannte Einschränkungen</h2>
+      <p>ChatGPT kann sich irren — manchmal sehr selbstsicher. Es kann Fakten, Quellen oder Zitate erfinden, die nicht existieren. Das nennt man "Halluzination". Die goldene Regel: Vertraue ihm niemals blind bei wichtigen Themen wie Gesundheit, Recht oder Finanzen.</p>
+      <h2>Zusammenfassung</h2>
+      <p>ChatGPT ist ein intelligenter Assistent, der für alle zugänglich und kostenlos ist und bei einer Vielzahl von Alltagsaufgaben helfen kann. Es ist nicht magisch, nicht unfehlbar, aber mit etwas Umsicht eingesetzt, ist es ein Werkzeug, das wirklich Zeit spart.</p>
+    </div>
+  </div>
 
-    <p>Depuis fin 2022, il est impossible de passer une journée sur internet sans entendre parler de ChatGPT. Certains disent que ça va révolutionner le travail, d'autres que c'est dangereux, d'autres encore que c'est juste un gadget. Alors, c'est quoi exactement ?</p>
+  <!-- ESPAÑOL -->
+  <div class="lang-content" id="lang-es">
+    <a class="back" href="index.html">← Volver al blog</a>
+    <div class="post-tag">Guía para principiantes</div>
+    <h1>¿Qué es ChatGPT? Todo lo que necesitas saber en 5 minutos</h1>
+    <div class="post-meta">1 de junio de 2026 · 6 min de lectura · TutoIA</div>
+    <p class="post-intro">Pasé semanas probando ChatGPT antes de escribir este artículo. Esto es lo que me hubiera gustado saber desde el principio, sin la jerga técnica innecesaria.</p>
+    <div class="post-body">
+      <p>Desde finales de 2022, es imposible pasar un día en internet sin escuchar hablar de ChatGPT. Algunos dicen que va a revolucionar el trabajo, otros que es peligroso, y otros que es solo un gadget. Entonces, ¿qué es exactamente?</p>
+      <p>Te lo explicaré de forma sencilla, sin jerga, como se lo explicaría a un amigo tomando un café.</p>
+      <h2>¿Qué es exactamente ChatGPT?</h2>
+      <p>ChatGPT es un programa informático con el que puedes mantener una conversación escrita. Haces una pregunta, te responde. Le pides que escriba algo, lo hace. Lo que lo diferencia de los viejos y frustrantes chatbots que conocíamos antes es que realmente entiende lo que le dices. Puedes escribirle como le escribirías a un amigo, sin necesidad de comandos especiales.</p>
+      <h2>¿Quién lo creó y por qué?</h2>
+      <p>ChatGPT fue creado por una empresa estadounidense llamada OpenAI, fundada en 2015. ChatGPT se lanzó oficialmente en noviembre de 2022 y alcanzó 100 millones de usuarios en solo dos meses, un récord absoluto en la historia de internet.</p>
+      <h2>¿Cómo funciona?</h2>
+      <p>ChatGPT fue entrenado con una cantidad astronómica de textos: libros, artículos, sitios web, foros. Aprendió a reconocer patrones en el lenguaje, entender el contexto y producir respuestas coherentes. No es una base de datos que se consulta, sino más bien un cerebro que ha leído mucho.</p>
+      <h2>¿Para qué sirve en el día a día?</h2>
+      <p>Personalmente lo uso para redactar correos electrónicos cuando no sé cómo expresarme, para resumir documentos largos, para entender temas complejos o para encontrar ideas cuando me bloqueo. También corrige mis textos mejor que la mayoría de los correctores automáticos.</p>
+      <h2>¿Es gratuito?</h2>
+      <p>Sí, en gran medida. Puedes crear una cuenta en <a href="https://chat.openai.com" target="_blank">chat.openai.com</a> y usar ChatGPT de forma gratuita. Existe una versión de pago de unos 20 €/mes que da acceso a los modelos más recientes, pero para empezar, realmente no la necesitas.</p>
+      <h2>Limitaciones a conocer</h2>
+      <p>ChatGPT puede equivocarse, y a veces con mucha seguridad. Puede inventar hechos, fuentes o citas que no existen. A esto se le llama "alucinación". La regla de oro: nunca confíes ciegamente en él para temas importantes como salud, derecho o finanzas.</p>
+      <h2>En resumen</h2>
+      <p>ChatGPT es un asistente inteligente accesible para todos, gratuito y capaz de ayudarte en una gran cantidad de tareas cotidianas. No es mágico ni infalible, pero usado con un poco de criterio, es una herramienta que realmente ahorra tiempo.</p>
+    </div>
+  </div>
 
-    <p>Je vais t'expliquer ça simplement, sans jargon, comme je l'aurais expliqué à un ami autour d'un café.</p>
-
-    <h2>C'est quoi ChatGPT concrètement ?</h2>
-
-    <p>ChatGPT est un programme informatique avec lequel tu peux avoir une conversation écrite. Tu poses une question, il te répond. Tu lui demandes d'écrire quelque chose, il le fait. Tu lui soumets un problème, il essaie de le résoudre. Ce qui le rend différent des vieux chatbots frustrants qu'on connaissait avant, c'est qu'il comprend vraiment ce que tu lui dis. Tu peux lui écrire comme tu écrirais à un ami, pas besoin de formules spéciales.</p>
-
-    <h2>Qui l'a créé, et pourquoi ?</h2>
-
-    <p>ChatGPT a été créé par une entreprise américaine appelée OpenAI, fondée en 2015. À la base, leur objectif était de développer une intelligence artificielle bénéfique pour l'humanité. ChatGPT est sorti officiellement en novembre 2022 et a atteint 100 millions d'utilisateurs en seulement deux mois, un record absolu dans l'histoire d'internet.</p>
-
-    <h2>Comment ça marche (sans se prendre la tête) ?</h2>
-
-    <p>ChatGPT a été nourri avec une quantité astronomique de textes : des livres, des articles, des sites web, des forums… Il a appris à reconnaître des patterns dans le langage, à comprendre le contexte, et à produire des réponses cohérentes. Ce n'est pas une base de données qu'on interroge. C'est plus proche d'un cerveau qui a beaucoup lu et qui essaie de te répondre de façon pertinente. Parfois il se trompe, et c'est important de le savoir.</p>
-
-    <h2>À quoi ça sert vraiment au quotidien ?</h2>
-
-    <p>Personnellement, je l'utilise pour écrire des emails quand je ne sais pas trop comment tourner les choses. Je lui décris la situation et il me rédige un brouillon que je retouche ensuite. Je l'utilise aussi pour résumer des documents longs, pour comprendre des sujets complexes qu'il explique avec des mots simples, ou encore pour trouver des idées quand je sèche. Et oui, il corrige aussi mon français mieux que la plupart des correcteurs automatiques.</p>
-
-    <h2>C'est gratuit ?</h2>
-
-    <p>Oui, en grande partie. Tu peux créer un compte sur <a href="https://chat.openai.com" target="_blank">chat.openai.com</a> et utiliser ChatGPT gratuitement. La version gratuite est déjà très puissante pour la majorité des usages du quotidien. Il existe une version payante à environ 20 €/mois qui donne accès aux modèles les plus récents, mais pour commencer, tu n'en as vraiment pas besoin.</p>
-
-    <h2>Les limites à connaître</h2>
-
-    <p>Ce serait malhonnête de ne pas en parler. ChatGPT peut se tromper, et parfois avec beaucoup d'assurance. Il peut inventer des faits, des sources, des citations qui n'existent pas. On appelle ça des hallucinations. La règle d'or : ne jamais lui faire confiance aveuglément sur des sujets importants comme la santé, le droit ou les finances. Vérifie toujours ailleurs ce qui compte vraiment.</p>
-
-    <h2>En résumé</h2>
-
-    <p>ChatGPT est un assistant intelligent accessible à tous, gratuit, et capable de t'aider dans une quantité de tâches du quotidien. Ce n'est pas magique, ce n'est pas infaillible, mais utilisé avec un peu de recul, c'est un outil qui fait vraiment gagner du temps. La meilleure façon de comprendre ce que c'est ? Le tester toi-même, dès maintenant.</p>
-
+  <!-- NEDERLANDS -->
+  <div class="lang-content" id="lang-nl">
+    <a class="back" href="index.html">← Terug naar blog</a>
+    <div class="post-tag">Beginnersgids</div>
+    <h1>Wat is ChatGPT? Alles begrijpen in 5 minuten</h1>
+    <div class="post-meta">1 juni 2026 · 6 min leestijd · TutoIA</div>
+    <p class="post-intro">Ik heb weken ChatGPT getest voordat ik dit artikel schreef. Dit is wat ik vanaf het begin had willen weten, zonder onnodige technische jargon.</p>
+    <div class="post-body">
+      <p>Sinds eind 2022 is het onmogelijk om een dag op internet door te brengen zonder over ChatGPT te horen. Sommigen zeggen dat het het werk gaat revolutioneren, anderen dat het gevaarlijk is, en weer anderen dat het gewoon een gadget is. Wat is het dan precies?</p>
+      <p>Ik leg het eenvoudig uit, zonder jargon, zoals ik het aan een vriend bij een kop koffie zou uitleggen.</p>
+      <h2>Wat is ChatGPT precies?</h2>
+      <p>ChatGPT is een computerprogramma waarmee je een schriftelijk gesprek kunt voeren. Je stelt een vraag, het antwoordt. Je vraagt het iets te schrijven, het doet het. Wat het onderscheidt van de oude, frustrerende chatbots die we kenden, is dat het echt begrijpt wat je zegt. Je kunt het schrijven zoals je aan een vriend zou schrijven, zonder speciale commando's.</p>
+      <h2>Wie heeft het gemaakt en waarom?</h2>
+      <p>ChatGPT is gemaakt door een Amerikaans bedrijf genaamd OpenAI, opgericht in 2015. ChatGPT werd officieel gelanceerd in november 2022 en bereikte in slechts twee maanden 100 miljoen gebruikers, een absoluut record in de geschiedenis van het internet.</p>
+      <h2>Hoe werkt het?</h2>
+      <p>ChatGPT werd getraind op een astronomische hoeveelheid teksten: boeken, artikelen, websites, forums. Het leerde patronen in taal te herkennen, context te begrijpen en coherente antwoorden te geven. Het is geen database die je raadpleegt, maar meer een brein dat veel heeft gelezen.</p>
+      <h2>Waarvoor is het dagelijks nuttig?</h2>
+      <p>Persoonlijk gebruik ik het om e-mails te schrijven als ik niet weet hoe ik iets moet formuleren, om lange documenten samen te vatten, om complexe onderwerpen te begrijpen of om ideeën te vinden als ik vastloop. Het corrigeert mijn teksten ook beter dan de meeste automatische spellingcheckers.</p>
+      <h2>Is het gratis?</h2>
+      <p>Ja, grotendeels. Je kunt een account aanmaken op <a href="https://chat.openai.com" target="_blank">chat.openai.com</a> en ChatGPT gratis gebruiken. Er is een betaalde versie van ongeveer 20 €/maand die toegang geeft tot de nieuwste modellen, maar om te beginnen heb je die echt niet nodig.</p>
+      <h2>Beperkingen om te kennen</h2>
+      <p>ChatGPT kan het mis hebben, soms heel zelfverzekerd. Het kan feiten, bronnen of citaten verzinnen die niet bestaan. Dit wordt "hallucinatie" genoemd. De gouden regel: vertrouw het nooit blindelings voor belangrijke onderwerpen zoals gezondheid, recht of financiën.</p>
+      <h2>Samengevat</h2>
+      <p>ChatGPT is een intelligente assistent die voor iedereen toegankelijk en gratis is, en kan helpen bij een groot aantal dagelijkse taken. Het is niet magisch, niet onfeilbaar, maar met een beetje perspectief gebruikt, is het een tool die echt tijd bespaart.</p>
+    </div>
   </div>
 
   <div style="border-top:1px solid var(--border);margin:3rem 0 2rem"></div>
-
   <div class="author-bar">
     <div class="author-avatar">T</div>
     <div>
       <div class="author-name">TutoIA</div>
-      <div class="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine</div>
+      <div class="author-bio" id="author-bio">Curieux de l'IA depuis 2023 · Un article par semaine</div>
     </div>
   </div>
 </div>
@@ -141,18 +240,37 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
 
 <script>
 function toggleTheme(){
-  const body=document.body;
-  const btn=document.querySelector('.theme-btn');
+  const body=document.body;const btn=document.querySelector('.theme-btn');
   body.classList.toggle('dark');
   btn.textContent=body.classList.contains('dark')?'Mode clair':'Mode sombre';
   localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');
 }
 const saved=localStorage.getItem('theme');
-if(saved==='dark'){
-  document.body.classList.add('dark');
-  document.querySelector('.theme-btn').textContent='Mode clair';
+if(saved==='dark'){document.body.classList.add('dark');document.querySelector('.theme-btn').textContent='Mode clair'}
+
+const authorBios = {
+  fr: 'Curieux de l\'IA depuis 2023 · Un article par semaine',
+  en: 'Curious about AI since 2023 · One article per week',
+  de: 'Neugierig auf KI seit 2023 · Ein Artikel pro Woche',
+  es: 'Curioso sobre IA desde 2023 · Un artículo por semana',
+  nl: 'Nieuwsgierig naar AI sinds 2023 · Één artikel per week'
+};
+
+function setLang(lang){
+  document.querySelectorAll('.lang-content').forEach(el=>el.classList.remove('active'));
+  document.getElementById('lang-'+lang).classList.add('active');
+  document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('author-bio').textContent = authorBios[lang];
+  document.documentElement.lang = lang;
+  localStorage.setItem('tutoia-lang', lang);
+}
+
+const savedLang = localStorage.getItem('tutoia-lang');
+if(savedLang && savedLang !== 'fr'){
+  const btn = document.querySelector(`.lang-btn[onclick="setLang('${savedLang}')"]`);
+  if(btn) btn.click();
 }
 </script>
-
 </body>
 </html>
