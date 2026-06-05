@@ -1,40 +1,394 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4YL93JT3K0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4YL93JT3K0');
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3118115945698615"
-     crossorigin="anonymous"></script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Articles — TutoIA</title>
+<title>Articles — TutosIA</title>
+<meta name="description" content="Tous les guides et tutoriels sur l'intelligence artificielle — ChatGPT, Midjourney, automatisation et plus."/>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3118115945698615" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4YL93JT3K0"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-4YL93JT3K0');
+</script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#faf9f7;--surface:#f3f0eb;--border:#e8e4df;--text:#1a1a1a;--muted:#666;--hint:#aaa;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
-body.dark{--bg:#0d0d0f;--surface:#1a1a24;--border:#2a2a3a;--text:#f0f0fa;--muted:#9090a8;--hint:#5050a0}
+:root{
+  --bg:#f5f0e8;--bg2:#ede8df;--surface:#e8e2d8;--border:#d8d0c4;
+  --text:#1a1714;--muted:#5c5650;--hint:#9c9690;--accent:#c0392b;
+  --serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+  --radius:12px;--max:860px;
+}
+body.dark{--bg:#111010;--bg2:#171614;--surface:#1d1b1a;--border:#2e2b29;--text:#ede9e4;--muted:#918d89;--hint:#524e4a;}
 body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
-a{cursor:pointer;text-decoration:none}
+a{text-decoration:none;cursor:pointer}
+
 nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
-.nav-inner{max-width:780px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 2rem;height:62px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--text);letter-spacing:-.3px}
 .nav-logo span{color:var(--accent)}
-.nav-right{display:flex;align-items:center;gap:2rem}
-.nav-links{display:flex;gap:2rem}
-.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
-.nav-links a:hover{color:var(--text)}
-.nav-links a.active{color:var(--accent)}
-.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
+.nav-right{display:flex;align-items:center;gap:1.75rem}
+.nav-links{display:flex;gap:1.75rem}
+.nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-links a.active{font-weight:600}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 14px;border-radius:20px;cursor:pointer;transition:all .2s}
 .theme-btn:hover{border-color:var(--accent);color:var(--accent)}
-.page-hero{max-width:780px;margin:0 auto;padding:4rem 2rem 2rem}
-.page-hero h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
+
+.page-hero{max-width:var(--max);margin:0 auto;padding:4rem 2rem 2.5rem;border-bottom:1px solid var(--border)}
+.page-hero h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:.75rem}
+.page-hero p{font-family:var(--sans);font-size:16px;color:var(--muted);line-height:1.7}
+
+.filters{max-width:var(--max);margin:0 auto;padding:1.25rem 2rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;border-bottom:1px solid var(--border);background:var(--bg2)}
+.filter-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--hint);text-transform:uppercase;letter-spacing:1.5px;margin-right:.25rem}
+.filter-btn{font-family:var(--sans);font-size:13px;padding:6px 16px;border-radius:20px;border:1px solid var(--border);background:var(--bg);color:var(--muted);cursor:pointer;transition:all .2s}
+.filter-btn:hover{border-color:var(--accent);color:var(--accent)}
+.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.main{max-width:var(--max);margin:0 auto;padding:2.5rem 2rem 5rem}
+
+.post-item{padding:2rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:auto 1fr auto;gap:1.5rem;align-items:start}
+.post-item:last-child{border-bottom:none}
+.post-item.hidden{display:none}
+.post-thumb{width:88px;height:88px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.post-thumb svg{width:36px;height:36px;opacity:.85}
+.thumb-tutoriel{background:linear-gradient(135deg,#2c1810 0%,#4a2518 100%)}
+.thumb-comparatif{background:linear-gradient(135deg,#0f1a2e 0%,#1a2d4a 100%)}
+.thumb-productivite{background:linear-gradient(135deg,#1a1f0f 0%,#2d3a18 100%)}
+.thumb-reflexion{background:linear-gradient(135deg,#1a0f1f 0%,#2d1840 100%)}
+.thumb-business{background:linear-gradient(135deg,#1f1a0f 0%,#3a2d18 100%)}
+.post-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.post-title{font-size:20px;font-weight:700;line-height:1.35;margin-bottom:8px;color:var(--text);font-family:var(--serif);transition:color .2s}
+.post-item a:hover .post-title{color:var(--accent)}
+.post-excerpt{font-family:var(--sans);font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:10px}
+.post-meta{font-family:var(--sans);font-size:12px;color:var(--hint);display:flex;gap:1rem;align-items:center}
+.post-read{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--accent);white-space:nowrap;margin-top:.5rem;opacity:0;transition:opacity .2s}
+.post-item:hover .post-read{opacity:1}
+
+.newsletter{background:#1a1714;color:#f5f0e8;border-radius:16px;padding:3rem;text-align:center;margin-top:3rem}
+.newsletter h3{font-size:22px;font-weight:700;margin-bottom:8px;color:#f5f0e8}
+.newsletter p{font-family:var(--sans);font-size:14px;color:rgba(245,240,232,.5);margin-bottom:2rem}
+.nl-form{display:flex;gap:8px;max-width:400px;margin:0 auto}
+.nl-form input{flex:1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#f5f0e8;font-size:14px;padding:11px 16px;border-radius:8px;font-family:var(--sans);outline:none}
+.nl-form input::placeholder{color:rgba(245,240,232,.4)}
+.nl-form button{background:var(--accent);border:none;color:#fff;font-size:14px;font-weight:600;padding:11px 22px;border-radius:8px;cursor:pointer;font-family:var(--sans);white-space:nowrap;transition:opacity .2s}
+.nl-form button:hover{opacity:.87}
+
+footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center;background:var(--bg2)}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem;flex-wrap:wrap}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint);transition:color .2s}
+.footer-links a:hover{color:var(--muted)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:var(--hint)}
+
+.lang-float{position:fixed;bottom:2rem;right:2rem;z-index:999}
+.lang-globe-btn{width:50px;height:50px;border-radius:50%;background:var(--accent);border:none;color:#fff;font-size:21px;cursor:pointer;box-shadow:0 4px 18px rgba(192,57,43,.3);display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s}
+.lang-globe-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(192,57,43,.42)}
+.lang-menu{position:absolute;bottom:62px;right:0;background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:8px;box-shadow:0 8px 36px rgba(0,0,0,.14);display:none;flex-direction:column;gap:2px;min-width:170px}
+.lang-menu.open{display:flex}
+.lang-option{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;cursor:pointer;font-family:var(--sans);font-size:14px;color:var(--text);border:none;background:none;width:100%;text-align:left;transition:background .15s}
+.lang-option:hover{background:var(--surface)}
+.lang-option.active{background:var(--surface);font-weight:600;color:var(--accent)}
+.lang-option .lang-code{font-size:12px;color:var(--hint);margin-left:auto}
+
+@media(max-width:600px){
+  .page-hero h1{font-size:26px}
+  .nav-links{display:none}
+  .post-item{grid-template-columns:auto 1fr}.post-thumb{width:64px;height:64px}
+  .post-read{opacity:1}
+  .lang-float{bottom:1.25rem;right:1.25rem}
+  .nl-form{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tutos<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="articles.html" class="active">Articles</a>
+        <a href="comparatifs.html">Comparatifs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="lang-float">
+  <div class="lang-menu" id="lang-menu">
+    <button class="lang-option active" onclick="setLang('fr')" id="opt-fr"><span>🇫🇷</span><span>Français</span><span class="lang-code">FR</span></button>
+    <button class="lang-option" onclick="setLang('en')" id="opt-en"><span>🇬🇧</span><span>English</span><span class="lang-code">EN</span></button>
+    <button class="lang-option" onclick="setLang('de')" id="opt-de"><span>🇩🇪</span><span>Deutsch</span><span class="lang-code">DE</span></button>
+    <button class="lang-option" onclick="setLang('es')" id="opt-es"><span>🇪🇸</span><span>Español</span><span class="lang-code">ES</span></button>
+    <button class="lang-option" onclick="setLang('nl')" id="opt-nl"><span>🇳🇱</span><span>Nederlands</span><span class="lang-code">NL</span></button>
+  </div>
+  <button class="lang-globe-btn" onclick="toggleLangMenu()">🌍</button>
+</div>
+
+<div class="page-hero">
+  <h1 id="page-title">Tous les articles</h1>
+  <p id="page-sub">Guides pratiques, comparatifs honnêtes et réflexions sur l'intelligence artificielle.</p>
+</div>
+
+<div class="filters">
+  <span class="filter-label">Filtrer</span>
+  <button class="filter-btn active" onclick="filter('tous',this)" id="f-tous">Tous</button>
+  <button class="filter-btn" onclick="filter('tutoriel',this)" id="f-tutoriel">Tutoriels</button>
+  <button class="filter-btn" onclick="filter('comparatif',this)" id="f-comparatif">Comparatifs</button>
+  <button class="filter-btn" onclick="filter('productivite',this)" id="f-productivite">Productivité</button>
+  <button class="filter-btn" onclick="filter('reflexion',this)" id="f-reflexion">Réflexions</button>
+  <button class="filter-btn" onclick="filter('business',this)" id="f-business">Business</button>
+</div>
+
+<div class="main">
+
+  <div class="post-item" data-cat="tutoriel">
+    <div class="post-thumb thumb-tutoriel"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+    <div>
+      <div class="post-tag">Guide débutant</div>
+      <a href="chatgpt-guide-debutant.html"><div class="post-title">C'est quoi ChatGPT ? Tout comprendre en 5 minutes</div></a>
+      <div class="post-excerpt">J'ai passé des semaines à tester ChatGPT avant d'écrire cet article. Voici ce que j'aurais aimé savoir dès le début.</div>
+      <div class="post-meta"><span>1 juin 2026</span><span>·</span><span>6 min</span></div>
+    </div>
+    <a href="chatgpt-guide-debutant.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="comparatif">
+    <div class="post-thumb thumb-comparatif"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+    <div>
+      <div class="post-tag">Comparatif</div>
+      <a href="chatgpt-vs-gemini.html"><div class="post-title">ChatGPT vs Gemini : mon avis après 3 mois d'utilisation</div></a>
+      <div class="post-excerpt">Pas de tableau de fonctionnalités ennuyeux. Juste mon retour honnête après avoir utilisé les deux au quotidien.</div>
+      <div class="post-meta"><span>28 mai 2026</span><span>·</span><span>5 min</span></div>
+    </div>
+    <a href="chatgpt-vs-gemini.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="tutoriel">
+    <div class="post-thumb thumb-tutoriel"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+    <div>
+      <div class="post-tag">Tutoriel</div>
+      <a href="outils-ia-gratuits.html"><div class="post-title">5 outils IA gratuits qui m'ont sauvé du temps cette semaine</div></a>
+      <div class="post-excerpt">Des outils que j'utilise vraiment, pas une liste copiée-collée d'un article américain.</div>
+      <div class="post-meta"><span>25 mai 2026</span><span>·</span><span>7 min</span></div>
+    </div>
+    <a href="outils-ia-gratuits.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="productivite">
+    <div class="post-thumb thumb-productivite"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div>
+      <div class="post-tag">Productivité</div>
+      <a href="cv-avec-chatgpt.html"><div class="post-title">Comment j'ai écrit mon CV en 12 minutes avec ChatGPT</div></a>
+      <div class="post-excerpt">Le process exact, les prompts que j'ai utilisés, et ce que j'ai dû corriger à la main.</div>
+      <div class="post-meta"><span>20 mai 2026</span><span>·</span><span>4 min</span></div>
+    </div>
+    <a href="cv-avec-chatgpt.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="tutoriel">
+    <div class="post-thumb thumb-tutoriel"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+    <div>
+      <div class="post-tag">Image IA</div>
+      <a href="midjourney-debutant.html"><div class="post-title">Midjourney pour les nuls : mes premières images, mes premières erreurs</div></a>
+      <div class="post-excerpt">Un vrai retour de débutant, avec les prompts qui marchent et ceux qui donnent des résultats étranges.</div>
+      <div class="post-meta"><span>15 mai 2026</span><span>·</span><span>6 min</span></div>
+    </div>
+    <a href="midjourney-debutant.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="tutoriel">
+    <div class="post-thumb thumb-tutoriel"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+    <div>
+      <div class="post-tag">Tutoriel</div>
+      <a href="apprendre-langue-ia.html"><div class="post-title">Comment apprendre une langue avec l'IA en 2026</div></a>
+      <div class="post-excerpt">J'ai testé ChatGPT comme professeur d'anglais pendant un mois. Voici ce qui m'a vraiment aidé à progresser.</div>
+      <div class="post-meta"><span>10 mai 2026</span><span>·</span><span>6 min</span></div>
+    </div>
+    <a href="apprendre-langue-ia.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="reflexion">
+    <div class="post-thumb thumb-reflexion"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+    <div>
+      <div class="post-tag">Réflexion</div>
+      <a href="ia-remplacer-graphiste.html"><div class="post-title">L'IA peut-elle vraiment remplacer un graphiste ?</div></a>
+      <div class="post-excerpt">J'ai testé les principaux outils de création visuelle par IA pendant deux semaines. La réponse est plus nuancée qu'on ne le pense.</div>
+      <div class="post-meta"><span>5 mai 2026</span><span>·</span><span>5 min</span></div>
+    </div>
+    <a href="ia-remplacer-graphiste.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="productivite">
+    <div class="post-thumb thumb-productivite"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div>
+      <div class="post-tag">Productivité</div>
+      <a href="resumer-pdf-ia.html"><div class="post-title">Comment résumer un PDF avec l'IA en 2 minutes</div></a>
+      <div class="post-excerpt">Rapport de 80 pages, contrat interminable — l'IA peut tout digérer à ta place.</div>
+      <div class="post-meta"><span>30 avril 2026</span><span>·</span><span>5 min</span></div>
+    </div>
+    <a href="resumer-pdf-ia.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="productivite">
+    <div class="post-thumb thumb-productivite"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div>
+      <div class="post-tag">Productivité</div>
+      <a href="ia-reseaux-sociaux.html"><div class="post-title">Comment j'utilise l'IA pour gérer mes réseaux sociaux sans y passer ma vie</div></a>
+      <div class="post-excerpt">Publier régulièrement sur les réseaux sociaux prend un temps fou. Voici comment j'ai réduit ce temps de moitié.</div>
+      <div class="post-meta"><span>25 avril 2026</span><span>·</span><span>6 min</span></div>
+    </div>
+    <a href="ia-reseaux-sociaux.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="reflexion">
+    <div class="post-thumb thumb-reflexion"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+    <div>
+      <div class="post-tag">Réflexion</div>
+      <a href="risques-ia.html"><div class="post-title">Les risques de l'IA : ce qu'il faut vraiment savoir</div></a>
+      <div class="post-excerpt">Entre les catastrophistes et les enthousiastes aveugles, voici un regard honnête sur les vrais risques du quotidien.</div>
+      <div class="post-meta"><span>20 avril 2026</span><span>·</span><span>6 min</span></div>
+    </div>
+    <a href="risques-ia.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="business">
+    <div class="post-thumb thumb-business"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+    <div>
+      <div class="post-tag">Business</div>
+      <a href="ia-petites-entreprises.html"><div class="post-title">Comment les petites entreprises peuvent utiliser l'IA sans se ruiner</div></a>
+      <div class="post-excerpt">L'IA n'est pas réservée aux grandes entreprises. Voici comment une petite structure peut en tirer un avantage concret.</div>
+      <div class="post-meta"><span>15 avril 2026</span><span>·</span><span>7 min</span></div>
+    </div>
+    <a href="ia-petites-entreprises.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="comparatif">
+    <div class="post-thumb thumb-comparatif"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+    <div>
+      <div class="post-tag">Guide</div>
+      <a href="claude-ai-guide.html"><div class="post-title">Claude AI : pourquoi j'ai commencé à l'utiliser en plus de ChatGPT</div></a>
+      <div class="post-excerpt">Pendant longtemps j'étais un utilisateur exclusif de ChatGPT. Puis j'ai testé Claude sérieusement.</div>
+      <div class="post-meta"><span>10 avril 2026</span><span>·</span><span>6 min</span></div>
+    </div>
+    <a href="claude-ai-guide.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="productivite">
+    <div class="post-thumb thumb-productivite"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div>
+      <div class="post-tag">Productivité</div>
+      <a href="automatiser-taches-ia.html"><div class="post-title">Comment automatiser ses tâches répétitives avec l'IA</div></a>
+      <div class="post-excerpt">J'ai récupéré environ 5 heures par semaine en automatisant des tâches que je faisais manuellement depuis des années.</div>
+      <div class="post-meta"><span>5 avril 2026</span><span>·</span><span>7 min</span></div>
+    </div>
+    <a href="automatiser-taches-ia.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="tutoriel">
+    <div class="post-thumb thumb-tutoriel"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+    <div>
+      <div class="post-tag">Tutoriel</div>
+      <a href="ia-traduction.html"><div class="post-title">IA et traduction : les meilleurs outils pour ne plus jamais être bloqué par la langue</div></a>
+      <div class="post-excerpt">Google Traduction c'est bien. Mais l'IA fait tellement mieux avec du contexte et de la nuance.</div>
+      <div class="post-meta"><span>1 avril 2026</span><span>·</span><span>5 min</span></div>
+    </div>
+    <a href="ia-traduction.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="post-item" data-cat="tutoriel">
+    <div class="post-thumb thumb-tutoriel"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+    <div>
+      <div class="post-tag">Tutoriel</div>
+      <a href="ia-etudiant.html"><div class="post-title">Les meilleurs outils IA pour les étudiants en 2026</div></a>
+      <div class="post-excerpt">Comprendre un cours difficile, préparer un exposé — l'IA peut t'aider sur tout ça, sans tricher.</div>
+      <div class="post-meta"><span>28 mars 2026</span><span>·</span><span>6 min</span></div>
+    </div>
+    <a href="ia-etudiant.html" class="post-read">Lire →</a>
+  </div>
+
+  <div class="newsletter">
+    <h3>Un article par semaine, dans ta boîte mail.</h3>
+    <p>Pas de spam. Juste les meilleurs guides IA, directement chez toi.</p>
+    <div class="nl-form">
+      <input type="email" placeholder="ton@email.com"/>
+      <button>Je m'abonne</button>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Tutos<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutosIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body,btn=document.getElementById('theme-btn');
+  body.classList.toggle('dark');
+  const dark=body.classList.contains('dark');
+  btn.textContent=dark?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',dark?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){document.body.classList.add('dark');document.getElementById('theme-btn').textContent='Mode clair';}
+
+function toggleLangMenu(){document.getElementById('lang-menu').classList.toggle('open')}
+document.addEventListener('click',function(e){
+  if(!document.querySelector('.lang-float').contains(e.target))
+    document.getElementById('lang-menu').classList.remove('open');
+});
+
+const translations={
+  fr:{title:'Tous les articles',sub:'Guides pratiques, comparatifs honnêtes et réflexions sur l\'intelligence artificielle.',filters:{tous:'Tous',tutoriel:'Tutoriels',comparatif:'Comparatifs',productivite:'Productivité',reflexion:'Réflexions',business:'Business'}},
+  en:{title:'All articles',sub:'Practical guides, honest comparisons and reflections on artificial intelligence.',filters:{tous:'All',tutoriel:'Tutorials',comparatif:'Comparisons',productivite:'Productivity',reflexion:'Insights',business:'Business'}},
+  de:{title:'Alle Artikel',sub:'Praktische Guides, ehrliche Vergleiche und Überlegungen zur künstlichen Intelligenz.',filters:{tous:'Alle',tutoriel:'Tutorials',comparatif:'Vergleiche',productivite:'Produktivität',reflexion:'Einblicke',business:'Business'}},
+  es:{title:'Todos los artículos',sub:'Guías prácticas, comparativas honestas y reflexiones sobre la inteligencia artificial.',filters:{tous:'Todos',tutoriel:'Tutoriales',comparatif:'Comparativas',productivite:'Productividad',reflexion:'Reflexiones',business:'Negocios'}},
+  nl:{title:'Alle artikelen',sub:'Praktische gidsen, eerlijke vergelijkingen en reflecties over kunstmatige intelligentie.',filters:{tous:'Alle',tutoriel:'Tutorials',comparatif:'Vergelijkingen',productivite:'Productiviteit',reflexion:'Inzichten',business:'Business'}}
+};
+
+function setLang(lang){
+  document.querySelectorAll('.lang-option').forEach(btn=>btn.classList.remove('active'));
+  document.getElementById('opt-'+lang).classList.add('active');
+  document.documentElement.lang=lang;
+  document.getElementById('lang-menu').classList.remove('open');
+  localStorage.setItem('tutoia-lang',lang);
+  const t=translations[lang];
+  document.getElementById('page-title').textContent=t.title;
+  document.getElementById('page-sub').textContent=t.sub;
+  Object.entries(t.filters).forEach(([key,val])=>{
+    const btn=document.getElementById('f-'+key);
+    if(btn) btn.textContent=val;
+  });
+}
+const savedLang=localStorage.getItem('tutoia-lang');
+if(savedLang&&savedLang!=='fr') setLang(savedLang);
+
+function filter(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.post-item').forEach(item=>{
+    if(cat==='tous'||item.dataset.cat===cat){item.classList.remove('hidden')}
+    else{item.classList.add('hidden')}
+  });
+}
+</script>
+</body>
+</html>.page-hero h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
 .page-hero p{font-size:17px;color:var(--muted);line-height:1.75}
 .filters{max-width:780px;margin:0 auto;padding:0 2rem 2rem;display:flex;gap:10px;flex-wrap:wrap}
 .filter-btn{font-family:var(--sans);font-size:13px;padding:6px 16px;border-radius:20px;border:1px solid var(--border);background:none;color:var(--muted);cursor:pointer;transition:all .2s}
