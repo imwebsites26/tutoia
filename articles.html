@@ -97,7 +97,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center;
         <a href="comparatifs.html" id="nav-comp">Comparatifs</a>
         <a href="contact.html" id="nav-contact">Contact</a>
       </div>
-      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" title="Changer le thème">🌙</button>
     </div>
   </div>
 </nav>
@@ -551,15 +551,9 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center;
 </footer>
 
 <script>
-function toggleTheme(){
-  const body=document.body,btn=document.getElementById('theme-btn');
-  body.classList.toggle('dark');
-  const dark=body.classList.contains('dark');
-  btn.textContent=dark?'Mode clair':'Mode sombre';
-  localStorage.setItem('theme',dark?'dark':'light');
-}
+function toggleTheme(){const body=document.body,btn=document.getElementById('theme-btn');body.classList.toggle('dark');const dark=body.classList.contains('dark');btn.textContent=dark?'☀️':'🌙';localStorage.setItem('theme',dark?'dark':'light');}
 const saved=localStorage.getItem('theme');
-if(saved==='dark'){document.body.classList.add('dark');document.getElementById('theme-btn').textContent='Mode clair';}
+if(saved==='dark'){document.body.classList.add('dark');document.getElementById('theme-btn').textContent='☀️';}
 
 function toggleLangMenu(){document.getElementById('lang-menu').classList.toggle('open')}
 document.addEventListener('click',function(e){
@@ -569,10 +563,10 @@ document.addEventListener('click',function(e){
 
 const ui={
   fr:{title:'Tous les articles',sub:'Guides pratiques, comparatifs honnêtes et réflexions sur l\'intelligence artificielle.',filter:'Filtrer',filters:{tous:'Tous',tutoriel:'Tutoriels',comparatif:'Comparatifs',productivite:'Productivité',reflexion:'Réflexions',business:'Business'},read:'Lire →',nl:{title:'Un article par semaine, dans ta boîte mail.',sub:'Pas de spam. Juste les meilleurs guides IA, directement chez toi.',ph:'ton@email.com',btn:'Je m\'abonne'}},
-  en:{title:'All articles',sub:'Practical guides, honest comparisons and reflections on artificial intelligence.',filter:'Filter',filters:{tous:'All',tutoriel:'Tutorials',comparatif:'Comparisons',productivite:'Productivity',reflexion:'Insights',business:'Business'},read:'Read →',nav:{home:'Home',articles:'Articles',comp:'Comparisons',contact:'Contact',dark:'Dark mode',light:'Light mode'},nl:{title:'One article a week, straight to your inbox.',sub:'No spam. Just the best AI guides, delivered directly to you.',ph:'your@email.com',btn:'Subscribe'}},
-  de:{title:'Alle Artikel',sub:'Praktische Guides, ehrliche Vergleiche und Überlegungen zur künstlichen Intelligenz.',filter:'Filtern',filters:{tous:'Alle',tutoriel:'Tutorials',comparatif:'Vergleiche',productivite:'Produktivität',reflexion:'Einblicke',business:'Business'},read:'Lesen →',nav:{home:'Startseite',articles:'Artikel',comp:'Vergleiche',contact:'Kontakt',dark:'Dunkler Modus',light:'Heller Modus'},nl:{title:'Ein Artikel pro Woche, direkt in dein Postfach.',sub:'Kein Spam. Nur die besten KI-Guides, direkt zu dir.',ph:'deine@email.de',btn:'Abonnieren'}},
-  es:{title:'Todos los artículos',sub:'Guías prácticas, comparativas honestas y reflexiones sobre la inteligencia artificial.',filter:'Filtrar',filters:{tous:'Todos',tutoriel:'Tutoriales',comparatif:'Comparativas',productivite:'Productividad',reflexion:'Reflexiones',business:'Negocios'},read:'Leer →',nav:{home:'Inicio',articles:'Artículos',comp:'Comparativas',contact:'Contacto',dark:'Modo oscuro',light:'Modo claro'},nl:{title:'Un artículo a la semana, en tu bandeja de entrada.',sub:'Sin spam. Solo las mejores guías de IA, directamente para ti.',ph:'tu@email.com',btn:'Suscribirme'}},
-  nl:{title:'Alle artikelen',sub:'Praktische gidsen, eerlijke vergelijkingen en reflecties over kunstmatige intelligentie.',filter:'Filteren',filters:{tous:'Alle',tutoriel:'Tutorials',comparatif:'Vergelijkingen',productivite:'Productiviteit',reflexion:'Inzichten',business:'Business'},read:'Lezen →',nav:{home:'Startpagina',articles:'Artikelen',comp:'Vergelijkingen',contact:'Contact',dark:'Donkere modus',light:'Lichte modus'},nl:{title:'Één artikel per week, rechtstreeks in je mailbox.',sub:'Geen spam. Alleen de beste AI-gidsen, direct voor jou.',ph:'jouw@email.nl',btn:'Abonneren'}}
+  en:{title:'All articles',sub:'Practical guides, honest comparisons and reflections on artificial intelligence.',filter:'Filter',filters:{tous:'All',tutoriel:'Tutorials',comparatif:'Comparisons',productivite:'Productivity',reflexion:'Insights',business:'Business'},read:'Read →',nav:{home:'Home',articles:'Articles',comp:'Comparisons',contact:'Contact'},nl:{title:'One article a week, straight to your inbox.',sub:'No spam. Just the best AI guides, delivered directly to you.',ph:'your@email.com',btn:'Subscribe'}},
+  de:{title:'Alle Artikel',sub:'Praktische Guides, ehrliche Vergleiche und Überlegungen zur künstlichen Intelligenz.',filter:'Filtern',filters:{tous:'Alle',tutoriel:'Tutorials',comparatif:'Vergleiche',productivite:'Produktivität',reflexion:'Einblicke',business:'Business'},read:'Lesen →',nav:{home:'Startseite',articles:'Artikel',comp:'Vergleiche',contact:'Kontakt'},nl:{title:'Ein Artikel pro Woche, direkt in dein Postfach.',sub:'Kein Spam. Nur die besten KI-Guides, direkt zu dir.',ph:'deine@email.de',btn:'Abonnieren'}},
+  es:{title:'Todos los artículos',sub:'Guías prácticas, comparativas honestas y reflexiones sobre la inteligencia artificial.',filter:'Filtrar',filters:{tous:'Todos',tutoriel:'Tutoriales',comparatif:'Comparativas',productivite:'Productividad',reflexion:'Reflexiones',business:'Negocios'},read:'Leer →',nav:{home:'Inicio',articles:'Artículos',comp:'Comparativas',contact:'Contacto'},nl:{title:'Un artículo a la semana, en tu bandeja de entrada.',sub:'Sin spam. Solo las mejores guías de IA, directamente para ti.',ph:'tu@email.com',btn:'Suscribirme'}},
+  nl:{title:'Alle artikelen',sub:'Praktische gidsen, eerlijke vergelijkingen en reflecties over kunstmatige intelligentie.',filter:'Filteren',filters:{tous:'Alle',tutoriel:'Tutorials',comparatif:'Vergelijkingen',productivite:'Productiviteit',reflexion:'Inzichten',business:'Business'},read:'Lezen →',nav:{home:'Startpagina',articles:'Artikelen',comp:'Vergelijkingen',contact:'Contact'},nl:{title:'Één artikel per week, rechtstreeks in je mailbox.',sub:'Geen spam. Alleen de beste AI-gidsen, direct voor jou.',ph:'jouw@email.nl',btn:'Abonneren'}}
 };
 
 function setLang(lang){
@@ -604,8 +598,6 @@ function setLang(lang){
   document.getElementById('nav-articles').textContent=n.articles;
   document.getElementById('nav-comp').textContent=n.comp;
   document.getElementById('nav-contact').textContent=n.contact;
-  const dark=document.body.classList.contains('dark');
-  document.getElementById('theme-btn').textContent=dark?n.light:n.dark;
 }
 
 const savedLang=localStorage.getItem('tutoia-lang');
