@@ -207,6 +207,198 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center;
   <div class="footer-copy">© 2026 TutosIA — Hecho con curiosidad</div>
 </footer>
 <script>
+function toggleTheme(){
+  const body=document.body,btn=document.getElementById('theme-btn');
+  body.classList.toggle('dark');
+  const dark=body.classList.contains('dark');
+  btn.textContent=dark?'Modo claro':'Modo oscuro';
+  localStorage.setItem('theme',dark?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){
+  document.body.classList.add('dark');
+  document.getElementById('theme-btn').textContent='Modo claro';
+}
+function toggleLangMenu(){document.getElementById('lang-menu').classList.toggle('open')}
+document.addEventListener('click',function(e){
+  if(!document.querySelector('.lang-float').contains(e.target))
+    document.getElementById('lang-menu').classList.remove('open');
+});
+</script>
+</body>
+</html>.hero-sub{font-size:16px;color:var(--muted);line-height:1.85;margin-bottom:2rem;font-family:var(--sans)}
+.hero-cta{display:inline-block;font-family:var(--sans);font-size:14px;font-weight:600;background:var(--accent);color:#fff;padding:12px 26px;border-radius:8px;transition:opacity .2s}
+.hero-cta:hover{opacity:.87}
+.hero-img-wrap{border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--surface)}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.hero-img-wrap:hover img{transform:scale(1.03)}
+.topics{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1rem 2rem;background:var(--bg2)}
+.topics-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.topics-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--hint);text-transform:uppercase;letter-spacing:1.5px;margin-right:.5rem;white-space:nowrap}
+.topic-tag{font-family:var(--sans);font-size:13px;color:var(--muted);background:var(--bg);border:1px solid var(--border);padding:5px 14px;border-radius:20px;transition:all .2s}
+.topic-tag:hover{border-color:var(--accent);color:var(--accent)}
+.main{max-width:var(--max);margin:0 auto;padding:3rem 2rem 5rem}
+.section-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:1.75rem}
+.featured{display:grid;grid-template-columns:5fr 4fr;border-radius:16px;overflow:hidden;margin-bottom:3.5rem;background:var(--surface);min-height:300px;border:1px solid var(--border)}
+.featured-img{position:relative;overflow:hidden;min-height:280px}
+.featured-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.featured-img:hover img{transform:scale(1.03)}
+.featured-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,5,5,.8) 0%,rgba(10,5,5,.25) 55%,transparent 100%)}
+.featured-img-label{position:absolute;top:1.25rem;left:1.25rem;font-family:var(--sans);font-size:11px;font-weight:600;color:#fff;background:var(--accent);padding:4px 12px;border-radius:20px;letter-spacing:.5px}
+.featured-img-title{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;font-family:var(--serif);font-size:21px;font-weight:700;color:#fff;line-height:1.3}
+.featured-content{padding:2.25rem 2rem;display:flex;flex-direction:column;justify-content:center}
+.featured-excerpt{font-family:var(--sans);font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:1rem}
+.featured-meta{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:1.5rem}
+.read-btn{display:inline-block;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--accent);border:1.5px solid var(--accent);padding:9px 20px;border-radius:7px;transition:all .2s;align-self:flex-start}
+.read-btn:hover{background:var(--accent);color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem}
+.card{border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:border-color .2s,box-shadow .2s;background:var(--bg)}
+.card:hover{border-color:var(--accent);box-shadow:0 4px 24px rgba(192,57,43,.08)}
+.card-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.card-title{font-size:16px;font-weight:700;line-height:1.4;margin-bottom:8px;color:var(--text);font-family:var(--serif)}
+.card a:hover .card-title{color:var(--accent)}
+.card-excerpt{font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:12px}
+.card-date{font-family:var(--sans);font-size:12px;color:var(--hint)}
+.see-all{text-align:center;margin-bottom:3.5rem}
+.see-all a{font-family:var(--sans);font-size:14px;color:var(--muted);border-bottom:1px solid var(--border);padding-bottom:2px;transition:color .2s,border-color .2s}
+.see-all a:hover{color:var(--accent);border-color:var(--accent)}
+.sel-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem;margin-top:1.5rem;margin-bottom:3.5rem}
+.sel-card{padding:1.5rem;border-radius:var(--radius);background:var(--surface);border:1px solid var(--border);transition:border-color .2s}
+.sel-card:hover{border-color:var(--accent)}
+.sel-badge{font-family:var(--sans);font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
+.sel-title{font-size:15px;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:6px;font-family:var(--serif)}
+.sel-card a:hover .sel-title{color:var(--accent)}
+.sel-desc{font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.6}
+.author-section{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center;border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:3.5rem;background:var(--bg)}
+.author-avatar{width:58px;height:58px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;border:2px solid var(--border)}
+.author-avatar svg{width:32px;height:32px;fill:#fff;opacity:.92}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:700;color:var(--text);margin-bottom:5px}
+.author-bio{font-family:var(--sans);font-size:14px;color:var(--muted);line-height:1.65}
+.newsletter{background:#1a1714;color:#f5f0e8;border-radius:16px;padding:3rem;text-align:center}
+.newsletter h3{font-size:22px;font-weight:700;margin-bottom:8px;color:#f5f0e8}
+.newsletter p{font-family:var(--sans);font-size:14px;color:rgba(245,240,232,.5);margin-bottom:2rem}
+.nl-form{display:flex;gap:8px;max-width:400px;margin:0 auto}
+.nl-form input{flex:1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#f5f0e8;font-size:14px;padding:11px 16px;border-radius:8px;font-family:var(--sans);outline:none}
+.nl-form input::placeholder{color:rgba(245,240,232,.4)}
+.nl-form button{background:var(--accent);border:none;color:#fff;font-size:14px;font-weight:600;padding:11px 22px;border-radius:8px;cursor:pointer;font-family:var(--sans);white-space:nowrap;transition:opacity .2s}
+.nl-form button:hover{opacity:.87}
+footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center;background:var(--bg2)}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem;flex-wrap:wrap}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint);transition:color .2s}
+.footer-links a:hover{color:var(--muted)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:var(--hint)}
+.lang-float{position:fixed;bottom:2rem;right:2rem;z-index:999}
+.lang-globe-btn{width:50px;height:50px;border-radius:50%;background:var(--accent);border:none;color:#fff;font-size:21px;cursor:pointer;box-shadow:0 4px 18px rgba(192,57,43,.3);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.lang-globe-btn:hover{transform:scale(1.08)}
+.lang-menu{position:absolute;bottom:62px;right:0;background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:8px;box-shadow:0 8px 36px rgba(0,0,0,.14);display:none;flex-direction:column;gap:2px;min-width:170px;z-index:1000}
+.lang-menu.open{display:flex}
+.lang-option{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;cursor:pointer;font-family:var(--sans);font-size:14px;color:var(--text);border:none;background:none;width:100%;text-align:left;transition:background .15s}
+.lang-option:hover{background:var(--surface)}
+.lang-option.active{background:var(--surface);font-weight:600;color:var(--accent)}
+.lang-option .lang-code{font-size:12px;color:var(--hint);margin-left:auto}
+@media(max-width:720px){.hero{grid-template-columns:1fr;padding:3rem 1.5rem 2rem;gap:2rem}.hero-img-wrap{aspect-ratio:16/9}.hero h1{font-size:30px}.featured{grid-template-columns:1fr}.featured-img{min-height:200px}.grid{grid-template-columns:1fr}.sel-grid{grid-template-columns:1fr}.nav-links{display:none}.lang-float{bottom:1.25rem;right:1.25rem}.author-section{grid-template-columns:1fr;text-align:center}.author-avatar{margin:0 auto}.nl-form{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tutos<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="articles.html">Artículos</a>
+        <a href="comparatifs.html">Comparativas</a>
+        <a href="contact.html">Contacto</a>
+      </div>
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()">Modo oscuro</button>
+    </div>
+  </div>
+</nav>
+<div class="lang-float">
+  <div class="lang-menu" id="lang-menu">
+    <button class="lang-option" onclick="window.location='../index.html'"><span>🇫🇷</span><span>Français</span><span class="lang-code">FR</span></button>
+    <button class="lang-option" onclick="window.location='../en/index.html'"><span>🇬🇧</span><span>English</span><span class="lang-code">EN</span></button>
+    <button class="lang-option" onclick="window.location='../de/index.html'"><span>🇩🇪</span><span>Deutsch</span><span class="lang-code">DE</span></button>
+    <button class="lang-option active"><span>🇪🇸</span><span>Español</span><span class="lang-code">ES</span></button>
+    <button class="lang-option" onclick="window.location='../nl/index.html'"><span>🇳🇱</span><span>Nederlands</span><span class="lang-code">NL</span></button>
+  </div>
+  <button class="lang-globe-btn" onclick="toggleLangMenu()">🌍</button>
+</div>
+<svg style="display:none"><symbol id="author-icon" viewBox="0 0 24 24"><path d="M20.71 4.04a1 1 0 0 0 0-1.42l-1.34-1.33a1 1 0 0 0-1.41 0L3 16.25V21h4.75L20.71 4.04zM4 19v-1.5l9.5-9.5 1.5 1.5L5.5 19H4zM16 4.5l1.5 1.5-9.5 9.5-1.5-1.5L16 4.5z"/></symbol></svg>
+
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Un blog sobre inteligencia artificial</div>
+    <h1>La IA explicada por alguien que la aprende contigo.</h1>
+    <p class="hero-sub">Sin jerga, sin promesas vacías. Guías honestas sobre las herramientas que realmente cambian la forma en que trabajamos y creamos.</p>
+    <a class="hero-cta" href="articles.html">Ver los artículos</a>
+  </div>
+  <div class="hero-img-wrap"><img src="../hero-home.jpg" alt="Escritorio acogedor con laptop y café"/></div>
+</div>
+<div class="topics">
+  <div class="topics-inner">
+    <span class="topics-label">En el blog</span>
+    <a class="topic-tag" href="../chatgpt-guide-debutant.html">ChatGPT</a>
+    <a class="topic-tag" href="../midjourney-debutant.html">Midjourney</a>
+    <a class="topic-tag" href="../automatiser-taches-ia.html">Automatización</a>
+    <a class="topic-tag" href="../comparatifs.html">Comparativas</a>
+    <a class="topic-tag" href="../ia-petites-entreprises.html">Productividad</a>
+  </div>
+</div>
+<div class="main">
+  <div class="section-label">Destacado</div>
+  <div class="featured">
+    <div class="featured-img">
+      <img src="../hero-chatgpt.jpg" alt="Manos escribiendo en laptop en un café"/>
+      <div class="featured-img-overlay"></div>
+      <div class="featured-img-label">Guía para principiantes</div>
+      <div class="featured-img-title">¿Qué es ChatGPT? Todo lo que necesitas saber en 5 minutos</div>
+    </div>
+    <div class="featured-content">
+      <div class="featured-excerpt">Pasé semanas probando ChatGPT antes de escribir este artículo. Esto es lo que me hubiera gustado saber desde el principio, sin la jerga técnica innecesaria.</div>
+      <div class="featured-meta">1 de junio de 2026 · 6 min de lectura</div>
+      <a class="read-btn" href="../chatgpt-guide-debutant.html">Leer el artículo</a>
+    </div>
+  </div>
+  <div class="section-label">Últimos artículos</div>
+  <div class="grid">
+    <div class="card"><div class="card-tag">Comparativa</div><a href="../chatgpt-vs-gemini.html"><div class="card-title">ChatGPT vs Gemini: mi opinión tras 3 meses de uso</div></a><div class="card-excerpt">Sin tablas aburridas. Solo mi experiencia real usando ambos cada día.</div><div class="card-date">28 de mayo de 2026</div></div>
+    <div class="card"><div class="card-tag">Tutorial</div><a href="../outils-ia-gratuits.html"><div class="card-title">5 herramientas de IA gratuitas que me ahorraron tiempo</div></a><div class="card-excerpt">Herramientas que realmente uso, no una lista copiada de algún artículo.</div><div class="card-date">25 de mayo de 2026</div></div>
+    <div class="card"><div class="card-tag">Productividad</div><a href="../cv-avec-chatgpt.html"><div class="card-title">Cómo escribí mi CV en 12 minutos con ChatGPT</div></a><div class="card-excerpt">El proceso exacto, los prompts usados y lo que tuve que corregir a mano.</div><div class="card-date">20 de mayo de 2026</div></div>
+    <div class="card"><div class="card-tag">Imagen IA</div><a href="../midjourney-debutant.html"><div class="card-title">Midjourney para principiantes: mis primeros errores</div></a><div class="card-excerpt">Una experiencia real de principiante con los prompts que funcionan y los que no.</div><div class="card-date">15 de mayo de 2026</div></div>
+  </div>
+  <div class="see-all"><a href="articles.html">Ver todos los artículos</a></div>
+  <div class="section-label">Selecciones de la semana</div>
+  <div class="sel-grid">
+    <div class="sel-card"><div class="sel-badge">Favorito</div><a href="../resumer-pdf-ia.html"><div class="sel-title">Resumir un PDF con IA en 2 minutos</div></a><div class="sel-desc">La herramienta que ojalá hubiera conocido mucho antes. Ahorra tiempo al instante.</div></div>
+    <div class="sel-card"><div class="sel-badge">Para empezar</div><a href="../chatgpt-guide-debutant.html"><div class="sel-title">La guía de ChatGPT para verdaderos principiantes</div></a><div class="sel-desc">Si aún no sabes por dónde empezar, empieza aquí.</div></div>
+    <div class="sel-card"><div class="sel-badge">Tendencia</div><a href="../automatiser-taches-ia.html"><div class="sel-title">Automatizar tus tareas repetitivas</div></a><div class="sel-desc">Cómo recuperar 5 horas a la semana gracias a la IA.</div></div>
+  </div>
+  <div class="author-section">
+    <div class="author-avatar"><svg><use href="#author-icon"/></svg></div>
+    <div>
+      <div class="author-name">TutosIA</div>
+      <div class="author-bio">Curioso sobre la IA desde 2023. Pruebo, me equivoco, aprendo y escribo al respecto. Un artículo a la semana, siempre intentando explicar las cosas tal como las entiendo de verdad.</div>
+    </div>
+  </div>
+  <div class="newsletter">
+    <h3>Un artículo a la semana, en tu bandeja de entrada.</h3>
+    <p>Sin spam. Solo las mejores guías de IA, directamente para ti.</p>
+    <div class="nl-form"><input type="email" placeholder="tu@email.com"/><button>Suscribirme</button></div>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo">Tutos<span>IA</span></div>
+  <div class="footer-links">
+    <a href="about.html">Sobre nosotros</a>
+    <a href="contact.html">Contacto</a>
+    <a href="privacy.html">Política de privacidad</a>
+  </div>
+  <div class="footer-copy">© 2026 TutosIA — Hecho con curiosidad</div>
+</footer>
+<script>
 function toggleTheme(){const body=document.body,btn=document.getElementById('theme-btn');body.classList.toggle('dark');btn.textContent=body.classList.contains('dark')?'Modo claro':'Modo oscuro';localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light');}
 const saved=localStorage.getItem('theme');if(saved==='dark'){document.body.classList.add('dark');document.getElementById('theme-btn').textContent='Modo claro';}
 function toggleLangMenu(){document.getElementById('lang-menu').classList.toggle('open')}
