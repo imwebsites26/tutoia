@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Articles — TutosIA</title>
-<meta name="description" content="Tous les guides et tutoriels sur l'intelligence artificielle — ChatGPT, Midjourney, automatisation et plus."/>
+<title>TutosIA — L'IA expliquée simplement</title>
+<meta name="description" content="Guides honnêtes sur les outils d'intelligence artificielle. ChatGPT, Midjourney, automatisation et plus — expliqués simplement."/>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3118115945698615" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4YL93JT3K0"></script>
@@ -16,10 +16,34 @@
 </script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#f5f0e8;--bg2:#ede8df;--surface:#e8e2d8;--border:#d8d0c4;--text:#1a1714;--muted:#5c5650;--hint:#9c9690;--accent:#c0392b;--serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--radius:12px;--max:860px;}
-body.dark{--bg:#111010;--bg2:#171614;--surface:#1d1b1a;--border:#2e2b29;--text:#ede9e4;--muted:#918d89;--hint:#524e4a;}
+:root{
+  --bg:#f5f0e8;
+  --bg2:#ede8df;
+  --surface:#e8e2d8;
+  --border:#d8d0c4;
+  --text:#1a1714;
+  --muted:#5c5650;
+  --hint:#9c9690;
+  --accent:#c0392b;
+  --serif:'Lora',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --radius:12px;
+  --max:860px;
+}
+body.dark{
+  --bg:#111010;
+  --bg2:#171614;
+  --surface:#1d1b1a;
+  --border:#2e2b29;
+  --text:#ede9e4;
+  --muted:#918d89;
+  --hint:#524e4a;
+}
 body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
 a{text-decoration:none;cursor:pointer}
+img{display:block;max-width:100%}
+
+/* NAV */
 nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;transition:background .3s}
 .nav-inner{max-width:var(--max);margin:0 auto;padding:0 2rem;height:62px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--text);letter-spacing:-.3px}
@@ -27,14 +51,554 @@ nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;t
 .nav-right{display:flex;align-items:center;gap:1.75rem}
 .nav-links{display:flex;gap:1.75rem}
 .nav-links a{font-family:var(--sans);font-size:14px;color:var(--muted);transition:color .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--text)}
-.nav-links a.active{font-weight:600}
+.nav-links a:hover{color:var(--text)}
 .theme-btn{background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--sans);font-size:13px;padding:5px 14px;border-radius:20px;cursor:pointer;transition:all .2s}
 .theme-btn:hover{border-color:var(--accent);color:var(--accent)}
-.page-hero{max-width:var(--max);margin:0 auto;padding:4rem 2rem 2.5rem;border-bottom:1px solid var(--border)}
-.page-hero h1{font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin-bottom:.75rem}
-.page-hero p{font-family:var(--sans);font-size:16px;color:var(--muted);line-height:1.7}
-.filters{max-width:var(--max);margin:0 auto;padding:1.25rem 2rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;border-bottom:1px solid var(--border);background:var(--bg2)}
+
+/* HERO */
+.hero{max-width:var(--max);margin:0 auto;padding:4.5rem 2rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.hero-eyebrow{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:1.25rem}
+.hero h1{font-size:40px;font-weight:700;line-height:1.18;letter-spacing:-.6px;margin-bottom:1.25rem;color:var(--text)}
+.hero-sub{font-size:16px;color:var(--muted);line-height:1.85;margin-bottom:2rem;font-family:var(--sans)}
+.hero-cta{display:inline-block;font-family:var(--sans);font-size:14px;font-weight:600;background:var(--accent);color:#fff;padding:12px 26px;border-radius:8px;transition:opacity .2s;letter-spacing:.2px}
+.hero-cta:hover{opacity:.87}
+.hero-img-wrap{border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--surface)}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.hero-img-wrap:hover img{transform:scale(1.03)}
+
+/* TOPICS */
+.topics{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1rem 2rem;background:var(--bg2)}
+.topics-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.topics-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--hint);text-transform:uppercase;letter-spacing:1.5px;margin-right:.5rem;white-space:nowrap}
+.topic-tag{font-family:var(--sans);font-size:13px;color:var(--muted);background:var(--bg);border:1px solid var(--border);padding:5px 14px;border-radius:20px;transition:all .2s}
+.topic-tag:hover{border-color:var(--accent);color:var(--accent)}
+
+/* MAIN */
+.main{max-width:var(--max);margin:0 auto;padding:3rem 2rem 5rem}
+.section-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:1.75rem}
+
+/* FEATURED */
+.featured{display:grid;grid-template-columns:5fr 4fr;border-radius:16px;overflow:hidden;margin-bottom:3.5rem;background:var(--surface);min-height:300px;border:1px solid var(--border)}
+.featured-img{position:relative;overflow:hidden;min-height:280px}
+.featured-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.featured-img:hover img{transform:scale(1.03)}
+.featured-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,5,5,.8) 0%,rgba(10,5,5,.25) 55%,transparent 100%)}
+.featured-img-label{position:absolute;top:1.25rem;left:1.25rem;font-family:var(--sans);font-size:11px;font-weight:600;color:#fff;background:var(--accent);padding:4px 12px;border-radius:20px;letter-spacing:.5px}
+.featured-img-title{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;font-family:var(--serif);font-size:21px;font-weight:700;color:#fff;line-height:1.3}
+.featured-content{padding:2.25rem 2rem;display:flex;flex-direction:column;justify-content:center;gap:.25rem}
+.featured-excerpt{font-family:var(--sans);font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:1rem}
+.featured-meta{font-family:var(--sans);font-size:13px;color:var(--hint);margin-bottom:1.5rem}
+.read-btn{display:inline-block;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--accent);border:1.5px solid var(--accent);padding:9px 20px;border-radius:7px;transition:all .2s;align-self:flex-start}
+.read-btn:hover{background:var(--accent);color:#fff}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem}
+.card{border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:border-color .2s,box-shadow .2s;background:var(--bg)}
+.card:hover{border-color:var(--accent);box-shadow:0 4px 24px rgba(192,57,43,.08)}
+.card-tag{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.card-title{font-size:16px;font-weight:700;line-height:1.4;margin-bottom:8px;color:var(--text);font-family:var(--serif)}
+.card a:hover .card-title{color:var(--accent)}
+.card-excerpt{font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:12px}
+.card-date{font-family:var(--sans);font-size:12px;color:var(--hint)}
+
+.see-all{text-align:center;margin-bottom:3.5rem}
+.see-all a{font-family:var(--sans);font-size:14px;color:var(--muted);border-bottom:1px solid var(--border);padding-bottom:2px;transition:color .2s,border-color .2s}
+.see-all a:hover{color:var(--accent);border-color:var(--accent)}
+
+/* SELECTIONS */
+.sel-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem;margin-top:1.5rem;margin-bottom:3.5rem}
+.sel-card{padding:1.5rem;border-radius:var(--radius);background:var(--surface);border:1px solid var(--border);transition:border-color .2s}
+.sel-card:hover{border-color:var(--accent)}
+.sel-badge{font-family:var(--sans);font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
+.sel-title{font-size:15px;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:6px;font-family:var(--serif)}
+.sel-card a:hover .sel-title{color:var(--accent)}
+.sel-desc{font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.6}
+
+/* AUTHOR */
+.author-section{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center;border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:3.5rem;background:var(--bg)}
+.author-avatar{width:58px;height:58px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;border:2px solid var(--border)}
+.author-avatar svg{width:34px;height:34px;fill:#fff;opacity:.92}
+.author-name{font-family:var(--sans);font-size:15px;font-weight:700;color:var(--text);margin-bottom:5px}
+.author-bio{font-family:var(--sans);font-size:14px;color:var(--muted);line-height:1.65}
+
+/* NEWSLETTER */
+.newsletter{background:#1a1714;color:#f5f0e8;border-radius:16px;padding:3rem;text-align:center}
+.newsletter h3{font-size:22px;font-weight:700;margin-bottom:8px;color:#f5f0e8}
+.newsletter p{font-family:var(--sans);font-size:14px;color:rgba(245,240,232,.5);margin-bottom:2rem}
+.nl-form{display:flex;gap:8px;max-width:400px;margin:0 auto}
+.nl-form input{
+  flex:1;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+  color:#f5f0e8;
+  font-size:14px;
+  padding:11px 16px;
+  border-radius:8px;
+  font-family:var(--sans);
+  outline:none;
+}
+.nl-form input::placeholder{color:rgba(245,240,232,.4)}
+.nl-form button{background:var(--accent);border:none;color:#fff;font-size:14px;font-weight:600;padding:11px 22px;border-radius:8px;cursor:pointer;font-family:var(--sans);white-space:nowrap;transition:opacity .2s}
+.nl-form button:hover{opacity:.87}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center;background:var(--bg2)}
+.footer-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.75rem;flex-wrap:wrap}
+.footer-links a{font-family:var(--sans);font-size:13px;color:var(--hint);transition:color .2s}
+.footer-links a:hover{color:var(--muted)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:var(--hint)}
+
+/* FLOATING LANG */
+.lang-float{position:fixed;bottom:2rem;right:2rem;z-index:999}
+.lang-globe-btn{width:50px;height:50px;border-radius:50%;background:var(--accent);border:none;color:#fff;font-size:21px;cursor:pointer;box-shadow:0 4px 18px rgba(192,57,43,.3);display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s}
+.lang-globe-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(192,57,43,.42)}
+.lang-menu{position:absolute;bottom:62px;right:0;background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:8px;box-shadow:0 8px 36px rgba(0,0,0,.14);display:none;flex-direction:column;gap:2px;min-width:170px}
+.lang-menu.open{display:flex}
+.lang-option{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;cursor:pointer;font-family:var(--sans);font-size:14px;color:var(--text);border:none;background:none;width:100%;text-align:left;transition:background .15s}
+.lang-option:hover{background:var(--surface)}
+.lang-option.active{background:var(--surface);font-weight:600;color:var(--accent)}
+.lang-option .flag{font-size:19px}
+.lang-option .lang-code{font-size:12px;color:var(--hint);margin-left:auto}
+
+.lang-content{display:none}
+.lang-content.active{display:block}
+
+@media(max-width:720px){
+  .hero{grid-template-columns:1fr;padding:3rem 1.5rem 2rem;gap:2rem}
+  .hero-img-wrap{aspect-ratio:16/9}
+  .hero h1{font-size:30px}
+  .featured{grid-template-columns:1fr}
+  .featured-img{min-height:200px}
+  .grid{grid-template-columns:1fr}
+  .sel-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .lang-float{bottom:1.25rem;right:1.25rem}
+  .author-section{grid-template-columns:1fr;text-align:center}
+  .author-avatar{margin:0 auto}
+  .nl-form{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Tutos<span>IA</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html" id="nav-home">Accueil</a>
+        <a href="articles.html" id="nav-articles">Articles</a>
+        <a href="comparatifs.html" id="nav-comp">Comparatifs</a>
+        <a href="contact.html" id="nav-contact">Contact</a>
+      </div>
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()">Mode sombre</button>
+    </div>
+  </div>
+</nav>
+
+<div class="lang-float">
+  <div class="lang-menu" id="lang-menu">
+    <button class="lang-option active" onclick="setLang('fr')" id="opt-fr"><span class="flag">🇫🇷</span><span>Français</span><span class="lang-code">FR</span></button>
+    <button class="lang-option" onclick="setLang('en')" id="opt-en"><span class="flag">🇬🇧</span><span>English</span><span class="lang-code">EN</span></button>
+    <button class="lang-option" onclick="setLang('de')" id="opt-de"><span class="flag">🇩🇪</span><span>Deutsch</span><span class="lang-code">DE</span></button>
+    <button class="lang-option" onclick="setLang('es')" id="opt-es"><span class="flag">🇪🇸</span><span>Español</span><span class="lang-code">ES</span></button>
+    <button class="lang-option" onclick="setLang('nl')" id="opt-nl"><span class="flag">🇳🇱</span><span>Nederlands</span><span class="lang-code">NL</span></button>
+  </div>
+  <button class="lang-globe-btn" onclick="toggleLangMenu()">🌍</button>
+</div>
+
+<!-- SVG auteur réutilisable (plume stylisée) -->
+<svg style="display:none">
+  <symbol id="author-icon" viewBox="0 0 24 24">
+    <path d="M20.71 4.04a1 1 0 0 0 0-1.42l-1.34-1.33a1 1 0 0 0-1.41 0L3 16.25V21h4.75L20.71 4.04zM4 19v-1.5l9.5-9.5 1.5 1.5L5.5 19H4zM16 4.5l1.5 1.5-9.5 9.5-1.5-1.5L16 4.5z"/>
+  </symbol>
+</svg>
+
+<!-- FRANÇAIS -->
+<div class="lang-content active" id="lang-fr">
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Un blog sur l'intelligence artificielle</div>
+      <h1>L'IA expliquée par quelqu'un qui l'apprend avec toi.</h1>
+      <p class="hero-sub">Pas de jargon, pas de promesses. Des guides honnêtes sur les outils qui changent vraiment la façon dont on travaille et crée.</p>
+      <a class="hero-cta" href="articles.html">Parcourir les articles</a>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="hero-home.jpg" alt="Bureau chaleureux avec laptop et café"/>
+    </div>
+  </div>
+  <div class="topics">
+    <div class="topics-inner">
+      <span class="topics-label">Sur le blog</span>
+      <a class="topic-tag" href="chatgpt-guide-debutant.html">ChatGPT</a>
+      <a class="topic-tag" href="midjourney-debutant.html">Midjourney</a>
+      <a class="topic-tag" href="automatiser-taches-ia.html">Automatisation</a>
+      <a class="topic-tag" href="comparatifs.html">Comparatifs</a>
+      <a class="topic-tag" href="ia-petites-entreprises.html">Productivité</a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="section-label">À la une</div>
+    <div class="featured">
+      <div class="featured-img">
+        <img src="hero-chatgpt.jpg" alt="Mains sur laptop dans un café"/>
+        <div class="featured-img-overlay"></div>
+        <div class="featured-img-label">Guide débutant</div>
+        <div class="featured-img-title">C'est quoi ChatGPT ? Tout comprendre en 5 minutes</div>
+      </div>
+      <div class="featured-content">
+        <div class="featured-excerpt">J'ai passé des semaines à tester ChatGPT avant d'écrire cet article. Voici ce que j'aurais aimé savoir dès le début, sans les termes techniques inutiles.</div>
+        <div class="featured-meta">1 juin 2026 · 6 min de lecture</div>
+        <a class="read-btn" href="chatgpt-guide-debutant.html">Lire l'article</a>
+      </div>
+    </div>
+    <div class="section-label">Derniers articles</div>
+    <div class="grid">
+      <div class="card"><div class="card-tag">Comparatif</div><a href="chatgpt-vs-gemini.html"><div class="card-title">ChatGPT vs Gemini : mon avis après 3 mois</div></a><div class="card-excerpt">Pas de tableau ennuyeux. Juste mon retour honnête après avoir utilisé les deux au quotidien.</div><div class="card-date">28 mai 2026</div></div>
+      <div class="card"><div class="card-tag">Tutoriel</div><a href="outils-ia-gratuits.html"><div class="card-title">5 outils IA gratuits qui m'ont sauvé du temps</div></a><div class="card-excerpt">Des outils que j'utilise vraiment, pas une liste copiée-collée d'un article américain.</div><div class="card-date">25 mai 2026</div></div>
+      <div class="card"><div class="card-tag">Productivité</div><a href="cv-avec-chatgpt.html"><div class="card-title">Comment j'ai écrit mon CV en 12 minutes avec ChatGPT</div></a><div class="card-excerpt">Le process exact, les prompts utilisés, et ce que j'ai dû corriger à la main.</div><div class="card-date">20 mai 2026</div></div>
+      <div class="card"><div class="card-tag">Image IA</div><a href="midjourney-debutant.html"><div class="card-title">Midjourney pour les nuls : mes premières erreurs</div></a><div class="card-excerpt">Un vrai retour de débutant avec les prompts qui marchent et ceux qui ratent.</div><div class="card-date">15 mai 2026</div></div>
+    </div>
+    <div class="see-all"><a href="articles.html">Voir tous les articles</a></div>
+    <div class="section-label">Sélections de la semaine</div>
+    <div class="sel-grid">
+      <div class="sel-card"><div class="sel-badge">Coup de coeur</div><a href="resumer-pdf-ia.html"><div class="sel-title">Résumer un PDF avec l'IA en 2 minutes</div></a><div class="sel-desc">L'outil que j'aurais voulu connaître bien plus tôt. Un gain de temps immédiat.</div></div>
+      <div class="sel-card"><div class="sel-badge">Pour débuter</div><a href="chatgpt-guide-debutant.html"><div class="sel-title">Le guide ChatGPT pour les vrais débutants</div></a><div class="sel-desc">Si tu ne sais pas encore par où commencer, commence ici.</div></div>
+      <div class="sel-card"><div class="sel-badge">Tendance</div><a href="automatiser-taches-ia.html"><div class="sel-title">Automatiser ses tâches répétitives</div></a><div class="sel-desc">Comment récupérer 5 heures par semaine grâce à l'IA.</div></div>
+    </div>
+    <div class="author-section">
+      <div class="author-avatar">
+        <svg><use href="#author-icon"/></svg>
+      </div>
+      <div>
+        <div class="author-name">TutosIA</div>
+        <div class="author-bio">Curieux de l'IA depuis 2023. Je teste, je rate, j'apprends, j'écris. Un article par semaine, toujours en cherchant à expliquer les choses comme je les comprends vraiment.</div>
+      </div>
+    </div>
+    <div class="newsletter">
+      <h3>Un article par semaine, dans ta boîte mail.</h3>
+      <p>Pas de spam. Juste les meilleurs guides IA, directement chez toi.</p>
+      <div class="nl-form"><input type="email" placeholder="ton@email.com"/><button>Je m'abonne</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ENGLISH -->
+<div class="lang-content" id="lang-en">
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">A blog about artificial intelligence</div>
+      <h1>AI explained by someone learning it with you.</h1>
+      <p class="hero-sub">No jargon, no hype. Honest guides about the tools that are genuinely changing the way we work and create.</p>
+      <a class="hero-cta" href="articles.html">Browse articles</a>
+    </div>
+    <div class="hero-img-wrap"><img src="hero-home.jpg" alt="Cozy workspace with laptop and coffee"/></div>
+  </div>
+  <div class="topics">
+    <div class="topics-inner">
+      <span class="topics-label">On the blog</span>
+      <a class="topic-tag" href="chatgpt-guide-debutant.html">ChatGPT</a>
+      <a class="topic-tag" href="midjourney-debutant.html">Midjourney</a>
+      <a class="topic-tag" href="automatiser-taches-ia.html">Automation</a>
+      <a class="topic-tag" href="comparatifs.html">Comparisons</a>
+      <a class="topic-tag" href="ia-petites-entreprises.html">Productivity</a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="section-label">Featured</div>
+    <div class="featured">
+      <div class="featured-img">
+        <img src="hero-chatgpt.jpg" alt="Hands typing on laptop in a café"/>
+        <div class="featured-img-overlay"></div>
+        <div class="featured-img-label">Beginner's guide</div>
+        <div class="featured-img-title">What is ChatGPT? Everything you need to know in 5 minutes</div>
+      </div>
+      <div class="featured-content">
+        <div class="featured-excerpt">I spent weeks testing ChatGPT before writing this article. Here's what I wish I had known from the start, without the unnecessary technical jargon.</div>
+        <div class="featured-meta">June 1, 2026 · 6 min read</div>
+        <a class="read-btn" href="chatgpt-guide-debutant.html">Read the article</a>
+      </div>
+    </div>
+    <div class="section-label">Latest articles</div>
+    <div class="grid">
+      <div class="card"><div class="card-tag">Comparison</div><a href="chatgpt-vs-gemini.html"><div class="card-title">ChatGPT vs Gemini: my honest take after 3 months</div></a><div class="card-excerpt">No boring tables. Just my real experience using both every day.</div><div class="card-date">May 28, 2026</div></div>
+      <div class="card"><div class="card-tag">Tutorial</div><a href="outils-ia-gratuits.html"><div class="card-title">5 free AI tools that saved me time this week</div></a><div class="card-excerpt">Tools I actually use, not a list copied from some American article.</div><div class="card-date">May 25, 2026</div></div>
+      <div class="card"><div class="card-tag">Productivity</div><a href="cv-avec-chatgpt.html"><div class="card-title">How I wrote my CV in 12 minutes with ChatGPT</div></a><div class="card-excerpt">The exact process, the prompts I used, and what I had to fix manually.</div><div class="card-date">May 20, 2026</div></div>
+      <div class="card"><div class="card-tag">AI Image</div><a href="midjourney-debutant.html"><div class="card-title">Midjourney for beginners: my first mistakes</div></a><div class="card-excerpt">A real beginner's account with prompts that work and those that don't.</div><div class="card-date">May 15, 2026</div></div>
+    </div>
+    <div class="see-all"><a href="articles.html">See all articles</a></div>
+    <div class="section-label">This week's picks</div>
+    <div class="sel-grid">
+      <div class="sel-card"><div class="sel-badge">Favourite</div><a href="resumer-pdf-ia.html"><div class="sel-title">Summarize a PDF with AI in 2 minutes</div></a><div class="sel-desc">The tool I wish I had discovered much sooner. Instantly saves time.</div></div>
+      <div class="sel-card"><div class="sel-badge">Start here</div><a href="chatgpt-guide-debutant.html"><div class="sel-title">The ChatGPT guide for real beginners</div></a><div class="sel-desc">If you don't know where to start yet, start here.</div></div>
+      <div class="sel-card"><div class="sel-badge">Trending</div><a href="automatiser-taches-ia.html"><div class="sel-title">Automating your repetitive tasks</div></a><div class="sel-desc">How to get 5 hours back every week thanks to AI.</div></div>
+    </div>
+    <div class="author-section">
+      <div class="author-avatar"><svg><use href="#author-icon"/></svg></div>
+      <div>
+        <div class="author-name">TutosIA</div>
+        <div class="author-bio">Curious about AI since 2023. I test things, make mistakes, learn, and write about it. One article a week, always trying to explain things the way I actually understand them.</div>
+      </div>
+    </div>
+    <div class="newsletter">
+      <h3>One article a week, straight to your inbox.</h3>
+      <p>No spam. Just the best AI guides, delivered directly to you.</p>
+      <div class="nl-form"><input type="email" placeholder="your@email.com"/><button>Subscribe</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- DEUTSCH -->
+<div class="lang-content" id="lang-de">
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Ein Blog über künstliche Intelligenz</div>
+      <h1>KI erklärt von jemandem, der sie mit dir lernt.</h1>
+      <p class="hero-sub">Kein Fachjargon, kein Hype. Ehrliche Guides über Tools, die wirklich verändern, wie wir arbeiten und erschaffen.</p>
+      <a class="hero-cta" href="articles.html">Artikel entdecken</a>
+    </div>
+    <div class="hero-img-wrap"><img src="hero-home.jpg" alt="Gemütlicher Arbeitsplatz mit Laptop und Kaffee"/></div>
+  </div>
+  <div class="topics">
+    <div class="topics-inner">
+      <span class="topics-label">Im Blog</span>
+      <a class="topic-tag" href="chatgpt-guide-debutant.html">ChatGPT</a>
+      <a class="topic-tag" href="midjourney-debutant.html">Midjourney</a>
+      <a class="topic-tag" href="automatiser-taches-ia.html">Automatisierung</a>
+      <a class="topic-tag" href="comparatifs.html">Vergleiche</a>
+      <a class="topic-tag" href="ia-petites-entreprises.html">Produktivität</a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="section-label">Im Fokus</div>
+    <div class="featured">
+      <div class="featured-img">
+        <img src="hero-chatgpt.jpg" alt="Hände auf Laptop im Café"/>
+        <div class="featured-img-overlay"></div>
+        <div class="featured-img-label">Einsteiger-Guide</div>
+        <div class="featured-img-title">Was ist ChatGPT? Alles verstehen in 5 Minuten</div>
+      </div>
+      <div class="featured-content">
+        <div class="featured-excerpt">Ich habe wochenlang ChatGPT getestet, bevor ich diesen Artikel geschrieben habe. Hier ist, was ich von Anfang an gewusst haben wollte — ohne unnötigen Fachjargon.</div>
+        <div class="featured-meta">1. Juni 2026 · 6 Min. Lesezeit</div>
+        <a class="read-btn" href="chatgpt-guide-debutant.html">Artikel lesen</a>
+      </div>
+    </div>
+    <div class="section-label">Neueste Artikel</div>
+    <div class="grid">
+      <div class="card"><div class="card-tag">Vergleich</div><a href="chatgpt-vs-gemini.html"><div class="card-title">ChatGPT vs Gemini: mein ehrliches Urteil nach 3 Monaten</div></a><div class="card-excerpt">Keine langweiligen Tabellen. Nur meine echte Erfahrung aus dem Alltag.</div><div class="card-date">28. Mai 2026</div></div>
+      <div class="card"><div class="card-tag">Tutorial</div><a href="outils-ia-gratuits.html"><div class="card-title">5 kostenlose KI-Tools, die mir diese Woche Zeit gespart haben</div></a><div class="card-excerpt">Tools, die ich wirklich nutze — keine kopierte Liste aus dem Internet.</div><div class="card-date">25. Mai 2026</div></div>
+      <div class="card"><div class="card-tag">Produktivität</div><a href="cv-avec-chatgpt.html"><div class="card-title">Wie ich meinen Lebenslauf in 12 Minuten mit ChatGPT schrieb</div></a><div class="card-excerpt">Der genaue Ablauf, die verwendeten Prompts und was ich manuell korrigieren musste.</div><div class="card-date">20. Mai 2026</div></div>
+      <div class="card"><div class="card-tag">KI-Bild</div><a href="midjourney-debutant.html"><div class="card-title">Midjourney für Anfänger: meine ersten Fehler</div></a><div class="card-excerpt">Ein echter Anfängerbericht mit Prompts, die funktionieren und welchen, die es nicht tun.</div><div class="card-date">15. Mai 2026</div></div>
+    </div>
+    <div class="see-all"><a href="articles.html">Alle Artikel ansehen</a></div>
+    <div class="section-label">Empfehlungen der Woche</div>
+    <div class="sel-grid">
+      <div class="sel-card"><div class="sel-badge">Favorit</div><a href="resumer-pdf-ia.html"><div class="sel-title">Ein PDF mit KI in 2 Minuten zusammenfassen</div></a><div class="sel-desc">Das Tool, das ich viel früher hätte kennen sollen.</div></div>
+      <div class="sel-card"><div class="sel-badge">Hier starten</div><a href="chatgpt-guide-debutant.html"><div class="sel-title">Der ChatGPT-Guide für echte Anfänger</div></a><div class="sel-desc">Wenn du noch nicht weißt, wo du anfangen sollst — fang hier an.</div></div>
+      <div class="sel-card"><div class="sel-badge">Im Trend</div><a href="automatiser-taches-ia.html"><div class="sel-title">Wiederholende Aufgaben automatisieren</div></a><div class="sel-desc">Wie man dank KI jede Woche 5 Stunden zurückgewinnt.</div></div>
+    </div>
+    <div class="author-section">
+      <div class="author-avatar"><svg><use href="#author-icon"/></svg></div>
+      <div>
+        <div class="author-name">TutosIA</div>
+        <div class="author-bio">Neugierig auf KI seit 2023. Ich teste, mache Fehler, lerne und schreibe darüber. Ein Artikel pro Woche — immer mit dem Ziel, Dinge so zu erklären, wie ich sie wirklich verstehe.</div>
+      </div>
+    </div>
+    <div class="newsletter">
+      <h3>Ein Artikel pro Woche, direkt in dein Postfach.</h3>
+      <p>Kein Spam. Nur die besten KI-Guides, direkt zu dir.</p>
+      <div class="nl-form"><input type="email" placeholder="deine@email.de"/><button>Abonnieren</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ESPAÑOL -->
+<div class="lang-content" id="lang-es">
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Un blog sobre inteligencia artificial</div>
+      <h1>La IA explicada por alguien que la aprende contigo.</h1>
+      <p class="hero-sub">Sin jerga, sin promesas vacías. Guías honestas sobre las herramientas que realmente cambian la forma en que trabajamos y creamos.</p>
+      <a class="hero-cta" href="articles.html">Ver los artículos</a>
+    </div>
+    <div class="hero-img-wrap"><img src="hero-home.jpg" alt="Escritorio acogedor con laptop y café"/></div>
+  </div>
+  <div class="topics">
+    <div class="topics-inner">
+      <span class="topics-label">En el blog</span>
+      <a class="topic-tag" href="chatgpt-guide-debutant.html">ChatGPT</a>
+      <a class="topic-tag" href="midjourney-debutant.html">Midjourney</a>
+      <a class="topic-tag" href="automatiser-taches-ia.html">Automatización</a>
+      <a class="topic-tag" href="comparatifs.html">Comparativas</a>
+      <a class="topic-tag" href="ia-petites-entreprises.html">Productividad</a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="section-label">Destacado</div>
+    <div class="featured">
+      <div class="featured-img">
+        <img src="hero-chatgpt.jpg" alt="Manos escribiendo en laptop en un café"/>
+        <div class="featured-img-overlay"></div>
+        <div class="featured-img-label">Guía para principiantes</div>
+        <div class="featured-img-title">¿Qué es ChatGPT? Todo lo que necesitas saber en 5 minutos</div>
+      </div>
+      <div class="featured-content">
+        <div class="featured-excerpt">Pasé semanas probando ChatGPT antes de escribir este artículo. Esto es lo que me hubiera gustado saber desde el principio, sin la jerga técnica innecesaria.</div>
+        <div class="featured-meta">1 de junio de 2026 · 6 min de lectura</div>
+        <a class="read-btn" href="chatgpt-guide-debutant.html">Leer el artículo</a>
+      </div>
+    </div>
+    <div class="section-label">Últimos artículos</div>
+    <div class="grid">
+      <div class="card"><div class="card-tag">Comparativa</div><a href="chatgpt-vs-gemini.html"><div class="card-title">ChatGPT vs Gemini: mi opinión tras 3 meses de uso</div></a><div class="card-excerpt">Sin tablas aburridas. Solo mi experiencia real usando ambos cada día.</div><div class="card-date">28 de mayo de 2026</div></div>
+      <div class="card"><div class="card-tag">Tutorial</div><a href="outils-ia-gratuits.html"><div class="card-title">5 herramientas de IA gratuitas que me ahorraron tiempo</div></a><div class="card-excerpt">Herramientas que realmente uso, no una lista copiada de algún artículo.</div><div class="card-date">25 de mayo de 2026</div></div>
+      <div class="card"><div class="card-tag">Productividad</div><a href="cv-avec-chatgpt.html"><div class="card-title">Cómo escribí mi CV en 12 minutos con ChatGPT</div></a><div class="card-excerpt">El proceso exacto, los prompts usados y lo que tuve que corregir a mano.</div><div class="card-date">20 de mayo de 2026</div></div>
+      <div class="card"><div class="card-tag">Imagen IA</div><a href="midjourney-debutant.html"><div class="card-title">Midjourney para principiantes: mis primeros errores</div></a><div class="card-excerpt">Una experiencia real de principiante con los prompts que funcionan y los que no.</div><div class="card-date">15 de mayo de 2026</div></div>
+    </div>
+    <div class="see-all"><a href="articles.html">Ver todos los artículos</a></div>
+    <div class="section-label">Selecciones de la semana</div>
+    <div class="sel-grid">
+      <div class="sel-card"><div class="sel-badge">Favorito</div><a href="resumer-pdf-ia.html"><div class="sel-title">Resumir un PDF con IA en 2 minutos</div></a><div class="sel-desc">La herramienta que ojalá hubiera conocido mucho antes.</div></div>
+      <div class="sel-card"><div class="sel-badge">Para empezar</div><a href="chatgpt-guide-debutant.html"><div class="sel-title">La guía de ChatGPT para verdaderos principiantes</div></a><div class="sel-desc">Si aún no sabes por dónde empezar, empieza aquí.</div></div>
+      <div class="sel-card"><div class="sel-badge">Tendencia</div><a href="automatiser-taches-ia.html"><div class="sel-title">Automatizar tus tareas repetitivas</div></a><div class="sel-desc">Cómo recuperar 5 horas a la semana gracias a la IA.</div></div>
+    </div>
+    <div class="author-section">
+      <div class="author-avatar"><svg><use href="#author-icon"/></svg></div>
+      <div>
+        <div class="author-name">TutosIA</div>
+        <div class="author-bio">Curioso sobre la IA desde 2023. Pruebo, me equivoco, aprendo y escribo al respecto. Un artículo a la semana, siempre intentando explicar las cosas tal como las entiendo de verdad.</div>
+      </div>
+    </div>
+    <div class="newsletter">
+      <h3>Un artículo a la semana, en tu bandeja de entrada.</h3>
+      <p>Sin spam. Solo las mejores guías de IA, directamente para ti.</p>
+      <div class="nl-form"><input type="email" placeholder="tu@email.com"/><button>Suscribirme</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- NEDERLANDS -->
+<div class="lang-content" id="lang-nl">
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Een blog over kunstmatige intelligentie</div>
+      <h1>AI uitgelegd door iemand die het samen met jou leert.</h1>
+      <p class="hero-sub">Geen jargon, geen beloftes. Eerlijke gidsen over tools die echt veranderen hoe we werken en creëren.</p>
+      <a class="hero-cta" href="articles.html">Artikelen bekijken</a>
+    </div>
+    <div class="hero-img-wrap"><img src="hero-home.jpg" alt="Gezellige werkplek met laptop en koffie"/></div>
+  </div>
+  <div class="topics">
+    <div class="topics-inner">
+      <span class="topics-label">Op de blog</span>
+      <a class="topic-tag" href="chatgpt-guide-debutant.html">ChatGPT</a>
+      <a class="topic-tag" href="midjourney-debutant.html">Midjourney</a>
+      <a class="topic-tag" href="automatiser-taches-ia.html">Automatisering</a>
+      <a class="topic-tag" href="comparatifs.html">Vergelijkingen</a>
+      <a class="topic-tag" href="ia-petites-entreprises.html">Productiviteit</a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="section-label">Uitgelicht</div>
+    <div class="featured">
+      <div class="featured-img">
+        <img src="hero-chatgpt.jpg" alt="Handen op laptop in een café"/>
+        <div class="featured-img-overlay"></div>
+        <div class="featured-img-label">Beginnersgids</div>
+        <div class="featured-img-title">Wat is ChatGPT? Alles begrijpen in 5 minuten</div>
+      </div>
+      <div class="featured-content">
+        <div class="featured-excerpt">Ik heb weken ChatGPT getest voordat ik dit artikel schreef. Dit is wat ik vanaf het begin had willen weten, zonder onnodige technische jargon.</div>
+        <div class="featured-meta">1 juni 2026 · 6 min leestijd</div>
+        <a class="read-btn" href="chatgpt-guide-debutant.html">Artikel lezen</a>
+      </div>
+    </div>
+    <div class="section-label">Nieuwste artikelen</div>
+    <div class="grid">
+      <div class="card"><div class="card-tag">Vergelijking</div><a href="chatgpt-vs-gemini.html"><div class="card-title">ChatGPT vs Gemini: mijn eerlijke mening na 3 maanden</div></a><div class="card-excerpt">Geen saaie tabellen. Alleen mijn echte ervaring met beide tools in de dagelijkse praktijk.</div><div class="card-date">28 mei 2026</div></div>
+      <div class="card"><div class="card-tag">Tutorial</div><a href="outils-ia-gratuits.html"><div class="card-title">5 gratis AI-tools die me deze week tijd bespaarden</div></a><div class="card-excerpt">Tools die ik echt gebruik, geen gekopieerde lijst van een willekeurig artikel.</div><div class="card-date">25 mei 2026</div></div>
+      <div class="card"><div class="card-tag">Productiviteit</div><a href="cv-avec-chatgpt.html"><div class="card-title">Hoe ik mijn cv in 12 minuten schreef met ChatGPT</div></a><div class="card-excerpt">Het exacte proces, de gebruikte prompts en wat ik handmatig moest corrigeren.</div><div class="card-date">20 mei 2026</div></div>
+      <div class="card"><div class="card-tag">AI-afbeelding</div><a href="midjourney-debutant.html"><div class="card-title">Midjourney voor beginners: mijn eerste fouten</div></a><div class="card-excerpt">Een eerlijk beginnersverhaal met prompts die werken en die het niet doen.</div><div class="card-date">15 mei 2026</div></div>
+    </div>
+    <div class="see-all"><a href="articles.html">Alle artikelen bekijken</a></div>
+    <div class="section-label">Selecties van de week</div>
+    <div class="sel-grid">
+      <div class="sel-card"><div class="sel-badge">Favoriet</div><a href="resumer-pdf-ia.html"><div class="sel-title">Een PDF samenvatten met AI in 2 minuten</div></a><div class="sel-desc">De tool die ik veel eerder had willen kennen.</div></div>
+      <div class="sel-card"><div class="sel-badge">Begin hier</div><a href="chatgpt-guide-debutant.html"><div class="sel-title">De ChatGPT-gids voor echte beginners</div></a><div class="sel-desc">Als je nog niet weet waar je moet beginnen, begin dan hier.</div></div>
+      <div class="sel-card"><div class="sel-badge">Trending</div><a href="automatiser-taches-ia.html"><div class="sel-title">Repetitieve taken automatiseren</div></a><div class="sel-desc">Hoe je dankzij AI elke week 5 uur terugwint.</div></div>
+    </div>
+    <div class="author-section">
+      <div class="author-avatar"><svg><use href="#author-icon"/></svg></div>
+      <div>
+        <div class="author-name">TutosIA</div>
+        <div class="author-bio">Nieuwsgierig naar AI sinds 2023. Ik test dingen, maak fouten, leer en schrijf erover. Één artikel per week, altijd met als doel dingen uit te leggen zoals ik ze echt begrijp.</div>
+      </div>
+    </div>
+    <div class="newsletter">
+      <h3>Één artikel per week, rechtstreeks in je mailbox.</h3>
+      <p>Geen spam. Alleen de beste AI-gidsen, direct voor jou.</p>
+      <div class="nl-form"><input type="email" placeholder="jouw@email.nl"/><button>Abonneren</button></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Tutos<span>IA</span></div>
+  <div class="footer-links">
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2026 TutosIA — Fait avec curiosité</div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const body=document.body,btn=document.getElementById('theme-btn');
+  body.classList.toggle('dark');
+  const dark=body.classList.contains('dark');
+  btn.textContent=dark?'Mode clair':'Mode sombre';
+  localStorage.setItem('theme',dark?'dark':'light');
+}
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){document.body.classList.add('dark');document.getElementById('theme-btn').textContent='Mode clair';}
+
+function toggleLangMenu(){document.getElementById('lang-menu').classList.toggle('open')}
+document.addEventListener('click',function(e){
+  if(!document.querySelector('.lang-float').contains(e.target))
+    document.getElementById('lang-menu').classList.remove('open');
+});
+const navTrans={
+  fr:{home:'Accueil',articles:'Articles',comp:'Comparatifs',contact:'Contact',dark:'Mode sombre',light:'Mode clair'},
+  en:{home:'Home',articles:'Articles',comp:'Comparisons',contact:'Contact',dark:'Dark mode',light:'Light mode'},
+  de:{home:'Startseite',articles:'Artikel',comp:'Vergleiche',contact:'Kontakt',dark:'Dunkler Modus',light:'Heller Modus'},
+  es:{home:'Inicio',articles:'Artículos',comp:'Comparativas',contact:'Contacto',dark:'Modo oscuro',light:'Modo claro'},
+  nl:{home:'Startpagina',articles:'Artikelen',comp:'Vergelijkingen',contact:'Contact',dark:'Donkere modus',light:'Lichte modus'}
+};
+function setLang(lang){
+  document.querySelectorAll('.lang-content').forEach(el=>el.classList.remove('active'));
+  document.getElementById('lang-'+lang).classList.add('active');
+  document.querySelectorAll('.lang-option').forEach(btn=>btn.classList.remove('active'));
+  document.getElementById('opt-'+lang).classList.add('active');
+  document.documentElement.lang=lang;
+  document.getElementById('lang-menu').classList.remove('open');
+  localStorage.setItem('tutoia-lang',lang);
+  const n=navTrans[lang];
+  document.getElementById('nav-home').textContent=n.home;
+  document.getElementById('nav-articles').textContent=n.articles;
+  document.getElementById('nav-comp').textContent=n.comp;
+  document.getElementById('nav-contact').textContent=n.contact;
+  const dark=document.body.classList.contains('dark');
+  document.getElementById('theme-btn').textContent=dark?n.light:n.dark;
+}
+const savedLang=localStorage.getItem('tutoia-lang');
+if(savedLang&&savedLang!=='fr') setLang(savedLang);
+</script>
+</body>
+</html>.filters{max-width:var(--max);margin:0 auto;padding:1.25rem 2rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;border-bottom:1px solid var(--border);background:var(--bg2)}
 .filter-label{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--hint);text-transform:uppercase;letter-spacing:1.5px;margin-right:.25rem}
 .filter-btn{font-family:var(--sans);font-size:13px;padding:6px 16px;border-radius:20px;border:1px solid var(--border);background:var(--bg);color:var(--muted);cursor:pointer;transition:all .2s}
 .filter-btn:hover{border-color:var(--accent);color:var(--accent)}
